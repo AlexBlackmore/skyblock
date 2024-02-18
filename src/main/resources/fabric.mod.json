@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.skyblock.ExampleMod"
+          "net.skyblock.Skyblock"
 		],
 		"client": [
-			"com.skyblock.ExampleModClient"
+          "net.skyblock.ExampleModClient"
 		]
 	},
 	"mixins": [
