@@ -36,6 +36,8 @@
   "block.skyblock.mithril_ore": "Mithril Ore",
   "block.skyblock.rich_mithril_ore": "Mithril Ore",
 
+  "currency.skyblock.mithril_powder": "§2Mithril Powder",
+  "currency.skyblock.gemstone_powder": "§dGemstone Powder",
 
   "item.skyblock.enchanted_acacia_log": "Enchanted Acacia Log",
   "item.skyblock.enchanted_baked_potato": "Enchanted Baked Potato",
@@ -132,6 +134,81 @@
   "item.skyblock.enchanted_glowstone": "Enchanted Glowstone",
   "item.skyblock.enchanted_redstone_lamp": "Enchanted Redstone Lamp",
 
+  "item.skyblock.refined_mineral": "Refined Mineral",
+  "item.skyblock.true_essence": "True Essence",
+
+  "item.skyblock.mithril": "Mithril",
+  "lore.skyblock.mithril.1": "§7§o\"The man called it \"true-silver\"",
+  "lore.skyblock.mithril.2": "§7§owhile the Dwarves, who loved it",
+  "lore.skyblock.mithril.3": "§7§oabove all other things, had",
+  "lore.skyblock.mithril.4": "§7§otheir own, secret name for it.\"",
+
+  "item.skyblock.magical_mushroom_soup": "Magical Mushroom Soup",
+  "item.skyblock.foul_flesh": "Foul Flesh",
+  "item.skyblock.nope_the_fish": "Nope The Fish",
+
+  "item.skyblock.magical_water_bucket": "Magical Water Bucket",
+  "lore.skyblock.magical_water_bucket.1": "§7This Magical Water Bucket will",
+  "lore.skyblock.magical_water_bucket.2": "§7never run out of water, no",
+  "lore.skyblock.magical_water_bucket.3": "§7matter how many times it is",
+  "lore.skyblock.magical_water_bucket.4": "§7emptied.",
+
+  "item.skyblock.magical_lava_bucket": "Magical Lava Bucket",
+  "lore.skyblock.magical_lava_bucket.1": "§7This Magical Lava Bucket holds a",
+  "lore.skyblock.magical_lava_bucket.2": "§7tiny volcano. Easy infinite lava!",
+
+  "item.skyblock.magical_milk_bucket": "Magical Milk Bucket",
+  "lore.skyblock.magical_milk_bucket.0.1": "§7What did the mother cow say to",
+  "lore.skyblock.magical_milk_bucket.0.2": "§7the baby cow?",
+  "lore.skyblock.magical_milk_bucket.0.3": "§7 ",
+  "lore.skyblock.magical_milk_bucket.0.4": "§7It's pasture bed time.",
+  "lore.skyblock.magical_milk_bucket.1.1": "§7What do you get when a cow is",
+  "lore.skyblock.magical_milk_bucket.1.2": "§7caught in a earthquake?",
+  "lore.skyblock.magical_milk_bucket.1.3": "§7 ",
+  "lore.skyblock.magical_milk_bucket.1.4": "§7A MILKSHAKE!!!",
+  "lore.skyblock.magical_milk_bucket.2.1": "§7What do you call a cow with a",
+  "lore.skyblock.magical_milk_bucket.2.2": "§7twitch?",
+  "lore.skyblock.magical_milk_bucket.2.3": "§7 ",
+  "lore.skyblock.magical_milk_bucket.2.4": "§7Beef jerky.",
+  "lore.skyblock.magical_milk_bucket.3.1": "§7Where do cows get their medicine?",
+  "lore.skyblock.magical_milk_bucket.3.2": "§7 ",
+  "lore.skyblock.magical_milk_bucket.3.3": "§7At the farmacy!",
+  "lore.skyblock.magical_milk_bucket.4.1": "§7What do you get from a dwarf cow?",
+  "lore.skyblock.magical_milk_bucket.4.2": "§7 ",
+  "lore.skyblock.magical_milk_bucket.4.3": "§7Condensed milk.",
+
+  "item.skyblock.zombie_pickaxe": "Zombie Pickaxe",
+  "lore.skyblock.zombie_pickaxe.1": "§7Grants %s §7for %s §7when",
+  "lore.skyblock.zombie_pickaxe.2": "§7breaking §fOres§7!",
+
+
+
+  "item.skyblock.rookie_hoe": "Rookie Hoe",
+  "item.skyblock.hoe_of_great_tilling": "Hoe of Great Tilling",
+  "item.skyblock.hoe_of_greater_tilling": "Hoe of Greater Tilling",
+  "item.skyblock.hoe_of_greatest_tilling": "Hoe of Greatest Tilling",
+  "item.skyblock.jungle_pickaxe": "Jungle Pickaxe",
+  "item.skyblock.fractured_mithril_pickaxe": "Fractured Mithril Pickaxe",
+  "item.skyblock.bandaged_mithril_pickaxe": "Bandaged Mithril Pickaxe",
+
+  "item.skyblock.mithril_pickaxe": "Mithril Pickaxe",
+  "lore.skyblock.mithril_pickaxe.1": "§7Gain %s %s §7when",
+  "lore.skyblock.mithril_pickaxe.2": "§7using this pickaxe!,",
+  "lore.skyblock.mithril_pickaxe.3": " ",
+  "lore.skyblock.mithril_pickaxe.4": "§7Grants %s %s §7when",
+  "lore.skyblock.mithril_pickaxe.5": "§7mining §fMithril Ore§7.",
+
+
+
+
+
+
+
+  "item.skyblock.refined_mithril_pickaxe": "Refined Mithril Pickaxe",
+
+  "itemgroup.swords": "Swords",
+  "itemgroup.enchanted": "Enchanted Items",
+  "itemgroup.admin": "Admin Items",
 
   "potion.potency.0": "",
   "potion.potency.1": "II",
@@ -144,16 +221,6 @@
   "potion.potency.8": "IX",
   "potion.potency.9": "X",
 
-  "itemgroup.swords": "Swords",
-  "itemgroup.enchanted": "Enchanted Items",
-  "itemgroup.admin": "Admin Items",
-
-  "item.skyblock.refined_mineral": "Refined Mineral",
-  "item.skyblock.true_essence": "True Essence",
-  "item.skyblock.mithril": "Mithril",
-  "item.skyblock.magical_mushroom_soup": "Magical Mushroom Soup",
-  "item.skyblock.foul_flesh": "Foul Flesh",
-  "item.skyblock.nope_the_fish": "Nope The Fish",
 
   "enchantment.skyblock.cleave": "Cleave",
   "enchantment.skyblock.critical": "Critical",

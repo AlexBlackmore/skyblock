@@ -1,11 +1,13 @@
 package net.skyblock;
 
 import net.skyblock.block.ModBlocks;
+import net.skyblock.effect.ModStatusEffects;
 import net.skyblock.item.ModItem;
 import net.skyblock.item.ModItemGroups;
 import net.skyblock.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.skyblock.item.ModPotions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +27,8 @@ public class Skyblock implements ModInitializer {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
+		ModStatusEffects.registerStatusEffects();
+		ModPotions.registerPotions();
 
-		LOGGER.info("Hello Fabric world!");
 	}
 }
