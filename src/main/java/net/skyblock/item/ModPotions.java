@@ -7,11 +7,8 @@ import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.skyblock.item.ModPotion;
 import net.skyblock.Skyblock;
 import net.skyblock.effect.ModStatusEffects;
-import net.skyblock.item.EnchantedItems;
-import net.skyblock.item.ModItems;
 import net.skyblock.mixin.BrewingRecipeRegistryMixin;
 
 import java.util.Objects;
@@ -1263,7 +1260,7 @@ public class ModPotions {
         } else if (Objects.equals(name, "enchanted_cactus_green")) {
             ENCHANTED_CACTUS_GREEN = Registry.register(Registries.POTION, new Identifier(Skyblock.MOD_ID, name),
                     new ModPotion(amplifier/2, "resistance", new StatusEffectInstance(StatusEffects.RESISTANCE, DEFAULT_DURATION, amplifier)));
-            BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, EnchantedItems.CACTUS_GREEN, ModPotions.ENCHANTED_CACTUS_GREEN);
+            BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, EnchantedItems.GREEN_DYE, ModPotions.ENCHANTED_CACTUS_GREEN);
 
             LONG_ENCHANTED_CACTUS_GREEN = Registry.register(Registries.POTION, new Identifier(Skyblock.MOD_ID, "long_" + name),
                     new ModPotion(amplifier/2, "resistance", new StatusEffectInstance(StatusEffects.RESISTANCE, REDSTONE_DURATION, amplifier)));

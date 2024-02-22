@@ -16,12 +16,22 @@ import net.skyblock.Skyblock;
 public class ModBlocks {
     public static final Block HARD_STONE = registerBlock("hard_stone",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE).strength(5.0f)));
+    public static final Block POOR_DWARVEN_GOLD = registerBlock("poor_dwarven_gold",
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), FabricBlockSettings.copyOf(Blocks.CYAN_TERRACOTTA).strength(40.0f)));
+    public static final Block DWARVEN_REDSTONE = registerBlock("dwarven_redstone",
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), FabricBlockSettings.copyOf(Blocks.REDSTONE_BLOCK).strength(50.0f)));
+    public static final Block DWARVEN_GOLD = registerBlock("dwarven_gold",
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(60.0f)));
+    public static final Block DWARVEN_EMERALD = registerBlock("dwarven_emerald",
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).strength(70.0f)));
     public static final Block POOR_MITHRIL_ORE = registerBlock("poor_mithril_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.OBSIDIAN).strength(50.0f)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.CYAN_TERRACOTTA).strength(50.0f)));
     public static final Block MITHRIL_ORE = registerBlock("mithril_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.OBSIDIAN).strength(80.0f)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.DARK_PRISMARINE).strength(80.0f)));
     public static final Block RICH_MITHRIL_ORE = registerBlock("rich_mithril_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.OBSIDIAN).strength(150.0f)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.LIGHT_BLUE_WOOL).strength(150.0f)));
+    public static final Block TITANIUM_ORE = registerBlock("titanium_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(50, 100), FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).strength(200.0f)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

@@ -6,10 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-import net.skyblock.util.Lore;
+import net.skyblock.util.LoreUtil;
 import net.skyblock.util.ModRarity;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModItem extends Item {
@@ -40,8 +41,12 @@ public class ModItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        Lore.appendLore(stack, world, tooltip, context, loreKey);
+        LoreUtil.appendLore(tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
+    }
+
+    public List<Object> getLoreArgs(int i) {
+        return new ArrayList<>();
     }
 
     public String getLoreKey() {

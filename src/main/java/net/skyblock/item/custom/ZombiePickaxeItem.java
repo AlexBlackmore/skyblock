@@ -20,6 +20,7 @@ import net.skyblock.util.ModRarity;
 import net.skyblock.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ZombiePickaxeItem extends ModMiningToolItem {
@@ -41,11 +42,23 @@ public class ZombiePickaxeItem extends ModMiningToolItem {
         }
         return true;
     }
+//    @Override
+//    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+//        String loreKey = "lore.skyblock." + NAME;
+//        tooltip.add(Text.translatable(loreKey + "." + 1, );
+//        tooltip.add(Text.translatable(loreKey + "." + 2));
+//        tooltip.add(Text.literal(" "));
+//    }
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        String loreKey = "lore.skyblock." + NAME;
-        tooltip.add(Text.translatable(loreKey + "." + 1, Text.translatable("potion.withAmplifier", Text.translatable(STATUS_EFFECT), Text.translatable("potion.potency."+AMPLIFIER).formatted(Formatting.BLUE)), "§a"+DURATION+"s"));
-        tooltip.add(Text.translatable(loreKey + "." + 2));
-        tooltip.add(Text.literal(" "));
+    public List<Object> getLoreArgs(int i) {
+        List<Object> list = new ArrayList<>();
+        switch (i) {
+            case 1 -> {
+                list.add(Text.translatable("potion.withAmplifier", Text.translatable(STATUS_EFFECT), Text.translatable("potion.potency."+AMPLIFIER)).formatted(Formatting.BLUE));
+                list.add("§a"+DURATION+"s");
+            }
+            default -> {}
+        }
+        return list;
     }
 }

@@ -17,10 +17,45 @@ public class ModItemGroups {
     public static final ItemGroup ENCHANTED = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Skyblock.MOD_ID, "enchanted"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.enchanted")).icon(() ->
-                    new ItemStack(EnchantedItems.ENCHANTED_POTATO)).entries((displayContext, entries) -> {
-                        entries.add(EnchantedItems.ENCHANTED_ACACIA_LOG);
-                        entries.add(EnchantedItems.ENCHANTED_BAKED_POTATO);
-                        entries.add(EnchantedItems.ENCHANTED_POTATO);
+                    new ItemStack(EnchantedItems.POTATO)).entries((displayContext, entries) -> {
+                        entries.add(EnchantedItems.ACACIA_LOG);
+                        entries.add(EnchantedItems.BAKED_POTATO);
+                        entries.add(EnchantedItems.BLAZE_POWDER);
+                        entries.add(EnchantedItems.BLAZE_ROD);
+                        entries.add(EnchantedItems.CACTUS);
+                        entries.add(EnchantedItems.CAKE);
+                        entries.add(EnchantedItems.COAL);
+                        entries.add(EnchantedItems.COCOA_BEANS);
+                        entries.add(EnchantedItems.COOKED_CHICKEN);
+                        entries.add(EnchantedItems.COOKED_MUTTON);
+                        entries.add(EnchantedItems.COOKED_PORKCHOP);
+                        entries.add(EnchantedItems.COOKIE);
+                        entries.add(EnchantedItems.DIAMOND);
+                        entries.add(EnchantedItems.EMERALD);
+                        entries.add(EnchantedItems.FERMENTED_SPIDER_EYE);
+                        entries.add(EnchantedItems.GHAST_TEAR);
+                        entries.add(EnchantedItems.GLISTERING_MELON_SLICE);
+                        entries.add(EnchantedItems.GLOWSTONE);
+                        entries.add(EnchantedItems.GLOWSTONE_DUST);
+                        entries.add(EnchantedItems.GOLD_BLOCK);
+                        entries.add(EnchantedItems.GOLD_INGOT);
+                        entries.add(EnchantedItems.GREEN_DYE);
+                        entries.add(EnchantedItems.ICE);
+                        entries.add(EnchantedItems.INK_SAC);
+                        entries.add(EnchantedItems.IRON_INGOT);
+                        entries.add(EnchantedItems.MELON_SLICE);
+                        entries.add(EnchantedItems.MUTTON);
+                        entries.add(EnchantedItems.NETHERRACK);
+                        entries.add(EnchantedItems.POISONOUS_POTATO);
+                        entries.add(EnchantedItems.POTATO);
+                        entries.add(EnchantedItems.RABBIT_FOOT);
+                        entries.add(EnchantedItems.RABBIT_HIDE);
+                        entries.add(EnchantedItems.REDSTONE);
+                        entries.add(EnchantedItems.REDSTONE_BLOCK);
+                        entries.add(EnchantedItems.REDSTONE_LAMP);
+                        entries.add(EnchantedItems.SPIDER_EYE);
+                        entries.add(EnchantedItems.SUGAR);
+                        entries.add(EnchantedItems.SUGAR_CANE);
                     }).build());
 
 //    private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
@@ -32,6 +67,11 @@ public class ModItemGroups {
         entries.add(ModBlocks.POOR_MITHRIL_ORE);
         entries.add(ModBlocks.MITHRIL_ORE);
         entries.add(ModBlocks.RICH_MITHRIL_ORE);
+        entries.add(ModBlocks.POOR_DWARVEN_GOLD);
+        entries.add(ModBlocks.DWARVEN_GOLD);
+        entries.add(ModBlocks.DWARVEN_EMERALD);
+        entries.add(ModBlocks.DWARVEN_REDSTONE);
+        entries.add(ModBlocks.TITANIUM_ORE);
     }
 //    private static void addItemsToFunctionalItemGroup(FabricItemGroupEntries entries) {
 //    }
@@ -57,10 +97,8 @@ public class ModItemGroups {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);
     }
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
-        entries.add(EnchantedItems.ENCHANTED_ACACIA_LOG);
-        entries.add(EnchantedItems.ENCHANTED_POTATO);
-        entries.add(EnchantedItems.ENCHANTED_BAKED_POTATO);
         entries.add(ModItems.MITHRIL);
+        entries.add(ModItems.TITANIUM);
         entries.add(ModItems.REFINED_MINERAL);
         entries.add(ModItems.TRUE_ESSENCE);
         entries.add(ModItems.FOUL_FLESH);

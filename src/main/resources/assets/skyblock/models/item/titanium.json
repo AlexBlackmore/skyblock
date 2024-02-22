@@ -1,0 +1,6 @@
+{
+  "parent": "item/player_head",
+  "textures": {
+    "layer0": "skyblock:item/basket_of_seeds/7a6bf916e28ccb80b4ebfacf98686ad6af7c4fb257e57a8cb78c71d19dccb2.png"
+  }
+}

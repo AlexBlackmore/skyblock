@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "skyblock:hard_stone",
-    "skyblock:poor_mithril_ore",
-    "skyblock:mithril_ore",
-    "skyblock:rich_mithril_ore"
+    "#skyblock:mithril_ores",
+    "#skyblock:dwarven_ores",
+    "skyblock:titanium_ore"
   ]
 }
