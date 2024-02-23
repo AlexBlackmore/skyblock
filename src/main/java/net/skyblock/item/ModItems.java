@@ -2,11 +2,9 @@ package net.skyblock.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.util.Rarity;
 import net.skyblock.Skyblock;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -32,6 +30,11 @@ public class ModItems {
     public static final Item BANDAGED_MITHRIL_PICKAXE = registerItem("bandaged_mithril_pickaxe", new MithrilPickaxeItem(6.0f, 8.0f, new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item MITHRIL_PICKAXE = registerItem("mithril_pickaxe", new MithrilPickaxeItem(8.0f, 9.0f, new FabricItemSettings().rarity(Rarity.UNCOMMON), ModRarity.UNCOMMON, 5, 20));
     public static final Item REFINED_MITHRIL_PICKAXE = registerItem("refined_mithril_pickaxe", new MithrilPickaxeItem(10.0f, 10.0f, new FabricItemSettings().rarity(Rarity.RARE), ModRarity.RARE, 10, 50));
+
+    public static final Item FARM_SUIT_HELMET = registerItem("farm_suit_helmet", new DyeableModArmorItem(ModArmorMaterials.FARM_SUIT, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item FARM_SUIT_CHESTPLATE = registerItem("farm_suit_chestplate", new DyeableModArmorItem(ModArmorMaterials.FARM_SUIT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item FARM_SUIT_LEGGINGS = registerItem("farm_suit_leggings", new DyeableModArmorItem(ModArmorMaterials.FARM_SUIT, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item FARM_SUIT_BOOTS = registerItem("farm_suit_boots", new DyeableModArmorItem(ModArmorMaterials.FARM_SUIT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static ModItem registerItem(String name, ModItem item) {
         return Registry.register(Registries.ITEM, new Identifier(Skyblock.MOD_ID, name), item);

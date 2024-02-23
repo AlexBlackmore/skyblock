@@ -1,7 +1,7 @@
 {
-  "replace" : false,
+  "replace": false,
   "values": [
     "#skyblock:mithril_ores",
-    "skyblock:titanium_ore"
+    "skyblock:hard_stone"
   ]
 }

@@ -12,6 +12,8 @@ import net.skyblock.Skyblock;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> MITHRIL_ORES = createTag("mithril_ores");
+        public static final TagKey<Block> DWARVEN_ORES = createTag("dwarven_ores");
+        public static final TagKey<Block> DWARVEN_GOLD = createTag("dwarven_gold");
         public static final TagKey<Block> ORES = createTag("ores");
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(Skyblock.MOD_ID, name));

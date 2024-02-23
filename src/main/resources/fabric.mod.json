@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
-	"version": "${version}",
+	"id": "skyblock",
+	"version": "1.0",
 	"name": "Skyblock",
 	"description": "!!!",
 	"authors": [
@@ -20,6 +20,9 @@
 		],
 		"client": [
           "net.skyblock.ExampleModClient"
+		],
+		"fabric-datagen": [
+			"net.skyblock.SkyblockDataGenerator"
 		]
 	},
 	"mixins": [

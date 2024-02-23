@@ -91,8 +91,12 @@ public class ModItemGroups {
         entries.add(ModItems.MITHRIL_PICKAXE);
         entries.add(ModItems.REFINED_MITHRIL_PICKAXE);
     }
-//    private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
-//    }
+    private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ModItems.FARM_SUIT_HELMET);
+        entries.add(ModItems.FARM_SUIT_CHESTPLATE);
+        entries.add(ModItems.FARM_SUIT_LEGGINGS);
+        entries.add(ModItems.FARM_SUIT_BOOTS);
+    }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);
     }
@@ -112,6 +116,7 @@ public class ModItemGroups {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItemGroups::addItemsToNaturalItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItemGroups::addItemsToToolsItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItemGroups::addItemsToCombatItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItemGroups::addItemsToFoodAndDrinkItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItemGroups::addItemsToIngredientsItemGroup);
     }

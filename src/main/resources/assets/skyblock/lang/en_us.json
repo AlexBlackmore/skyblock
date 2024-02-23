@@ -224,6 +224,12 @@
 
   "item.skyblock.refined_mithril_pickaxe": "Refined Mithril Pickaxe",
 
+
+  "item.skyblock.farm_suit_helmet": "Farm Suit Helmet",
+  "item.skyblock.farm_suit_chestplate": "Farm Suit Chestplate",
+  "item.skyblock.farm_suit_leggings": "Farm Suit Leggings",
+  "item.skyblock.farm_suit_boots": "Farm Suit Boots",
+
   "itemgroup.swords": "Swords",
   "itemgroup.enchanted": "Enchanted Items",
   "itemgroup.admin": "Admin Items",
