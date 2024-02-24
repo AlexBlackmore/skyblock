@@ -10,6 +10,9 @@ public class EnchantedItem extends ModItem {
     public EnchantedItem(Settings settings, ModRarity rarity) {
         super(settings, rarity);
     }
+    public EnchantedItem(Settings settings, ModRarity rarity, String name) {
+        super(settings, rarity, name);
+    }
 
     @Override
     public boolean hasGlint(ItemStack stack) {

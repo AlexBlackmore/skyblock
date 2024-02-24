@@ -1,39 +1,32 @@
 package net.skyblock.item.custom;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
-import net.skyblock.item.ModMiningToolItem;
+import net.minecraft.world.World;
+import net.skyblock.item.ModPickaxe;
 import net.skyblock.item.ModToolMaterials;
+import net.skyblock.util.LoreUtil;
 import net.skyblock.util.ModRarity;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MithrilPickaxeItem extends ModMiningToolItem {
+public class MithrilPickaxeItem extends ModPickaxe {
     private int mithrilPowder = 0;
     private int mithrilMiningSpeed = 0;
-    public MithrilPickaxeItem(float attackDamage, float miningSpeed, Settings settings) {
-        super(attackDamage, -2.8f, miningSpeed, ModToolMaterials.TITANIUM, BlockTags.PICKAXE_MINEABLE, settings);
+
+    public MithrilPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity) {
+        super(material, settings, rarity, "mithril_pickaxe");
     }
-    public MithrilPickaxeItem(float attackDamage, float miningSpeed, Settings settings, ModRarity rarity,  int powder, int speed) {
-        super(attackDamage, -2.8f, miningSpeed, ModToolMaterials.TITANIUM, BlockTags.PICKAXE_MINEABLE,  settings, rarity, "mithril_pickaxe");
+    public MithrilPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity,  int powder, int speed) {
+        super(material,  settings, rarity, "mithril_pickaxe");
         this.mithrilPowder = powder;
         this.mithrilMiningSpeed = speed;
     }
-
-//    @Override
-//    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-//        if (this.mithrilPowder>0) {
-//            String loreKey = "lore.skyblock." + NAME;
-//            tooltip.add(Text.translatable(loreKey + "." + 1, "§a+"+this.mithrilPowder+"%", Text.translatable("currency.skyblock.mithril_powder")));
-//            tooltip.add(Text.translatable(loreKey + "." + 2));
-//            tooltip.add(Text.translatable(loreKey + "." + 3));
-//            tooltip.add(Text.translatable(loreKey + "." + 4, "§a+"+ this.mithrilMiningSpeed+"%", Text.translatable("attribute.name.generic.mining_speed")));
-//            tooltip.add(Text.translatable(loreKey + "." + 5));
-//            tooltip.add(Text.literal(" "));
-//        }
-//    }
     @Override
     public List<Object> getLoreArgs(int i) {
         List<Object> list = new ArrayList<>();

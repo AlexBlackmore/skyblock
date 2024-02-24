@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:farm_suit_helmet",
+    "skyblock:farm_suit_chestplate",
+    "skyblock:farm_suit_leggings",
+    "skyblock:farm_suit_boots"
+  ]
+}

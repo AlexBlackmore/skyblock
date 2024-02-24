@@ -2,7 +2,9 @@ package net.skyblock.item;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
@@ -14,6 +16,12 @@ public enum ModToolMaterials implements ToolMaterial {
 //    IRON(2, 250, 6.0f, 2.0f, 14, () -> Ingredient.ofItems(Items.IRON_INGOT)),
 //    DIAMOND(3, 1561, 8.0f, 3.0f, 10, () -> Ingredient.ofItems(Items.DIAMOND)),
 //    NETHERITE(4, 2031, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(Items.NETHERITE_INGOT));
+    ZOMBIE(2, 250, 6.3f, 0.0f, 14, () -> Ingredient.ofItems(Items.IRON_INGOT)),
+    JUNGLE(4, 1561, 11.0f, 10.0f, 15, () -> Ingredient.fromTag(ItemTags.PLANKS)),
+    FRACTURED_MITHRIL(4, 1561, 7.5f, 6.0f, 15, () -> Ingredient.ofItems(ModItems.MITHRIL)),
+    BANDAGED_MITHRIL(4, 1561, 8.3f, 6.0f, 15, () -> Ingredient.ofItems(ModItems.MITHRIL)),
+    MITHRIL(4, 1561, 9.3f, 8.0f, 15, () -> Ingredient.ofItems(ModItems.MITHRIL)),
+    REFINED_MITHRIL(4, 2031, 10.0f, 10.0f, 15, () -> Ingredient.ofItems(ModItems.MITHRIL)),
     TITANIUM(4, 2031, 0.0f, 0.0f, 15, () -> Ingredient.ofItems(Items.BEDROCK)),
     RUBY(5, 2501, 0.0f, 0.0f, 15, () -> Ingredient.ofItems(Items.BEDROCK)),
     GEMSTONE(6, 2971, 0.0f, 0.0f, 15, () -> Ingredient.ofItems(Items.BEDROCK)),

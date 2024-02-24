@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:poor_mithril_ore",
+    "skyblock:mithril_ore",
+    "skyblock:rich_mithril_ore"
+  ]
+}

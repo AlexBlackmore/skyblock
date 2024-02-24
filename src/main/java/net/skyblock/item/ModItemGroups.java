@@ -80,6 +80,7 @@ public class ModItemGroups {
     private static void addItemsToToolsItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_WATER_BUCKET);
         entries.add(ModItems.MAGICAL_LAVA_BUCKET);
+        entries.add(ModItems.ROOKIE_PICKAXE);
         entries.add(ModItems.ROOKIE_HOE);
         entries.add(ModItems.HOE_OF_GREAT_TILLING);
         entries.add(ModItems.HOE_OF_GREATER_TILLING);
