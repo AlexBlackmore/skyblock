@@ -1,5 +1,6 @@
 package net.skyblock.item.custom;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -10,9 +11,10 @@ import net.skyblock.util.ModRarity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JunglePickaxeItem extends ModPickaxe {
-    public JunglePickaxeItem(Settings settings) {
-        super(ModToolMaterial.JUNGLE, settings, ModRarity.UNCOMMON, "jungle_pickaxe");
+public class Pickonimbus2000Pickaxe extends ModPickaxe {
+
+    public Pickonimbus2000Pickaxe() {
+        super(ModToolMaterial.PICKONIMBUS, new FabricItemSettings(), ModRarity.EPIC, "pickonimbus_2000");
     }
 
     @Override
@@ -20,11 +22,7 @@ public class JunglePickaxeItem extends ModPickaxe {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 2 -> {
-                list.add(Text.translatable("item.skyblock.sludge_juice").formatted(Formatting.YELLOW));
-            }
-            case 3 -> {
-                list.add(Text.translatable("location.skyblock.crystal_hollows.jungle"));
-                list.add(Text.translatable("location.skyblock.crystal_hollows"));
+                list.add("§a" + this.getMaterial().getDurability());
             }
             default -> {}
         }

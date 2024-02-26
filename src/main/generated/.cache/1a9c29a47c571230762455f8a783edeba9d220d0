@@ -1,4 +1,4 @@
-// 1.20.4	2024-02-23T20:47:56.0426731	Skyblock/Model Definitions
+// 1.20.4	2024-02-25T19:00:35.8077807	Skyblock/Model Definitions
 7d187cfda986072b3c17d63c8ac7dc42e1009b82 assets\skyblock\models\item\farm_suit_leggings_lapis_trim.json
 98122bacd2af639b489f302906c8341be45d6098 assets\skyblock\models\item\farm_suit_boots_amethyst_trim.json
 2dd0fc925819a767f086153d637948f98177cd3b assets\skyblock\models\item\farm_suit_chestplate_gold_trim.json
@@ -38,8 +38,8 @@ d91b5fb09a5d25b897a419fb30da1930523b3ea3 assets\skyblock\models\item\farm_suit_b
 d819594882335918dbd024cece5c91a9949a7742 assets\skyblock\models\item\farm_suit_helmet_copper_trim.json
 d397604fc95ac9244e1bb9f08e8d0cf8eb5af79e assets\skyblock\models\item\farm_suit_leggings_emerald_trim.json
 7dac9a12a8d71674a0ab77e3e662a9edd9fc4e8a assets\skyblock\models\item\farm_suit_helmet_redstone_trim.json
-93d2bf8d9a15ba9a6d0f12147963d02d2a1f7c5e assets\skyblock\models\item\farm_suit_boots_lapis_trim.json
 26e3099f3cb68b8c4d6c3a3ce5748d29ee4fad57 assets\skyblock\models\item\farm_suit_leggings_redstone_trim.json
+93d2bf8d9a15ba9a6d0f12147963d02d2a1f7c5e assets\skyblock\models\item\farm_suit_boots_lapis_trim.json
 9af79a7bb9fc7e0eb215e9b0dbb0e8cb31309847 assets\skyblock\models\item\farm_suit_leggings_copper_trim.json
 bb9cf4073f6c4c7281236a0cee50e9c898452870 assets\skyblock\models\item\farm_suit_helmet_iron_trim.json
 f3795cdc10c4eac5e26eeab20ab1b83db2a0c3cc assets\skyblock\models\item\farm_suit_chestplate_diamond_trim.json

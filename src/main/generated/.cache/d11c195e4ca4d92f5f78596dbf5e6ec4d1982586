@@ -1,4 +1,4 @@
-// 1.20.4	2024-02-23T20:47:56.0496689	Skyblock/Tags for minecraft:block
+// 1.20.4	2024-02-25T19:00:35.8267688	Skyblock/Tags for minecraft:block
 fd03f895b4583c3c9547b9549d39aac070525883 data\fabric\tags\blocks\needs_tool_level_4.json
 f3dcf91ea2110000f8b1a695bbfbe8bdd775eb02 data\minecraft\tags\blocks\needs_iron_tool.json
 d54c5b3cc3e8eea7eeb7cb25df445193723721a3 data\minecraft\tags\blocks\gold_ores.json
@@ -7,6 +7,6 @@ f643d84ef93cdf1ad962629d12b28d330f4b6fb3 data\minecraft\tags\blocks\needs_diamon
 dda75235159f2294219403ac770eb2777688cfcb data\minecraft\tags\blocks\emerald_ores.json
 fc3fbfa6e5fdc0c85309e0c9cf93832bdabc6b27 data\minecraft\tags\blocks\redstone_ores.json
 a2dab067fe78ee7b2b6ea75ffa1fb3fb1c4ec8f7 data\minecraft\tags\blocks\mineable\pickaxe.json
-a65f0c01dcfcbdd24bab98cd26c58df70844ec0f data\skyblock\tags\blocks\ores.json
 b7e3ffc86edb81ab9dcb354aac953cdb7ce5dd0e data\skyblock\tags\blocks\dwarven_gold.json
+a65f0c01dcfcbdd24bab98cd26c58df70844ec0f data\skyblock\tags\blocks\ores.json
 b6e016cd89a4f61697b0bff23fe4bd9f898dd2e6 data\skyblock\tags\blocks\dwarven_ores.json

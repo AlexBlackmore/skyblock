@@ -5,17 +5,13 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.skyblock.item.ModPickaxe;
-import net.skyblock.item.ModToolMaterials;
+import net.skyblock.item.ModToolMaterial;
 import net.skyblock.util.ModRarity;
 import net.skyblock.util.ModTags;
 
@@ -28,11 +24,8 @@ public class ZombiePickaxeItem extends ModPickaxe {
     private static final int AMPLIFIER = 1;
 
     public ZombiePickaxeItem(Settings settings) {
-        super(ModToolMaterials.ZOMBIE, settings, ModRarity.COMMON, "zombie_pickaxe");
+        super(ModToolMaterial.ZOMBIE, settings, ModRarity.COMMON, "zombie_pickaxe");
     }
-//    public ZombiePickaxeItem(Item.Settings settings) {
-//        super(0.0f, -2.8f, 6, ToolMaterials.IRON, BlockTags.PICKAXE_MINEABLE,  settings, ModRarity.COMMON, NAME);
-//    }
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {

@@ -1,16 +1,10 @@
 package net.skyblock.item.custom;
 
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
 import net.skyblock.item.ModPickaxe;
-import net.skyblock.item.ModToolMaterials;
-import net.skyblock.util.LoreUtil;
 import net.skyblock.util.ModRarity;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +31,10 @@ public class MithrilPickaxeItem extends ModPickaxe {
             }
             case 4 -> {
                 list.add("§a+"+ this.mithrilMiningSpeed+"%");
-                list.add(Text.translatable("attribute.name.generic.mining_speed"));
+                list.add(Text.translatable("attribute.name.player.mining_speed"));
+            }
+            case 5 -> {
+                list.add(Text.translatable("block.skyblock.mithril_ore"));
             }
             default -> {}
         }

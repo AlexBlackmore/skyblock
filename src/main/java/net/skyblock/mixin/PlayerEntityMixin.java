@@ -6,14 +6,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.skyblock.attribute.ModEntityAttributes;
 import net.skyblock.effect.ModStatusEffects;
 import net.skyblock.enchantment.ModEnchantments;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -55,6 +53,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 .add(ModEntityAttributes.FORAGING_WISDOM)
                 .add(ModEntityAttributes.ENCHANTING_WISDOM)
                 .add(ModEntityAttributes.ALCHEMY_WISDOM)
+                .add(ModEntityAttributes.FISHING_WISDOM)
                 .add(ModEntityAttributes.MINING_SPEED)
                 .add(ModEntityAttributes.PRISTINE)
                 .add(ModEntityAttributes.FORAGING_FORTUNE)

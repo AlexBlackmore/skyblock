@@ -91,6 +91,10 @@ public class ModItemGroups {
         entries.add(ModItems.BANDAGED_MITHRIL_PICKAXE);
         entries.add(ModItems.MITHRIL_PICKAXE);
         entries.add(ModItems.REFINED_MITHRIL_PICKAXE);
+        entries.add(ModItems.TITANIUM_PICKAXE);
+        entries.add(ModItems.REFINED_TITANIUM_PICKAXE);
+        entries.add(ModItems.PICKONIMBUS_2000);
+        entries.add(ModItems.BINGONIMBUS_2000);
     }
     private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.FARM_SUIT_HELMET);

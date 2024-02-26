@@ -1,11 +1,14 @@
 package net.skyblock.item;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+import net.skyblock.util.ArmorSetUtil;
 import net.skyblock.util.LoreUtil;
 import net.skyblock.util.ModItemInterface;
 import net.skyblock.util.ModRarity;
@@ -21,11 +24,23 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
         super(material, type, settings);
         this.rarity = ModRarity.convertRarity(this);
     }
+
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings, ModRarity rarity, String name) {
         super(material, type, settings.rarity(ModRarity.convertModRarity(rarity)));
         this.rarity = rarity;
         this.loreKey = "lore.skyblock." + name;
     }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if(!world.isClient()) {
+            if(entity instanceof PlayerEntity player) {
+                ArmorSetUtil.evaluateArmorEffects(player);
+            }
+        }
+        super.inventoryTick(stack, world, entity, slot, selected);
+    }
+
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         LoreUtil.appendLore(tooltip, this);

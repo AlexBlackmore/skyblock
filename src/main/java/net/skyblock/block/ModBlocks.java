@@ -2,9 +2,9 @@ package net.skyblock.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -32,6 +32,9 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(22, 45), FabricBlockSettings.copyOf(Blocks.LIGHT_BLUE_WOOL).strength(150.0f)));
     public static final Block TITANIUM_ORE = registerBlock("titanium_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(50, 100), FabricBlockSettings.copyOf(Blocks.POLISHED_DIORITE).strength(200.0f)));
+
+//    public static final Block BASKET_OF_SEEDS = registerBlock("basket_of_seeds",
+//            new PlayerSkullBlock(FabricBlockSettings.copyOf(Blocks.PLAYER_HEAD)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

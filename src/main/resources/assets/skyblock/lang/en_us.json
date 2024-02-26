@@ -11,24 +11,24 @@
   "attribute.name.generic.vitality": "§4♨Vitality",
   "attribute.name.generic.armor_toughness": "§f❂Armor Toughness",
   "attribute.name.generic.movement_speed": "§f✦Speed",
-  "attribute.name.generic.sea_creature_chance": "§3αSea Creature Chance",
   "attribute.name.generic.luck": "§b✯Luck",
-  "attribute.name.generic.pet_luck": "§d♣Pet Luck",
-  "attribute.name.generic.fishing_speed": "§b☂Fishing Speed",
+  "attribute.name.player.sea_creature_chance": "§3αSea Creature Chance",
+  "attribute.name.player.pet_luck": "§d♣Pet Luck",
+  "attribute.name.player.fishing_speed": "§b☂Fishing Speed",
 
-  "attribute.name.generic.combat_wisdom": "§3☯Combat Wisdom",
-  "attribute.name.generic.mining_wisdom": "§3☯Mining Wisdom",
-  "attribute.name.generic.farming_wisdom": "§3☯Farming Wisdom",
-  "attribute.name.generic.foraging_wisdom": "§3☯Foraging Wisdom",
-  "attribute.name.generic.fishing_wisdom": "§3☯Fishing Wisdom",
-  "attribute.name.generic.enchanting_wisdom": "§3☯Enchanting Wisdom",
-  "attribute.name.generic.alchemy_wisdom": "§3☯Alchemy Wisdom",
+  "attribute.name.wisdom.combat": "§3☯Combat Wisdom",
+  "attribute.name.wisdom.mining": "§3☯Mining Wisdom",
+  "attribute.name.wisdom.farming": "§3☯Farming Wisdom",
+  "attribute.name.wisdom.foraging": "§3☯Foraging Wisdom",
+  "attribute.name.wisdom.fishing": "§3☯Fishing Wisdom",
+  "attribute.name.wisdom.enchanting": "§3☯Enchanting Wisdom",
+  "attribute.name.wisdom.alchemy": "§3☯Alchemy Wisdom",
 
-  "attribute.name.generic.mining_speed": "§6⸕Mining Speed",
-  "attribute.name.generic.pristine": "§5✧Pristine",
-  "attribute.name.generic.foraging_fortune": "§6☘Foraging Fortune",
-  "attribute.name.generic.farming_fortune": "§6☘Farming Fortune",
-  "attribute.name.generic.mining_fortune": "§6☘Mining Fortune",
+  "attribute.name.player.mining_speed": "§6⸕Mining Speed",
+  "attribute.name.player.pristine": "§5✧Pristine",
+  "attribute.name.fortune.foraging_fortune": "§6☘Foraging Fortune",
+  "attribute.name.fortune.farming_fortune": "§6☘Farming Fortune",
+  "attribute.name.fortune.mining_fortune": "§6☘Mining Fortune",
 
   "currency.skyblock.mithril_powder": "§2Mithril Powder",
   "currency.skyblock.gemstone_powder": "§dGemstone Powder",
@@ -234,10 +234,25 @@
   "lore.skyblock.mithril_pickaxe.2": "§7using this pickaxe!",
   "lore.skyblock.mithril_pickaxe.3": " ",
   "lore.skyblock.mithril_pickaxe.4": "§7Grants %s %s §7when",
-  "lore.skyblock.mithril_pickaxe.5": "§7mining §fMithril Ore§7.",
+  "lore.skyblock.mithril_pickaxe.5": "§7mining %s§7.",
 
   "item.skyblock.refined_mithril_pickaxe": "Refined Mithril Pickaxe",
 
+
+  "item.skyblock.titanium_pickaxe": "Titanium Pickaxe",
+  "lore.skyblock.titanium_pickaxe.1": "§7Grants %s %s §7when",
+  "lore.skyblock.titanium_pickaxe.2": "§7mining %s§7.",
+
+  "item.skyblock.refined_titanium_pickaxe": "Refined Titanium Pickaxe",
+
+  "item.skyblock.pickonimbus_2000": "Pickonimbus 2000",
+  "lore.skyblock.pickonimbus_2000.1": "§7A powerful tool that breaks",
+  "lore.skyblock.pickonimbus_2000.2": "§7after %s §7uses.",
+
+
+  "item.skyblock.bingonimbus_2000": "Bingonimbus 2000",
+  "lore.skyblock.bingonimbus_2000.1": "§7A powerful tool that doesn't",
+  "lore.skyblock.bingonimbus_2000.2": "§7seem to break.",
 
   "item.skyblock.farm_suit_helmet": "Farm Suit Helmet",
   "item.skyblock.farm_suit_chestplate": "Farm Suit Chestplate",

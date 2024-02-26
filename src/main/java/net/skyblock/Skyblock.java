@@ -2,6 +2,7 @@ package net.skyblock;
 
 import net.skyblock.block.ModBlocks;
 import net.skyblock.effect.ModStatusEffects;
+import net.skyblock.enchantment.ModEnchantments;
 import net.skyblock.item.ModItem;
 import net.skyblock.item.ModItemGroups;
 import net.skyblock.item.ModItems;
@@ -28,6 +29,7 @@ public class Skyblock implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModStatusEffects.registerStatusEffects();
+		ModEnchantments.registerModEnchantments();
 		ModPotions.registerPotions();
 
 	}

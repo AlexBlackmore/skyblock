@@ -1,14 +1,31 @@
 package net.skyblock.item.abilities;
 
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BonusSpeed extends Ability {
     public static final int BOOST = 20;
     public BonusSpeed() { super("bonus_speed", true); }
+
+    @Override
+    public void apply(PlayerEntity player) {
+        StatusEffectInstance effect = new StatusEffectInstance(StatusEffects.SPEED, 220, 1, true, false, false);
+        boolean hasPlayerEffect = player.hasStatusEffect(effect.getEffectType());
+        if (hasPlayerEffect && Objects.requireNonNull(player.getStatusEffect(effect.getEffectType())).getDuration() <= 141) {
+            hasPlayerEffect = false;
+        }
+
+        if(!hasPlayerEffect) {
+            player.addStatusEffect(new StatusEffectInstance(effect));
+        }
+    }
 
     @Override
     public List<Object> getLoreArgs(int i) {
