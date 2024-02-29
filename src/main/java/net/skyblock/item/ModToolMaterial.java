@@ -1,20 +1,14 @@
 package net.skyblock.item;
 
 import com.google.common.collect.Multimap;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.skyblock.Skyblock;
-import net.skyblock.item.abilities.Abilities;
-import net.skyblock.item.abilities.Ability;
+import net.skyblock.effect.Ability;
 import net.skyblock.util.ModStats;
 
-import java.util.Map;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {

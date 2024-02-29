@@ -14,9 +14,6 @@ public class BurnedStatusEffect extends ModStatusEffect {
     }
 
     @Override
-    public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {}
-
-    @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
             entity.damage(entity.getDamageSources().onFire(), (float) Objects.requireNonNull(entity.getStatusEffect(ModStatusEffects.BURNING)).getAmplifier()+1.0f);
     }
@@ -26,8 +23,8 @@ public class BurnedStatusEffect extends ModStatusEffect {
         return duration % 20 == 0;
     }
 
-    @Override
-    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        entity.setOnFireFor(Objects.requireNonNull(entity.getStatusEffect(ModStatusEffects.BURNING)).getDuration()/20);
-    }
+//    @Override
+//    public void onApplied(AttributeContainer attributes, int amplifier) {
+//        entity.setOnFireFor(Objects.requireNonNull(entity.getStatusEffect(ModStatusEffects.BURNING)).getDuration()/20);
+//    }
 }

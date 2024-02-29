@@ -16,20 +16,20 @@ public class FlyingStatusEffect
         super(statusEffectCategory, i);
     }
 
-    @Override
-    public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity) {
-//            ((PlayerEntity) entity).getAbilities().allowFlying = false;
-            NbtCompound a = new NbtCompound();
-            a.putBoolean("mayfly", false);
-            NbtCompound b = new NbtCompound();
-            b.put("abilities", a);
-            ((PlayerEntity) entity).getAbilities().readNbt(b);
-        }
-    }
+//    @Override
+//    public void onRemoved(AttributeContainer attributes, int amplifier) {
+//        if (entity instanceof PlayerEntity) {
+////            ((PlayerEntity) entity).getAbilities().allowFlying = false;
+//            NbtCompound a = new NbtCompound();
+//            a.putBoolean("mayfly", false);
+//            NbtCompound b = new NbtCompound();
+//            b.put("abilities", a);
+//            ((PlayerEntity) entity).getAbilities().readNbt(b);
+//        }
+//    }
 
     @Override
-    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+    public void onApplied(LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity) {
 //            ((PlayerEntity) entity).getAbilities().allowFlying = true;
             NbtCompound a = new NbtCompound();

@@ -1,20 +1,16 @@
 package net.skyblock.util;
 
-import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.skyblock.item.ModArmorMaterial;
-import net.skyblock.item.abilities.Ability;
+import net.skyblock.effect.Ability;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 public class ArmorSetUtil {
     public static void evaluateArmorEffects(PlayerEntity player) {

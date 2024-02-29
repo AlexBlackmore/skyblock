@@ -53,6 +53,8 @@ public class EnchantedItems {
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item GREEN_DYE = registerItem("enchanted_green_dye",
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
+    public static final Item HAY_BLOCK = registerItem("enchanted_hay_block",
+            new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item ICE = registerItem("enchanted_ice",
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item INK_SAC = registerItem("enchanted_ink_sac",

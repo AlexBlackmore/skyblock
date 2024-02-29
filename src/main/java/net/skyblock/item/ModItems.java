@@ -1,7 +1,6 @@
 package net.skyblock.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.util.Rarity;
@@ -9,7 +8,7 @@ import net.skyblock.Skyblock;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.skyblock.item.abilities.Abilities;
+import net.skyblock.effect.Abilities;
 import net.skyblock.item.custom.*;
 import net.skyblock.util.ModRarity;
 
@@ -39,10 +38,15 @@ public class ModItems {
     public static final Item PICKONIMBUS_2000 = registerItem("pickonimbus_2000", new Pickonimbus2000Pickaxe());
     public static final Item BINGONIMBUS_2000 = registerItem("bingonimbus_2000", new ModPickaxe(ModToolMaterial.PICKONIMBUS, new FabricItemSettings(), ModRarity.EPIC, "bingonimbus_2000"));
 
-    public static final Item FARM_SUIT_HELMET = registerItem("farm_suit_helmet", new FarmSuitItem(ArmorItem.Type.HELMET));
-    public static final Item FARM_SUIT_CHESTPLATE = registerItem("farm_suit_chestplate", new FarmSuitItem(ArmorItem.Type.CHESTPLATE));
-    public static final Item FARM_SUIT_LEGGINGS = registerItem("farm_suit_leggings", new FarmSuitItem(ArmorItem.Type.LEGGINGS));
-    public static final Item FARM_SUIT_BOOTS = registerItem("farm_suit_boots", new FarmSuitItem(ArmorItem.Type.BOOTS));
+    public static final Item FARM_SUIT_HELMET = registerItem("farm_suit_helmet", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));
+    public static final Item FARM_SUIT_CHESTPLATE = registerItem("farm_suit_chestplate", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));
+    public static final Item FARM_SUIT_LEGGINGS = registerItem("farm_suit_leggings", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));
+    public static final Item FARM_SUIT_BOOTS = registerItem("farm_suit_boots", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));
+
+    public static final Item FARM_ARMOR_HELMET = registerItem("farm_armor_helmet", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
+    public static final Item FARM_ARMOR_CHESTPLATE = registerItem("farm_armor_chestplate", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
+    public static final Item FARM_ARMOR_LEGGINGS = registerItem("farm_armor_leggings", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
+    public static final Item FARM_ARMOR_BOOTS = registerItem("farm_armor_boots", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
 
     private static ModItem registerItem(String name, ModItem item) {
         return Registry.register(Registries.ITEM, new Identifier(Skyblock.MOD_ID, name), item);
@@ -54,6 +58,5 @@ public class ModItems {
         Skyblock.LOGGER.info("Registering Mod Items for " + Skyblock.MOD_ID);
 
         EnchantedItems.registerEnchantedItems();
-        Abilities.registerAbilities();
     }
 }

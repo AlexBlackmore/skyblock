@@ -86,6 +86,8 @@ public class ModStatusEffects {
                     .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "29DB4744-3010-49CA-AF24-8BDE625C7877", -0.012f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
 
     public static void registerStatusEffects() {
+        Abilities.registerAbilities();
+
         Skyblock.LOGGER.info("Registering Mod Status Effects for " + Skyblock.MOD_ID);
     }
 }

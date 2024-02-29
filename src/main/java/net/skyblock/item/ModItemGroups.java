@@ -101,6 +101,10 @@ public class ModItemGroups {
         entries.add(ModItems.FARM_SUIT_CHESTPLATE);
         entries.add(ModItems.FARM_SUIT_LEGGINGS);
         entries.add(ModItems.FARM_SUIT_BOOTS);
+        entries.add(ModItems.FARM_ARMOR_HELMET);
+        entries.add(ModItems.FARM_ARMOR_CHESTPLATE);
+        entries.add(ModItems.FARM_ARMOR_LEGGINGS);
+        entries.add(ModItems.FARM_ARMOR_BOOTS);
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);

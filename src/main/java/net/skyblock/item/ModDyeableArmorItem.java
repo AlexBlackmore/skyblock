@@ -87,9 +87,9 @@ public class ModDyeableArmorItem extends DyeableArmorItem implements ModItemInte
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (this.material instanceof ModArmorMaterial) {
-            for (int i = 0; i < ((ModArmorMaterial) this.material).getAbilities().length; i++) {
-                LoreUtil.appendLore(tooltip, ((ModArmorMaterial) this.material).getAbilities()[i]);
+        if (this.material instanceof ModArmorMaterial modMaterial) {
+            for (int i = 0; i < modMaterial.getAbilities().length; i++) {
+                LoreUtil.appendLore(tooltip, modMaterial.getAbilities()[i]);
             }
         }
         LoreUtil.appendLore(tooltip, this);

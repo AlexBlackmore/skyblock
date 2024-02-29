@@ -9,21 +9,26 @@ import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.skyblock.Skyblock;
-import net.skyblock.item.abilities.Abilities;
-import net.skyblock.item.abilities.Ability;
+import net.skyblock.effect.Abilities;
+import net.skyblock.effect.Ability;
 import net.skyblock.util.ModStats;
 
 import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements ArmorMaterial {
-    FARM_SUIT("farm_suit", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.HAY_BLOCK), 5,
+    FARM_SUIT("farm_suit", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.HAY_BLOCK), 10,
             new Ability[]{Abilities.BONUS_SPEED, Abilities.FARMER_AURA}, new ModStats[] {
                     new ModStats().setArmor(3.0f).setFarmingFortune(0.05f),
                     new ModStats().setArmor(8.0f).setFarmingFortune(0.05f),
                     new ModStats().setArmor(6.0f).setFarmingFortune(0.05f),
-                    new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)})
+                    new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)}),
+    FARM_ARMOR("farm_armor", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(EnchantedItems.HAY_BLOCK), 30,
+            new Ability[]{Abilities.BONUS_SPEED}, new ModStats[] {
+            new ModStats().setMaxHealth(4.0f).setArmor(8.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(15.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(10.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(7.0f).setFarmingFortune(0.10f)})
 ;
     private final String name;
     private final int enchantability;
