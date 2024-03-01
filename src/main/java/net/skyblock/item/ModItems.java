@@ -8,7 +8,6 @@ import net.skyblock.Skyblock;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.skyblock.effect.Abilities;
 import net.skyblock.item.custom.*;
 import net.skyblock.util.ModRarity;
 
@@ -47,6 +46,26 @@ public class ModItems {
     public static final Item FARM_ARMOR_CHESTPLATE = registerItem("farm_armor_chestplate", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
     public static final Item FARM_ARMOR_LEGGINGS = registerItem("farm_armor_leggings", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
     public static final Item FARM_ARMOR_BOOTS = registerItem("farm_armor_boots", new ModDyeableArmorItem(ModArmorMaterial.FARM_ARMOR, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.RARE, "farm_armor", 16766720));
+
+    public static final Item MUSHROOM_HELMET = registerItem("mushroom_helmet", new ModDyeableArmorItem(ModArmorMaterial.MUSHROOM, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.COMMON, "mushroom_armor", 16711680));
+    public static final Item MUSHROOM_CHESTPLATE = registerItem("mushroom_chestplate", new ModDyeableArmorItem(ModArmorMaterial.MUSHROOM, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.COMMON, "mushroom_armor", 16711680));
+    public static final Item MUSHROOM_LEGGINGS = registerItem("mushroom_leggings", new ModDyeableArmorItem(ModArmorMaterial.MUSHROOM, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.COMMON, "mushroom_armor", 16711680));
+    public static final Item MUSHROOM_BOOTS = registerItem("mushroom_boots", new ModDyeableArmorItem(ModArmorMaterial.MUSHROOM, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.COMMON, "mushroom_armor", 16711680));
+
+    public static final Item ROSETTAS_HELMET = registerItem("rosettas_helmet", new ModArmorItem(ModArmorMaterial.ROSETTAS, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.UNCOMMON, "rosettas_armor"));
+    public static final Item ROSETTAS_CHESTPLATE = registerItem("rosettas_chestplate", new ModArmorItem(ModArmorMaterial.ROSETTAS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "rosettas_armor"));
+    public static final Item ROSETTAS_LEGGINGS = registerItem("rosettas_leggings", new ModArmorItem(ModArmorMaterial.ROSETTAS, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "rosettas_armor"));
+    public static final Item ROSETTAS_BOOTS = registerItem("rosettas_boots", new ModArmorItem(ModArmorMaterial.ROSETTAS, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "rosettas_armor"));
+
+    public static final Item SQUIRE_HELMET = registerItem("squire_helmet", new ModArmorItem(ModArmorMaterial.SQUIRE, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.UNCOMMON, "squire_armor"));
+    public static final Item SQUIRE_CHESTPLATE = registerItem("squire_chestplate", new ModArmorItem(ModArmorMaterial.SQUIRE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "squire_armor"));
+    public static final Item SQUIRE_LEGGINGS = registerItem("squire_leggings", new ModArmorItem(ModArmorMaterial.SQUIRE, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "squire_armor"));
+    public static final Item SQUIRE_BOOTS = registerItem("squire_boots", new ModDyeableArmorItem(ModArmorMaterial.SQUIRE, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "squire_armor", 5526612));
+
+    public static final Item CELESTE_HELMET = registerItem("celeste_helmet", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 13930226));
+    public static final Item CELESTE_CHESTPLATE = registerItem("celeste_chestplate", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748254));
+    public static final Item CELESTE_LEGGINGS = registerItem("celeste_leggings", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748234));
+    public static final Item CELESTE_BOOTS = registerItem("celeste_boots", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748214));
 
     private static ModItem registerItem(String name, ModItem item) {
         return Registry.register(Registries.ITEM, new Identifier(Skyblock.MOD_ID, name), item);

@@ -10,25 +10,51 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.skyblock.Skyblock;
-import net.skyblock.effect.Abilities;
 import net.skyblock.effect.Ability;
+import net.skyblock.effect.abilities.BonusSpeedAbility;
+import net.skyblock.effect.abilities.FarmerAuraAbility;
+import net.skyblock.effect.abilities.NightAffinityAbility;
 import net.skyblock.util.ModStats;
 
 import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements ArmorMaterial {
     FARM_SUIT("farm_suit", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.HAY_BLOCK), 10,
-            new Ability[]{Abilities.BONUS_SPEED, Abilities.FARMER_AURA}, new ModStats[] {
-                    new ModStats().setArmor(3.0f).setFarmingFortune(0.05f),
-                    new ModStats().setArmor(8.0f).setFarmingFortune(0.05f),
-                    new ModStats().setArmor(6.0f).setFarmingFortune(0.05f),
-                    new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)}),
+            new Ability[]{new BonusSpeedAbility(3), new FarmerAuraAbility()}, new ModStats[] {
+                new ModStats().setArmor(3.0f).setFarmingFortune(0.05f),
+                new ModStats().setArmor(8.0f).setFarmingFortune(0.05f),
+                new ModStats().setArmor(6.0f).setFarmingFortune(0.05f),
+                new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)}),
     FARM_ARMOR("farm_armor", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(EnchantedItems.HAY_BLOCK), 30,
-            new Ability[]{Abilities.BONUS_SPEED}, new ModStats[] {
-            new ModStats().setMaxHealth(4.0f).setArmor(8.0f).setFarmingFortune(0.10f),
-            new ModStats().setMaxHealth(4.0f).setArmor(15.0f).setFarmingFortune(0.10f),
-            new ModStats().setMaxHealth(4.0f).setArmor(10.0f).setFarmingFortune(0.10f),
-            new ModStats().setMaxHealth(4.0f).setArmor(7.0f).setFarmingFortune(0.10f)})
+            new Ability[]{new BonusSpeedAbility(4)}, new ModStats[] {
+                new ModStats().setMaxHealth(4.0f).setArmor(8.0f).setFarmingFortune(0.10f),
+                new ModStats().setMaxHealth(4.0f).setArmor(15.0f).setFarmingFortune(0.10f),
+                new ModStats().setMaxHealth(4.0f).setArmor(10.0f).setFarmingFortune(0.10f),
+                new ModStats().setMaxHealth(4.0f).setArmor(7.0f).setFarmingFortune(0.10f)}),
+    MUSHROOM("mushroom", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.RED_MUSHROOM), 10,
+            new Ability[]{new NightAffinityAbility()}, new ModStats[] {
+                new ModStats().setMaxHealth(4.0f),
+                new ModStats().setMaxHealth(2.0f).setArmor(2.0f),
+                new ModStats().setMaxHealth(2.0f).setArmor(1.0f),
+                new ModStats().setMaxHealth(3.0f)}),
+    ROSETTAS("rosettas", ArmorMaterials.DIAMOND.getEnchantability(), ArmorMaterials.DIAMOND.getEquipSound(), () -> Ingredient.ofItems(Items.DIAMOND), 20,
+            new Ability[]{}, new ModStats[] {
+                new ModStats().setArmor(4.0f),
+                new ModStats().setArmor(8.0f),
+                new ModStats().setArmor(6.0f),
+                new ModStats().setArmor(4.0f)}),
+    SQUIRE("squire", ArmorMaterials.IRON.getEnchantability(), ArmorMaterials.IRON.getEquipSound(), () -> Ingredient.ofItems(Items.BEDROCK), 20,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setMaxHealth(5.0f).setArmor(5.0f),
+            new ModStats().setMaxHealth(8.0f).setArmor(8.0f),
+            new ModStats().setMaxHealth(6.0f).setArmor(6.0f),
+            new ModStats().setMaxHealth(4.0f).setArmor(4.0f)}),
+    CELESTE("celeste", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.LEATHER), 20,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(2.0f).setIntelligence(30),
+            new ModStats().setMaxHealth(4.0f).setArmor(4.0f).setIntelligence(60),
+            new ModStats().setMaxHealth(3.0f).setArmor(3.0f).setIntelligence(40),
+            new ModStats().setMaxHealth(1.0f).setArmor(1.0f).setIntelligence(20)})
 ;
     private final String name;
     private final int enchantability;

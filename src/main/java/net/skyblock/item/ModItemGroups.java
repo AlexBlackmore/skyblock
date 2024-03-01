@@ -105,6 +105,22 @@ public class ModItemGroups {
         entries.add(ModItems.FARM_ARMOR_CHESTPLATE);
         entries.add(ModItems.FARM_ARMOR_LEGGINGS);
         entries.add(ModItems.FARM_ARMOR_BOOTS);
+        entries.add(ModItems.MUSHROOM_HELMET);
+        entries.add(ModItems.MUSHROOM_CHESTPLATE);
+        entries.add(ModItems.MUSHROOM_LEGGINGS);
+        entries.add(ModItems.MUSHROOM_BOOTS);
+        entries.add(ModItems.ROSETTAS_HELMET);
+        entries.add(ModItems.ROSETTAS_CHESTPLATE);
+        entries.add(ModItems.ROSETTAS_LEGGINGS);
+        entries.add(ModItems.ROSETTAS_BOOTS);
+        entries.add(ModItems.SQUIRE_HELMET);
+        entries.add(ModItems.SQUIRE_CHESTPLATE);
+        entries.add(ModItems.SQUIRE_LEGGINGS);
+        entries.add(ModItems.SQUIRE_BOOTS);
+        entries.add(ModItems.CELESTE_HELMET);
+        entries.add(ModItems.CELESTE_CHESTPLATE);
+        entries.add(ModItems.CELESTE_LEGGINGS);
+        entries.add(ModItems.CELESTE_BOOTS);
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);

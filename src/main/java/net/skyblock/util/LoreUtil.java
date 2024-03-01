@@ -3,6 +3,7 @@ package net.skyblock.util;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.util.Formatting;
 import net.skyblock.effect.Ability;
 import net.skyblock.item.ModItem;
 
@@ -38,7 +39,7 @@ public class LoreUtil {
     }
     public static void appendLore(List<Text> tooltip, Ability ability) {
         if (ability.fullSetBonus) {
-            tooltip.add(Text.translatable("lore.skyblock.full_set_bonus", Text.translatable(ability.getLoreKey())));
+            tooltip.add(Text.translatable("lore.skyblock.full_set_bonus", Text.translatable(ability.getLoreKey())).formatted(Formatting.GOLD));
         }
         for (int i=1 ; i<64 ; i++) {
             MutableText line = MutableText.of(new TranslatableTextContent(ability.getLoreKey() + "." + i, null, ability.getLoreArgs(i).toArray()));

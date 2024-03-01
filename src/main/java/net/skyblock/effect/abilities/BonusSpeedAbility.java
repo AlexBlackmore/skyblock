@@ -19,6 +19,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.chunk.ChunkSection;
+import net.skyblock.effect.Abilities;
 import net.skyblock.effect.Ability;
 import net.skyblock.effect.ModStatusEffect;
 
@@ -28,25 +29,31 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class BonusSpeedAbility extends Ability {
-    public static final int BOOST = 20;
-    public BonusSpeedAbility(String name, StatusEffect effect) { super(name, effect, 80, true); }
+    private final int amplifier;
+    public BonusSpeedAbility(int amplifier) {
+        super("bonus_speed", Abilities.BONUS_SPEED_EFFECT, 99, true);
+        this.amplifier = amplifier;
+    }
 
     @Override
     public void apply(PlayerEntity player) {
-        StatusEffectInstance effect = new StatusEffectInstance(this.getEffect(), this.getCoolDown(), 0, true, false, false);
+        StatusEffectInstance effect = new StatusEffectInstance(this.getEffect(), this.getCoolDown(), amplifier, true, false, false);
         RegistryEntry<Biome> biome = player.getWorld().getBiome(player.getBlockPos());
 
-        if(!player.hasStatusEffect(effect.getEffectType()) && biome.getKey().isPresent()) {
-            if (player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.PLAINS) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.RIVER) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.WINDSWEPT_HILLS) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.DESERT) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.BADLANDS) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.MUSHROOM_FIELDS) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.SPARSE_JUNGLE) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.MEADOW) ||
-                player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.SUNFLOWER_PLAINS)) {
+        if (biome.getKey().isPresent() &&
+            (player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.PLAINS) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.RIVER) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.WINDSWEPT_HILLS) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.DESERT) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.BADLANDS) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.MUSHROOM_FIELDS) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.SPARSE_JUNGLE) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.MEADOW) ||
+            player.getWorld().getBiome(player.getBlockPos()).matchesKey(BiomeKeys.SUNFLOWER_PLAINS))) {
 
+            if(!player.hasStatusEffect(effect.getEffectType())) {
+                player.addStatusEffect(new StatusEffectInstance(effect));
+            } else if (Objects.requireNonNull(player.getStatusEffect(effect.getEffectType())).getDuration()<=21) {
                 player.addStatusEffect(new StatusEffectInstance(effect));
             }
         }
@@ -58,7 +65,7 @@ public class BonusSpeedAbility extends Ability {
         switch (i) {
             case 1 -> {
                 list.add(Text.translatable("attribute.name.generic.movement_speed"));
-                list.add("§a+" + BOOST + "%");
+                list.add("§a+" + (amplifier+1)*5 + "%");
             }
             case 3 -> {
                 list.add(Text.translatable("biome.minecraft.plains").formatted(Formatting.DARK_GRAY));

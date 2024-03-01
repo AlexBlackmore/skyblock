@@ -30,6 +30,9 @@ public class ItemColorsMixin {
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), Items.LEATHER_HELMET, Items.LEATHER_CHESTPLATE, Items.LEATHER_LEGGINGS, Items.LEATHER_BOOTS, Items.LEATHER_HORSE_ARMOR);
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.FARM_SUIT_HELMET, ModItems.FARM_SUIT_CHESTPLATE, ModItems.FARM_SUIT_LEGGINGS, ModItems.FARM_SUIT_BOOTS);
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.FARM_ARMOR_HELMET, ModItems.FARM_ARMOR_CHESTPLATE, ModItems.FARM_ARMOR_LEGGINGS, ModItems.FARM_ARMOR_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.MUSHROOM_HELMET, ModItems.MUSHROOM_CHESTPLATE, ModItems.MUSHROOM_LEGGINGS, ModItems.MUSHROOM_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.SQUIRE_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS);
         itemColors.register((stack, tintIndex) -> GrassColors.getColor((double)0.5, (double)1.0), Blocks.TALL_GRASS, Blocks.LARGE_FERN);
         itemColors.register((stack, tintIndex) -> {
             int[] is;

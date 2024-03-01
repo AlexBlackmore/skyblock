@@ -28,5 +28,25 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.FARM_ARMOR_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.FARM_ARMOR_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.FARM_ARMOR_BOOTS);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MUSHROOM_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MUSHROOM_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MUSHROOM_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MUSHROOM_BOOTS);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ROSETTAS_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ROSETTAS_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ROSETTAS_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ROSETTAS_BOOTS);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SQUIRE_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SQUIRE_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SQUIRE_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SQUIRE_BOOTS);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_BOOTS);
     }
 }

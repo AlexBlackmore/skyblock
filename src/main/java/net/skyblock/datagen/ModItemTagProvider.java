@@ -17,6 +17,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.FARM_SUIT_HELMET, ModItems.FARM_SUIT_CHESTPLATE, ModItems.FARM_SUIT_LEGGINGS, ModItems.FARM_SUIT_BOOTS)
-                .add(ModItems.FARM_ARMOR_HELMET, ModItems.FARM_ARMOR_CHESTPLATE, ModItems.FARM_ARMOR_LEGGINGS, ModItems.FARM_ARMOR_BOOTS);
+                .add(ModItems.FARM_ARMOR_HELMET, ModItems.FARM_ARMOR_CHESTPLATE, ModItems.FARM_ARMOR_LEGGINGS, ModItems.FARM_ARMOR_BOOTS)
+                .add(ModItems.MUSHROOM_HELMET, ModItems.MUSHROOM_CHESTPLATE, ModItems.MUSHROOM_LEGGINGS, ModItems.MUSHROOM_BOOTS)
+                .add(ModItems.ROSETTAS_HELMET, ModItems.ROSETTAS_CHESTPLATE, ModItems.ROSETTAS_LEGGINGS, ModItems.ROSETTAS_BOOTS)
+                .add(ModItems.SQUIRE_HELMET, ModItems.SQUIRE_CHESTPLATE, ModItems.SQUIRE_LEGGINGS, ModItems.SQUIRE_BOOTS)
+                .add(ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS);
     }
 }

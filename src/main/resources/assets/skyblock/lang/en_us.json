@@ -36,7 +36,7 @@
   "location.skyblock.crystal_hollows": "§5Crystal Hollows",
   "location.skyblock.crystal_hollows.jungle": "§2Jungle",
 
-  "lore.skyblock.full_set_bonus": "§6Full Set Bonus: %s",
+  "lore.skyblock.full_set_bonus": "Full Set Bonus: %s",
 
   "block.skyblock.hard_stone": "Hard Stone",
   "block.skyblock.poor_mithril_ore": "Mithril Ore",
@@ -265,7 +265,7 @@
   "item.skyblock.farm_armor_leggings": "Farm Armor Leggings",
   "item.skyblock.farm_armor_boots": "Farm Armor Boots",
 
-  "effect.skyblock.bonus_speed": "§6Bonus Speed",
+  "effect.skyblock.bonus_speed": "Bonus Speed",
   "effect.skyblock.bonus_speed.1": "§7Increases your %s §7by %s",
   "effect.skyblock.bonus_speed.2": "§7while worn in specific biomes.",
   "effect.skyblock.bonus_speed.3": "§8(%s§8, %s§8, %s§8,",
@@ -277,7 +277,7 @@
   "item.minecraft.lingering_potion.effect.bonus_speed": "Lingering Potion of Bonus Speed",
   "item.minecraft.tipped_arrow.effect.bonus_speed": "Arrow of Bonus Speed",
 
-  "effect.skyblock.farmer_aura": "§6Farmer Aura",
+  "effect.skyblock.farmer_aura": "Farmer Aura",
   "effect.skyblock.farmer_aura.1": "§7Improves the growth rate of",
   "effect.skyblock.farmer_aura.2": "§7nearby crops, increasing the age",
   "effect.skyblock.farmer_aura.3": "§7of a random crop within %s §7blocks",
@@ -287,10 +287,35 @@
   "item.minecraft.lingering_potion.effect.farmer_aura": "Lingering Potion of Farmer Aura",
   "item.minecraft.tipped_arrow.effect.farmer_aura": "Arrow of Farmer Aura",
 
+  "item.skyblock.mushroom_helmet": "Mushroom Helmet",
+  "item.skyblock.mushroom_chestplate": "Mushroom Chestplate",
+  "item.skyblock.mushroom_leggings": "Mushroom Leggings",
+  "item.skyblock.mushroom_boots": "Mushroom Boots",
 
+  "effect.skyblock.night_affinity": "Night Affinity",
+  "effect.skyblock.night_affinity.1": "§7Grants the wearer with permanent",
+  "effect.skyblock.night_affinity.2": "%s §7while worn. During",
+  "effect.skyblock.night_affinity.3": "§7the night, the base stats of the",
+  "effect.skyblock.night_affinity.4": "§7armor pieces are %s§7.",
+  "item.minecraft.potion.night_affinity": "Night Affinity",
+  "item.minecraft.splash_potion.effect.night_affinity": "Splash Potion of Night Affinity",
+  "item.minecraft.lingering_potion.effect.night_affinity": "Lingering Potion of Night Affinity",
+  "item.minecraft.tipped_arrow.effect.night_affinity": "Arrow of Night Affinity",
 
+  "item.skyblock.rosettas_helmet": "Rosetta's Helmet",
+  "item.skyblock.rosettas_chestplate": "Rosetta's Chestplate",
+  "item.skyblock.rosettas_leggings": "Rosetta's Leggings",
+  "item.skyblock.rosettas_boots": "Rosetta's Boots",
 
+  "item.skyblock.squire_helmet": "Squire Helmet",
+  "item.skyblock.squire_chestplate": "Squire Chestplate",
+  "item.skyblock.squire_leggings": "Squire Leggings",
+  "item.skyblock.squire_boots": "Squire Boots",
 
+  "item.skyblock.celeste_helmet": "Celeste Helmet",
+  "item.skyblock.celeste_chestplate": "Celeste Chestplate",
+  "item.skyblock.celeste_leggings": "Celeste Leggings",
+  "item.skyblock.celeste_boots": "Celeste Boots",
 
 
   "itemgroup.swords": "Swords",

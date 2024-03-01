@@ -27,7 +27,6 @@ import java.util.UUID;
 
 public class ModDyeableArmorItem extends DyeableArmorItem implements ModItemInterface {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
-
     private ModRarity rarity;
     private String loreKey;
     private int defaultColor = 10511680;
@@ -41,7 +40,6 @@ public class ModDyeableArmorItem extends DyeableArmorItem implements ModItemInte
         }
         return builder.build();
     }
-
     public ModDyeableArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
         this.rarity = ModRarity.convertRarity(this);

@@ -8,6 +8,22 @@
     "skyblock:farm_armor_helmet",
     "skyblock:farm_armor_chestplate",
     "skyblock:farm_armor_leggings",
-    "skyblock:farm_armor_boots"
+    "skyblock:farm_armor_boots",
+    "skyblock:mushroom_helmet",
+    "skyblock:mushroom_chestplate",
+    "skyblock:mushroom_leggings",
+    "skyblock:mushroom_boots",
+    "skyblock:rosettas_helmet",
+    "skyblock:rosettas_chestplate",
+    "skyblock:rosettas_leggings",
+    "skyblock:rosettas_boots",
+    "skyblock:squire_helmet",
+    "skyblock:squire_chestplate",
+    "skyblock:squire_leggings",
+    "skyblock:squire_boots",
+    "skyblock:celeste_helmet",
+    "skyblock:celeste_chestplate",
+    "skyblock:celeste_leggings",
+    "skyblock:celeste_boots"
   ]
 }

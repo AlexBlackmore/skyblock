@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
+import net.skyblock.effect.Abilities;
 import net.skyblock.effect.Ability;
 
 import java.util.ArrayList;
@@ -24,8 +25,8 @@ import java.util.Random;
 
 public class FarmerAuraAbility extends Ability {
     public static final int DURATION = 3;
-    public static final int RANGE = 4;
-    public FarmerAuraAbility(String name, StatusEffect effect) { super(name, effect, 60, true); }
+    public static final int RANGE = 5;
+    public FarmerAuraAbility() { super("farmer_aura", Abilities.FARMER_AURA_EFFECT, 60, true); }
 
     @Override
     public void apply(PlayerEntity player) {
