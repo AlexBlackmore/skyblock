@@ -24,6 +24,10 @@
     "skyblock:celeste_helmet",
     "skyblock:celeste_chestplate",
     "skyblock:celeste_leggings",
-    "skyblock:celeste_boots"
+    "skyblock:celeste_boots",
+    "skyblock:miners_outfit_helmet",
+    "skyblock:miners_outfit_chestplate",
+    "skyblock:miners_outfit_leggings",
+    "skyblock:miners_outfit_boots"
   ]
 }

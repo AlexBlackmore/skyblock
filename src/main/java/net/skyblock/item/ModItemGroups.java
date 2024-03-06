@@ -25,6 +25,7 @@ public class ModItemGroups {
                         entries.add(EnchantedItems.CACTUS);
                         entries.add(EnchantedItems.CAKE);
                         entries.add(EnchantedItems.COAL);
+                        entries.add(EnchantedItems.COBBLESTONE);
                         entries.add(EnchantedItems.COCOA_BEANS);
                         entries.add(EnchantedItems.COOKED_CHICKEN);
                         entries.add(EnchantedItems.COOKED_MUTTON);
@@ -95,6 +96,14 @@ public class ModItemGroups {
         entries.add(ModItems.REFINED_TITANIUM_PICKAXE);
         entries.add(ModItems.PICKONIMBUS_2000);
         entries.add(ModItems.BINGONIMBUS_2000);
+        entries.add(ModItems.SPOOKY_DISC);
+        entries.add(ModItems.BATTLE_DISC);
+        entries.add(ModItems.WINTER_DISC);
+        entries.add(ModItems.DUNGEON_DISC);
+        entries.add(ModItems.CLOWN_DISC);
+        entries.add(ModItems.WATCHER_DISC);
+        entries.add(ModItems.NECRON_DISC);
+        entries.add(ModItems.OLD_DISC);
     }
     private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.FARM_SUIT_HELMET);
@@ -121,6 +130,10 @@ public class ModItemGroups {
         entries.add(ModItems.CELESTE_CHESTPLATE);
         entries.add(ModItems.CELESTE_LEGGINGS);
         entries.add(ModItems.CELESTE_BOOTS);
+        entries.add(ModItems.MINERS_OUTFIT_HELMET);
+        entries.add(ModItems.MINERS_OUTFIT_CHESTPLATE);
+        entries.add(ModItems.MINERS_OUTFIT_LEGGINGS);
+        entries.add(ModItems.MINERS_OUTFIT_BOOTS);
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);

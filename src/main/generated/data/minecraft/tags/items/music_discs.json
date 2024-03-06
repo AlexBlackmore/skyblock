@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:spooky_disc",
+    "skyblock:battle_disc",
+    "skyblock:winter_disc",
+    "skyblock:dungeon_disc",
+    "skyblock:clown_disc",
+    "skyblock:watcher_disc",
+    "skyblock:necron_disc",
+    "skyblock:old_disc"
+  ]
+}

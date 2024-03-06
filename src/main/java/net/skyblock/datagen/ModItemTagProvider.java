@@ -21,6 +21,17 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.MUSHROOM_HELMET, ModItems.MUSHROOM_CHESTPLATE, ModItems.MUSHROOM_LEGGINGS, ModItems.MUSHROOM_BOOTS)
                 .add(ModItems.ROSETTAS_HELMET, ModItems.ROSETTAS_CHESTPLATE, ModItems.ROSETTAS_LEGGINGS, ModItems.ROSETTAS_BOOTS)
                 .add(ModItems.SQUIRE_HELMET, ModItems.SQUIRE_CHESTPLATE, ModItems.SQUIRE_LEGGINGS, ModItems.SQUIRE_BOOTS)
-                .add(ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS);
+                .add(ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS)
+                .add(ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
+                .add(ModItems.SPOOKY_DISC)
+                .add(ModItems.BATTLE_DISC)
+                .add(ModItems.WINTER_DISC)
+                .add(ModItems.DUNGEON_DISC)
+                .add(ModItems.CLOWN_DISC)
+                .add(ModItems.WATCHER_DISC)
+                .add(ModItems.NECRON_DISC)
+                .add(ModItems.OLD_DISC);
     }
 }

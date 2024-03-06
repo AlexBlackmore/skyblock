@@ -56,6 +56,7 @@
   "item.skyblock.enchanted_cactus": "Enchanted Cactus",
   "item.skyblock.enchanted_cake": "Enchanted Cake",
   "item.skyblock.enchanted_coal": "Enchanted Coal",
+  "item.skyblock.enchanted_cobblestone": "Enchanted Cobblestone",
   "item.skyblock.enchanted_cocoa_beans": "Enchanted Cocoa Beans",
   "item.skyblock.enchanted_cooked_chicken": "Enchanted Cooked Chicken",
   "item.skyblock.enchanted_cooked_mutton": "Enchanted Cooked Mutton",
@@ -153,6 +154,48 @@
 
   "item.skyblock.foul_flesh": "Foul Flesh",
   "item.skyblock.fractured_mithril_pickaxe": "Fractured Mithril Pickaxe",
+
+
+  "item.skyblock.dungeon_disc": "Dungeon Disc",
+  "item.skyblock.dungeon_disc.desc": "ShinkoNet - Dungeon Drama",
+  "lore.skyblock.dungeon_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.dungeon_disc.2": "§7play a dungeon song!",
+
+  "item.skyblock.clown_disc": "Clown Disc",
+  "item.skyblock.clown_disc.desc": "SirCatcelot - Superior Judgement",
+  "lore.skyblock.clown_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.clown_disc.2": "§7play a dungeon song!",
+
+  "item.skyblock.watcher_disc": "Watcher Disc",
+  "item.skyblock.watcher_disc.desc": "ShinkoNet - The Watcher",
+  "lore.skyblock.watcher_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.watcher_disc.2": "§7play a dungeon song!",
+
+  "item.skyblock.necron_disc": "Necron Disc",
+  "item.skyblock.necron_disc.desc": "ShinkoNet - Necron Doom",
+  "lore.skyblock.necron_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.necron_disc.2": "§7play a dungeon song!",
+
+  "item.skyblock.old_disc": "Old Disc",
+  "item.skyblock.old_disc.desc": "ShinkoNet - The Wither King",
+  "lore.skyblock.old_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.old_disc.2": "§7play a dungeon song!",
+
+  "item.skyblock.spooky_disc": "Spooky Disc",
+  "item.skyblock.spooky_disc.desc": "ShinkoNet - Hallow Hallow",
+  "lore.skyblock.spooky_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.spooky_disc.2": "§7play a spooky song!",
+
+  "item.skyblock.battle_disc": "Battle Disc",
+  "item.skyblock.battle_disc.desc": "ShinkoNet - Blast in Banter Battle",
+  "lore.skyblock.battle_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.battle_disc.2": "§7play a battle song!",
+
+  "item.skyblock.winter_disc": "Winter Disc",
+  "item.skyblock.winter_disc.desc": "ShinkoNet - Let Them Eat Cake",
+  "lore.skyblock.winter_disc.1": "§7Place this inside a jukebox to",
+  "lore.skyblock.winter_disc.2": "§7play a winter song!",
+
 
   "item.skyblock.mithril": "Mithril",
   "lore.skyblock.mithril.1": "§7§o\"The man called it \"true-silver\"",
@@ -316,6 +359,15 @@
   "item.skyblock.celeste_chestplate": "Celeste Chestplate",
   "item.skyblock.celeste_leggings": "Celeste Leggings",
   "item.skyblock.celeste_boots": "Celeste Boots",
+
+  "item.skyblock.miners_outfit_helmet": "Miner's Outfit Helmet",
+  "item.skyblock.miners_outfit_chestplate": "Miner's Outfit Chestplate",
+  "item.skyblock.miners_outfit_leggings": "Miner's Outfit Leggings",
+  "item.skyblock.miners_outfit_boots": "Miner's Outfit Boots",
+
+  "effect.skyblock.haste": "Haste",
+  "effect.skyblock.haste.1": "§7Grants the wearer with permanent",
+  "effect.skyblock.haste.2": "%s §7while worn.",
 
 
   "itemgroup.swords": "Swords",

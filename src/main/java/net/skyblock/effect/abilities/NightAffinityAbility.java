@@ -7,6 +7,7 @@ import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldEvents;
 import net.skyblock.effect.Abilities;
@@ -45,7 +46,7 @@ public class NightAffinityAbility extends Ability {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 2 -> {
-                list.add(Text.translatable("effect.minecraft.night_vision"));
+                list.add(Text.translatable("effect.minecraft.night_vision").formatted(Formatting.BLUE));
             }
             case 4 -> {
                 list.add("§atripled");

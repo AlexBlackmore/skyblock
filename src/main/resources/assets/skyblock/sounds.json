@@ -1,0 +1,66 @@
+{
+  "blast_in_banter_battle": {
+    "sounds": [
+      {
+        "name": "skyblock:blast_in_banter_battle",
+        "stream": true
+      }
+    ]
+  },
+  "dungeon_drama": {
+    "sounds": [
+      {
+        "name": "skyblock:dungeon_drama",
+        "stream": true
+      }
+    ]
+  },
+  "hallow_hallow": {
+    "sounds": [
+      {
+      "name": "skyblock:hallow_hallow",
+      "stream": true
+      }
+    ]
+  },
+  "let_them_eat_cake": {
+    "sounds": [
+      {
+        "name": "skyblock:let_them_eat_cake",
+        "stream": true
+      }
+    ]
+  },
+  "necron_doom": {
+    "sounds": [
+      {
+        "name": "skyblock:necron_doom",
+        "stream": true
+      }
+    ]
+  },
+  "superior_judgement": {
+    "sounds": [
+      {
+        "name": "skyblock:superior_judgement",
+        "stream": true
+      }
+    ]
+  },
+  "the_watcher": {
+    "sounds": [
+      {
+        "name": "skyblock:the_watcher",
+        "stream": true
+      }
+    ]
+  },
+  "the_wither_king": {
+    "sounds": [
+      {
+        "name": "skyblock:the_wither_king",
+        "stream": true
+      }
+    ]
+  }
+}

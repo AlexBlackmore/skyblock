@@ -25,7 +25,7 @@ public class TitaniumPickaxeItem extends ModPickaxe {
         switch (i) {
             case 1 -> {
                 list.add("§a+"+this.titaniumMiningFortune+"%");
-                list.add(Text.translatable("attribute.name.fortune.mining_fortune"));
+                list.add(Text.translatable("attribute.name.fortune.mining"));
             }
             case 2 -> {
                 list.add(Text.translatable("block.skyblock.titanium_ore"));

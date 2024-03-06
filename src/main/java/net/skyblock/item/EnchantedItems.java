@@ -23,6 +23,8 @@ public class EnchantedItems {
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item COAL = registerItem("enchanted_coal",
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
+    public static final Item COBBLESTONE = registerItem("enchanted_cobblestone",
+            new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item COCOA_BEANS = registerItem("enchanted_cocoa_beans",
             new EnchantedItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item COOKED_CHICKEN = registerItem("enchanted_cooked_chicken",

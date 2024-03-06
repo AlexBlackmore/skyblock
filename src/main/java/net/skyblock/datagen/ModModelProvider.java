@@ -48,5 +48,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.CELESTE_BOOTS);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MINERS_OUTFIT_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MINERS_OUTFIT_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MINERS_OUTFIT_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.MINERS_OUTFIT_BOOTS);
     }
 }

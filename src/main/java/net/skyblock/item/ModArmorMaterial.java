@@ -13,6 +13,7 @@ import net.skyblock.Skyblock;
 import net.skyblock.effect.Ability;
 import net.skyblock.effect.abilities.BonusSpeedAbility;
 import net.skyblock.effect.abilities.FarmerAuraAbility;
+import net.skyblock.effect.abilities.HasteAbility;
 import net.skyblock.effect.abilities.NightAffinityAbility;
 import net.skyblock.util.ModStats;
 
@@ -54,7 +55,13 @@ public enum ModArmorMaterial implements ArmorMaterial {
             new ModStats().setArmor(2.0f).setIntelligence(30),
             new ModStats().setMaxHealth(4.0f).setArmor(4.0f).setIntelligence(60),
             new ModStats().setMaxHealth(3.0f).setArmor(3.0f).setIntelligence(40),
-            new ModStats().setMaxHealth(1.0f).setArmor(1.0f).setIntelligence(20)})
+            new ModStats().setMaxHealth(1.0f).setArmor(1.0f).setIntelligence(20)}),
+    MINERS_OUTFIT("miners_outfit", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.LEATHER), 20,
+            new Ability[]{new HasteAbility(1)}, new ModStats[] {
+            new ModStats().setArmor(3.0f),
+            new ModStats().setArmor(8.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(3.0f)})
 ;
     private final String name;
     private final int enchantability;

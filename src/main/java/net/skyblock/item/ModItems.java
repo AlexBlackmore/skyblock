@@ -9,9 +9,18 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.skyblock.item.custom.*;
+import net.skyblock.sound.ModSounds;
 import net.skyblock.util.ModRarity;
 
 public class ModItems {
+    public static final Item SPOOKY_DISC = registerItem("spooky_disc", new ModMusicDiscItem("spooky_disc", 1, ModSounds.HALLOW_HALLOW, 237, ModRarity.RARE));
+    public static final Item BATTLE_DISC = registerItem("battle_disc", new ModMusicDiscItem("battle_disc", 2, ModSounds.BLAST_IN_BANTER_BATTLE, 170, ModRarity.RARE));
+    public static final Item WINTER_DISC = registerItem("winter_disc", new ModMusicDiscItem("winter_disc", 3, ModSounds.LET_THEM_EAT_CAKE, 208, ModRarity.RARE));
+    public static final Item DUNGEON_DISC = registerItem("dungeon_disc", new ModMusicDiscItem("dungeon_disc", 4, ModSounds.DUNGEON_DRAMA, 157, ModRarity.EPIC));
+    public static final Item CLOWN_DISC = registerItem("clown_disc", new ModMusicDiscItem("clown_disc", 5, ModSounds.SUPERIOR_JUDGEMENT, 107, ModRarity.EPIC));
+    public static final Item WATCHER_DISC = registerItem("watcher_disc", new ModMusicDiscItem("watcher_disc", 6, ModSounds.THE_WATCHER, 239, ModRarity.EPIC));
+    public static final Item NECRON_DISC = registerItem("necron_disc", new ModMusicDiscItem("necron_disc", 7, ModSounds.NECRON_DOOM, 148, ModRarity.EPIC));
+    public static final Item OLD_DISC  = registerItem("old_disc", new ModMusicDiscItem("old_disc", 8, ModSounds.THE_WITHER_KING, 350, ModRarity.LEGENDARY));
     public static final Item MITHRIL = registerItem("mithril", new ModItem(new FabricItemSettings(), ModRarity.COMMON, "mithril"));
     public static final Item TITANIUM = registerItem("titanium", new ModItem(new FabricItemSettings(), ModRarity.RARE, "titanium"));
 //    public static final Item BASKET_OF_SEEDS = registerItem("basket_of_seeds", new ModPlayerHeadItem(new Item.Settings().rarity(Rarity.EPIC)));
@@ -66,6 +75,11 @@ public class ModItems {
     public static final Item CELESTE_CHESTPLATE = registerItem("celeste_chestplate", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748254));
     public static final Item CELESTE_LEGGINGS = registerItem("celeste_leggings", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748234));
     public static final Item CELESTE_BOOTS = registerItem("celeste_boots", new ModDyeableArmorItem(ModArmorMaterial.CELESTE, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "celeste_armor", 16748214));
+
+    public static final Item MINERS_OUTFIT_HELMET = registerItem("miners_outfit_helmet", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
+    public static final Item MINERS_OUTFIT_CHESTPLATE = registerItem("miners_outfit_chestplate", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
+    public static final Item MINERS_OUTFIT_LEGGINGS = registerItem("miners_outfit_leggings", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
+    public static final Item MINERS_OUTFIT_BOOTS = registerItem("miners_outfit_boots", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
 
     private static ModItem registerItem(String name, ModItem item) {
         return Registry.register(Registries.ITEM, new Identifier(Skyblock.MOD_ID, name), item);
