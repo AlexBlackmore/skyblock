@@ -1,0 +1,6 @@
+{
+	"parent": "skyblock:item/block_helmet_template",
+	"textures": {
+		"skin": "skyblock:item/skins/glacite_helmet"
+	}
+}

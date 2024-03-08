@@ -80,6 +80,12 @@ public class ModItems {
     public static final Item MINERS_OUTFIT_CHESTPLATE = registerItem("miners_outfit_chestplate", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
     public static final Item MINERS_OUTFIT_LEGGINGS = registerItem("miners_outfit_leggings", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
     public static final Item MINERS_OUTFIT_BOOTS = registerItem("miners_outfit_boots", new ModDyeableArmorItem(ModArmorMaterial.MINERS_OUTFIT, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.UNCOMMON, "miners_outfit", 8026468));
+    public static final Item BLAZE_HAT = registerItem("blaze_hat", new ModArmorItem(ModArmorMaterial.BLAZE_HAT, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.COMMON, "blaze_hat"));
+
+    public static final Item GLACITE_HELMET = registerItem("glacite_helmet", new ModArmorItem(ModArmorMaterial.GLACITE, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.EPIC, "glacite_armor"));
+    public static final Item GLACITE_CHESTPLATE = registerItem("glacite_chestplate", new ModDyeableArmorItem(ModArmorMaterial.GLACITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.EPIC, "glacite_armor", 261368));
+    public static final Item GLACITE_LEGGINGS = registerItem("glacite_leggings", new ModDyeableArmorItem(ModArmorMaterial.GLACITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), ModRarity.EPIC, "glacite_armor", 261368));
+    public static final Item GLACITE_BOOTS = registerItem("glacite_boots", new ModDyeableArmorItem(ModArmorMaterial.GLACITE, ArmorItem.Type.BOOTS, new FabricItemSettings(), ModRarity.EPIC, "glacite_armor", 261368));
 
     private static ModItem registerItem(String name, ModItem item) {
         return Registry.register(Registries.ITEM, new Identifier(Skyblock.MOD_ID, name), item);

@@ -63,6 +63,9 @@ public enum ModToolMaterial implements ToolMaterial {
     public float getAttackDamage(ArmorItem.Type type) {
         return this.stats.getAttackDamage();
     }
+    public float getStrength(ArmorItem.Type type) {
+        return this.stats.getStrength();
+    }
     public float getIntelligence(ArmorItem.Type type) {
         return this.stats.getIntelligence();
     }

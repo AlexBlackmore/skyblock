@@ -28,6 +28,9 @@
     "skyblock:miners_outfit_helmet",
     "skyblock:miners_outfit_chestplate",
     "skyblock:miners_outfit_leggings",
-    "skyblock:miners_outfit_boots"
+    "skyblock:miners_outfit_boots",
+    "skyblock:glacite_chestplate",
+    "skyblock:glacite_leggings",
+    "skyblock:glacite_boots"
   ]
 }

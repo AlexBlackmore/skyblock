@@ -22,7 +22,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ROSETTAS_HELMET, ModItems.ROSETTAS_CHESTPLATE, ModItems.ROSETTAS_LEGGINGS, ModItems.ROSETTAS_BOOTS)
                 .add(ModItems.SQUIRE_HELMET, ModItems.SQUIRE_CHESTPLATE, ModItems.SQUIRE_LEGGINGS, ModItems.SQUIRE_BOOTS)
                 .add(ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS)
-                .add(ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS);
+                .add(ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS)
+                .add(ModItems.GLACITE_CHESTPLATE, ModItems.GLACITE_LEGGINGS, ModItems.GLACITE_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(ModItems.SPOOKY_DISC)

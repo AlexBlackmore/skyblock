@@ -1,37 +1,23 @@
 package net.skyblock.effect.abilities;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.chunk.ChunkSection;
 import net.skyblock.effect.Abilities;
 import net.skyblock.effect.Ability;
-import net.skyblock.effect.ModStatusEffect;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
 
 public class BonusSpeedAbility extends Ability {
     private final int amplifier;
     public BonusSpeedAbility(int amplifier) {
-        super("bonus_speed", Abilities.BONUS_SPEED_EFFECT, 99, true);
+        super("bonus_speed", Abilities.BONUS_SPEED_ABILITY, 99, true);
         this.amplifier = amplifier;
     }
 

@@ -1,6 +1,7 @@
 package net.skyblock.item;
 
 import com.google.common.collect.Multimap;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ArmorItem;
@@ -11,11 +12,9 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.skyblock.Skyblock;
 import net.skyblock.effect.Ability;
-import net.skyblock.effect.abilities.BonusSpeedAbility;
-import net.skyblock.effect.abilities.FarmerAuraAbility;
-import net.skyblock.effect.abilities.HasteAbility;
-import net.skyblock.effect.abilities.NightAffinityAbility;
+import net.skyblock.effect.abilities.*;
 import net.skyblock.util.ModStats;
+import net.skyblock.util.ModTags;
 
 import java.util.function.Supplier;
 
@@ -61,7 +60,19 @@ public enum ModArmorMaterial implements ArmorMaterial {
             new ModStats().setArmor(3.0f),
             new ModStats().setArmor(8.0f),
             new ModStats().setArmor(6.0f),
-            new ModStats().setArmor(3.0f)})
+            new ModStats().setArmor(3.0f)}),
+    BLAZE_HAT("blaze_hat", ArmorMaterials.IRON.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.BEDROCK), 10,
+            new Ability[]{}, new ModStats[] {
+                    new ModStats().setStrength(4.0f),
+                    new ModStats().setStrength(4.0f),
+                    new ModStats().setStrength(4.0f),
+                    new ModStats().setStrength(4.0f)}),
+    GLACITE("glacite", ArmorMaterials.LEATHER.getEnchantability(), Blocks.PACKED_ICE.getSoundGroup(Blocks.PACKED_ICE.getDefaultState()).getBreakSound(), () -> Ingredient.ofItems(Items.BEDROCK), 40,
+            new Ability[]{new ExpertMinerAbility(), new GlaciteArmorAbility()}, new ModStats[] {
+            new ModStats().setArmor(14.0f).setMovementSpeed(0.10f).setArmorToughness(1.0f).setMiningSpeed(0.10f),
+            new ModStats().setArmor(30.0f).setMovementSpeed(0.15f).setArmorToughness(2.0f).setMiningSpeed(0.10f),
+            new ModStats().setArmor(25.0f).setMovementSpeed(0.15f).setArmorToughness(2.0f).setMiningSpeed(0.10f),
+            new ModStats().setArmor(14.0f).setMovementSpeed(0.10f).setArmorToughness(1.0f).setMiningSpeed(0.10f)}),
 ;
     private final String name;
     private final int enchantability;
@@ -98,6 +109,9 @@ public enum ModArmorMaterial implements ArmorMaterial {
     }
     public float getAttackDamage(ArmorItem.Type type) {
         return this.stats[type.ordinal()].getAttackDamage();
+    }
+    public float getStrength(ArmorItem.Type type) {
+        return this.stats[type.ordinal()].getStrength();
     }
     public float getIntelligence(ArmorItem.Type type) {
         return this.stats[type.ordinal()].getIntelligence();

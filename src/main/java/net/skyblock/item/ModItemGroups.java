@@ -134,6 +134,11 @@ public class ModItemGroups {
         entries.add(ModItems.MINERS_OUTFIT_CHESTPLATE);
         entries.add(ModItems.MINERS_OUTFIT_LEGGINGS);
         entries.add(ModItems.MINERS_OUTFIT_BOOTS);
+        entries.add(ModItems.BLAZE_HAT);
+        entries.add(ModItems.GLACITE_HELMET);
+        entries.add(ModItems.GLACITE_CHESTPLATE);
+        entries.add(ModItems.GLACITE_LEGGINGS);
+        entries.add(ModItems.GLACITE_BOOTS);
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);

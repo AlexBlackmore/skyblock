@@ -2,6 +2,7 @@
   "attribute.name.generic.max_health": "§c❤Max Health",
   "attribute.name.generic.armor": "§a❈Armor",
   "attribute.name.generic.attack_damage": "§c❁Attack Damage",
+  "attribute.name.generic.strength": "§c❁Strength",
   "attribute.name.generic.intelligence": "§b✎Intelligence",
   "attribute.name.generic.crit_damage": "§9☠Crit Damage",
   "attribute.name.generic.crit_chance": "§9☣Crit Chance",
@@ -253,6 +254,7 @@
 
 
 
+  "item.skyblock.blaze_hat": "Blaze Hat",
 
   "item.skyblock.rookie_hoe": "Rookie Hoe",
 
@@ -368,6 +370,20 @@
   "effect.skyblock.haste": "Haste",
   "effect.skyblock.haste.1": "§7Grants the wearer with permanent",
   "effect.skyblock.haste.2": "%s §7while worn.",
+
+
+  "item.skyblock.glacite_helmet": "Glacite Helmet",
+  "item.skyblock.glacite_chestplate": "Glacite Chestplate",
+  "item.skyblock.glacite_leggings": "Glacite Leggings",
+  "item.skyblock.glacite_boots": "Glacite Boots",
+
+  "effect.skyblock.glacite_armor": "Glacite Armor",
+  "effect.skyblock.glacite_armor.1": "§7The %s §7of this item is",
+  "effect.skyblock.glacite_armor.2": "%s §7while in specific biomes.",
+
+  "effect.skyblock.expert_miner": "Expert Miner",
+  "effect.skyblock.expert_miner.1": "§7Grants %s %s §7for each",
+  "effect.skyblock.expert_miner.2": "§7of your Mining levels.",
 
 
   "itemgroup.swords": "Swords",

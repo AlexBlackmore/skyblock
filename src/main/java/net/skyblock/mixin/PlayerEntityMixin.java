@@ -37,6 +37,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.1f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED)
                 .add(EntityAttributes.GENERIC_LUCK)
+                .add(ModEntityAttributes.STRENGTH)
                 .add(ModEntityAttributes.INTELLIGENCE)
                 .add(ModEntityAttributes.CRIT_DAMAGE)
                 .add(ModEntityAttributes.CRIT_CHANCE)

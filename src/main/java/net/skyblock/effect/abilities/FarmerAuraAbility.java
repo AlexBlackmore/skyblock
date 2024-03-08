@@ -1,21 +1,12 @@
 package net.skyblock.effect.abilities;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BoneMealItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
-import net.minecraft.world.event.GameEvent;
 import net.skyblock.effect.Abilities;
 import net.skyblock.effect.Ability;
 
@@ -26,7 +17,7 @@ import java.util.Random;
 public class FarmerAuraAbility extends Ability {
     public static final int DURATION = 3;
     public static final int RANGE = 5;
-    public FarmerAuraAbility() { super("farmer_aura", Abilities.FARMER_AURA_EFFECT, 60, true); }
+    public FarmerAuraAbility() { super("farmer_aura", Abilities.FARMER_AURA_ABILITY, 60, true); }
 
     @Override
     public void apply(PlayerEntity player) {

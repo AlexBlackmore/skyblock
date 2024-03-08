@@ -34,6 +34,7 @@ public class ItemColorsMixin {
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.SQUIRE_BOOTS);
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS);
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.GLACITE_CHESTPLATE, ModItems.GLACITE_LEGGINGS, ModItems.GLACITE_BOOTS);
         itemColors.register((stack, tintIndex) -> GrassColors.getColor((double)0.5, (double)1.0), Blocks.TALL_GRASS, Blocks.LARGE_FERN);
         itemColors.register((stack, tintIndex) -> {
             int[] is;

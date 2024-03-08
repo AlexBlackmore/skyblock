@@ -20,6 +20,7 @@ public class ModStats {
     private float armor = 0;
     private float armorToughness = 0;
     private float attackDamage = 0;
+    private float strength = 0;
     private float attackKnockback = 0;
     private float attackSpeed = 0;
     private float knockbackResistance = 0;
@@ -100,7 +101,11 @@ public class ModStats {
             builder.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(UUID.randomUUID(), "Movement Speed modifier",
                     this.movementSpeed, EntityAttributeModifier.Operation.MULTIPLY_BASE));
         }
-//
+//        private float strength = 0;
+        if (this.strength!=0) {
+            builder.put(ModEntityAttributes.STRENGTH, new EntityAttributeModifier(UUID.randomUUID(), "Strength modifier",
+                    this.strength, EntityAttributeModifier.Operation.ADDITION));
+        }
 //        private float intelligence = 0;
         if (this.intelligence!=0) {
             builder.put(ModEntityAttributes.INTELLIGENCE, new EntityAttributeModifier(UUID.randomUUID(), "Intelligence modifier",
@@ -488,7 +493,17 @@ public class ModStats {
         return attackKnockback;
     }
 
-    public void setAttackKnockback(float attackKnockback) {
+    public ModStats setAttackKnockback(float attackKnockback) {
+
         this.attackKnockback = attackKnockback;
+        return this;
+    }
+
+    public float getStrength() {
+        return strength;
+    }
+    public ModStats setStrength(float strength) {
+        this.strength = strength;
+        return this;
     }
 }

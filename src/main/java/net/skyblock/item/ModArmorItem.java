@@ -80,6 +80,11 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        if (this.material instanceof ModArmorMaterial modMaterial) {
+            for (int i = 0; i < modMaterial.getAbilities().length; i++) {
+                LoreUtil.appendLore(tooltip, modMaterial.getAbilities()[i]);
+            }
+        }
         LoreUtil.appendLore(tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
     }

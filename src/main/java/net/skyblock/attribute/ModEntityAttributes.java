@@ -11,6 +11,8 @@ public class ModEntityAttributes {
     private static final double ARBITRARY_MAX = 2048;
 
     //Combat stats
+    public static EntityAttribute STRENGTH = Registry.register(Registries.ATTRIBUTE, "generic.strength",
+            new ClampedEntityAttribute("attribute.name.generic.strength", 0.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static EntityAttribute INTELLIGENCE = Registry.register(Registries.ATTRIBUTE, "generic.intelligence",
             new ClampedEntityAttribute("attribute.name.generic.intelligence", 100.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static EntityAttribute CRIT_DAMAGE = Registry.register(Registries.ATTRIBUTE, "generic.crit_damage",
