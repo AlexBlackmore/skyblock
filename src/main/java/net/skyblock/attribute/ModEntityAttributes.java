@@ -20,7 +20,7 @@ public class ModEntityAttributes {
     public static EntityAttribute CRIT_CHANCE = Registry.register(Registries.ATTRIBUTE, "generic.crit_chance",
             new ClampedEntityAttribute("attribute.name.generic.crit_chance", 0.3, 0.0, ARBITRARY_MAX).setTracked(true));
     public static EntityAttribute FEROCITY = Registry.register(Registries.ATTRIBUTE, "generic.ferocity",
-            new ClampedEntityAttribute("attribute.name.generic.ferocity", 1.0, 0.0, 5.0).setTracked(true));
+            new ClampedEntityAttribute("attribute.name.generic.ferocity", 0.0, 0.0, 5.0).setTracked(true));
     public static EntityAttribute ABILITY_DAMAGE = Registry.register(Registries.ATTRIBUTE, "generic.ability_damage",
             new ClampedEntityAttribute("attribute.name.generic.ability_damage", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static EntityAttribute HEALTH_REGEN = Registry.register(Registries.ATTRIBUTE, "generic.health_regen",

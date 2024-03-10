@@ -142,6 +142,20 @@ public class ModItemGroups {
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);
+        entries.add(ModBlocks.CENTURY_CAKE_PINK);
+        entries.add(ModBlocks.CENTURY_CAKE_RED);
+        entries.add(ModBlocks.CENTURY_CAKE_ORANGE);
+        entries.add(ModBlocks.CENTURY_CAKE_YELLOW);
+        entries.add(ModBlocks.CENTURY_CAKE_LIME);
+        entries.add(ModBlocks.CENTURY_CAKE_AQUA);
+        entries.add(ModBlocks.CENTURY_CAKE_BLUE);
+        entries.add(ModBlocks.CENTURY_CAKE_MAGENTA);
+        entries.add(ModBlocks.CENTURY_CAKE_BLACK);
+        entries.add(ModBlocks.CENTURY_CAKE_BROWN);
+        entries.add(ModBlocks.CENTURY_CAKE_WHITE);
+        entries.add(ModBlocks.CENTURY_CAKE_CYAN);
+        entries.add(ModBlocks.CENTURY_CAKE_GREEN);
+        entries.add(ModBlocks.CENTURY_CAKE_GRAY);
     }
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MITHRIL);

@@ -43,8 +43,8 @@ public class ModItems {
     public static final Item REFINED_MITHRIL_PICKAXE = registerItem("refined_mithril_pickaxe", new MithrilPickaxeItem(ModToolMaterial.REFINED_MITHRIL, new FabricItemSettings(), ModRarity.RARE, 10, 50));
     public static final Item TITANIUM_PICKAXE = registerItem("titanium_pickaxe", new TitaniumPickaxeItem(ModToolMaterial.TITANIUM, new FabricItemSettings(), ModRarity.RARE, 10));
     public static final Item REFINED_TITANIUM_PICKAXE = registerItem("refined_titanium_pickaxe", new TitaniumPickaxeItem(ModToolMaterial.REFINED_TITANIUM, new FabricItemSettings(), ModRarity.RARE, 15));
-    public static final Item PICKONIMBUS_2000 = registerItem("pickonimbus_2000", new Pickonimbus2000Pickaxe());
-    public static final Item BINGONIMBUS_2000 = registerItem("bingonimbus_2000", new ModPickaxe(ModToolMaterial.PICKONIMBUS, new FabricItemSettings(), ModRarity.EPIC, "bingonimbus_2000"));
+    public static final Item PICKONIMBUS_2000 = registerItem("pickonimbus_2000", new PickonimbusPickaxe("pickonimbus_2000", 5000));
+    public static final Item BINGONIMBUS_2000 = registerItem("bingonimbus_2000", new PickonimbusPickaxe("bingonimbus_2000"));
 
     public static final Item FARM_SUIT_HELMET = registerItem("farm_suit_helmet", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.HELMET, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));
     public static final Item FARM_SUIT_CHESTPLATE = registerItem("farm_suit_chestplate", new ModDyeableArmorItem(ModArmorMaterial.FARM_SUIT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), ModRarity.COMMON, "farm_suit", 16776960));

@@ -20,7 +20,7 @@ public enum ModToolMaterial implements ToolMaterial {
     REFINED_MITHRIL(4, ToolMaterials.NETHERITE.getDurability(), 10.0f, 10.0f, ToolMaterials.IRON.getEnchantability(), () -> Ingredient.ofItems(ModItems.MITHRIL)),
     TITANIUM(5, ToolMaterials.NETHERITE.getDurability(), 10.3f, 12.0f, ToolMaterials.IRON.getEnchantability(), () -> Ingredient.ofItems(ModItems.TITANIUM)),
     REFINED_TITANIUM(5, ToolMaterials.NETHERITE.getDurability(), 13.0f, 13.0f, ToolMaterials.IRON.getEnchantability(), () -> Ingredient.ofItems(ModItems.TITANIUM)),
-    PICKONIMBUS(6, 5000, 50.0f, 6.0f, ToolMaterials.DIAMOND.getEnchantability(), () -> Ingredient.ofItems(Items.BEDROCK)),
+    PICKONIMBUS(6, ToolMaterials.GOLD.getDurability(), 50.0f, 6.0f, ToolMaterials.DIAMOND.getEnchantability(), () -> Ingredient.ofItems(Items.BEDROCK)),
     BINGONIMBUS(6, 1, 50.0f, ToolMaterials.GOLD.getEnchantability(), () -> Ingredient.ofItems(Items.BEDROCK), new Ability[] {},
             new ModStats().setAttackDamage(6.0f).setMiningFortune(1.0f)),
 

@@ -28,6 +28,7 @@ public class Abilities {
                     .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "66888923-d380-410c-a9f1-4fae085361a7", 5.0f, EntityAttributeModifier.Operation.ADDITION));
 
     public static void registerAbilities() {
+
         Skyblock.LOGGER.info("Registering Abilities for " + Skyblock.MOD_ID);
     }
 }

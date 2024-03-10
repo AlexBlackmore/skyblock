@@ -82,8 +82,50 @@ public class ModStatusEffects {
     public static StatusEffect FLYING = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "flying"),
             new FlyingStatusEffect(StatusEffectCategory.NEUTRAL, 0xFFFFFF));
     public static StatusEffect LETHALITY = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "lethality"),
-            new ModStatusEffect(StatusEffectCategory.HARMFUL, 0xFFFF)
+            new ModStatusEffect(StatusEffectCategory.HARMFUL, 0xFFFFFF)
                     .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "29DB4744-3010-49CA-AF24-8BDE625C7877", -0.012f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+    public static StatusEffect CENTURY_CAKE_MAX_HEALTH = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_max_health"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFF55FF)
+                    .addAttributeModifier(EntityAttributes.GENERIC_MAX_HEALTH, "8a6c9550-15f9-4981-bad0-08cd96c753ee", 2.0f, EntityAttributeModifier.Operation.ADDITION));
+    public static StatusEffect CENTURY_CAKE_STRENGTH = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_strength"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFF5555)
+                    .addAttributeModifier(ModEntityAttributes.STRENGTH, "f4172be8-bb71-4892-846b-a2adf832e1f3", 0.02f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+    public static StatusEffect CENTURY_CAKE_FEROCITY = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_ferocity"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFAA00)
+                    .addAttributeModifier(ModEntityAttributes.FEROCITY, "d3523ba4-7d64-4b01-98ae-5d6fc9515fec", 0.02f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+    public static StatusEffect CENTURY_CAKE_MOVEMENT_SPEED = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_movement_speed"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFFF55)
+                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "34a016e0-84d7-4f9e-a853-d56b2ae0e26c", 0.10f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_ARMOR = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_armor"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x55FF55)
+                    .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "d480635c-7a23-4519-ae7f-0940cfe26718", 1.0f, EntityAttributeModifier.Operation.ADDITION));
+    public static StatusEffect CENTURY_CAKE_INTELLIGENCE = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_intelligence"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x55FFFF)
+                    .addAttributeModifier(ModEntityAttributes.INTELLIGENCE, "4a669acf-ef3c-4f34-8723-f7437b41fe2c", 5.0f, EntityAttributeModifier.Operation.ADDITION));
+    public static StatusEffect CENTURY_CAKE_SEA_CREATURE_CHANCE = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_sea_creature_chance"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x5555FF)
+                    .addAttributeModifier(ModEntityAttributes.SEA_CREATURE_CHANCE, "64b60121-b076-41ac-abc7-3470b0f770f5", 0.01f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_PET_LUCK = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_pet_luck"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xAA00AA)
+                    .addAttributeModifier(ModEntityAttributes.PET_LUCK, "d593c060-1577-4c2f-afd6-19c0ee076537", 0.01f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_LUCK = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_luck"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x555555)
+                    .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "95a2b177-ecce-4875-8206-2e4076f66a5e", 1.0f, EntityAttributeModifier.Operation.ADDITION));
+    public static StatusEffect CENTURY_CAKE_FARMING_FORTUNE = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_farming_fortune"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xB4684D)
+                    .addAttributeModifier(ModEntityAttributes.FARMING_FORTUNE, "c91147c3-4a73-4581-bb34-34785b940ccb", 0.05f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_FORAGING_FORTUNE = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_foraging_fortune"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFFFFF)
+                    .addAttributeModifier(ModEntityAttributes.FORAGING_FORTUNE, "36769f86-6e4a-47e4-8766-463aaf9b5342", 0.05f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_MINING_FORTUNE = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_mining_fortune"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x00AAAA)
+                    .addAttributeModifier(ModEntityAttributes.MINING_FORTUNE, "06a722ad-310d-4fe6-bdae-5ef7b845da5b", 0.05f, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    public static StatusEffect CENTURY_CAKE_VITALITY = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_vitality"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x00AA00)
+                    .addAttributeModifier(ModEntityAttributes.VITALITY, "6f9dd838-ad9a-49b7-ace8-101a3d20ec58", 1.0f, EntityAttributeModifier.Operation.ADDITION));
+    public static StatusEffect CENTURY_CAKE_ARMOR_TOUGHNESS = Registry.register(Registries.STATUS_EFFECT, new Identifier(Skyblock.MOD_ID, "century_cake_armor_toughness"),
+            new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0xAAAAAA)
+                    .addAttributeModifier(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, "586f4090-4001-4249-a2ed-9478624a177d", 1.0f, EntityAttributeModifier.Operation.ADDITION));
 
     public static void registerStatusEffects() {
         Abilities.registerAbilities();
