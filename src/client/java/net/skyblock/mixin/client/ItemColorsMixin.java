@@ -10,13 +10,10 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.potion.PotionUtil;
+import net.skyblock.item.ModArmorItems;
 import net.skyblock.item.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemColors.class)
 public class ItemColorsMixin {
@@ -28,13 +25,13 @@ public class ItemColorsMixin {
     public static ItemColors create(BlockColors blockColors) {
         ItemColors itemColors = new ItemColors();
         itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), Items.LEATHER_HELMET, Items.LEATHER_CHESTPLATE, Items.LEATHER_LEGGINGS, Items.LEATHER_BOOTS, Items.LEATHER_HORSE_ARMOR);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.FARM_SUIT_HELMET, ModItems.FARM_SUIT_CHESTPLATE, ModItems.FARM_SUIT_LEGGINGS, ModItems.FARM_SUIT_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.FARM_ARMOR_HELMET, ModItems.FARM_ARMOR_CHESTPLATE, ModItems.FARM_ARMOR_LEGGINGS, ModItems.FARM_ARMOR_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.MUSHROOM_HELMET, ModItems.MUSHROOM_CHESTPLATE, ModItems.MUSHROOM_LEGGINGS, ModItems.MUSHROOM_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.SQUIRE_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS);
-        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModItems.GLACITE_CHESTPLATE, ModItems.GLACITE_LEGGINGS, ModItems.GLACITE_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.FARM_SUIT_HELMET, ModArmorItems.FARM_SUIT_CHESTPLATE, ModArmorItems.FARM_SUIT_LEGGINGS, ModArmorItems.FARM_SUIT_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.FARM_ARMOR_HELMET, ModArmorItems.FARM_ARMOR_CHESTPLATE, ModArmorItems.FARM_ARMOR_LEGGINGS, ModArmorItems.FARM_ARMOR_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.MUSHROOM_HELMET, ModArmorItems.MUSHROOM_CHESTPLATE, ModArmorItems.MUSHROOM_LEGGINGS, ModArmorItems.MUSHROOM_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.SQUIRE_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.CELESTE_HELMET, ModArmorItems.CELESTE_CHESTPLATE, ModArmorItems.CELESTE_LEGGINGS, ModArmorItems.CELESTE_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.MINERS_OUTFIT_HELMET, ModArmorItems.MINERS_OUTFIT_CHESTPLATE, ModArmorItems.MINERS_OUTFIT_LEGGINGS, ModArmorItems.MINERS_OUTFIT_BOOTS);
+        itemColors.register((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack), ModArmorItems.GLACITE_CHESTPLATE, ModArmorItems.GLACITE_LEGGINGS, ModArmorItems.GLACITE_BOOTS);
         itemColors.register((stack, tintIndex) -> GrassColors.getColor((double)0.5, (double)1.0), Blocks.TALL_GRASS, Blocks.LARGE_FERN);
         itemColors.register((stack, tintIndex) -> {
             int[] is;

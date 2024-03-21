@@ -2,6 +2,7 @@ package net.skyblock.item.custom;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
@@ -11,7 +12,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.skyblock.item.ModHoeItem;
-import net.skyblock.util.ModRarity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,9 @@ import java.util.function.Predicate;
 
 public class TillingHoeItem extends ModHoeItem {
     public final int DIAMETER;
-    public TillingHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, ModRarity rarity, String name, int diameter) {
-        super(material, attackDamage, attackSpeed, settings, rarity, name);
+    public TillingHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, int diameter) {
+        super(material, attackDamage, attackSpeed, settings);
+        this.setLoreKey("hoe_of_great_tilling");
         this.DIAMETER = diameter;
     }
 
@@ -66,7 +67,7 @@ public class TillingHoeItem extends ModHoeItem {
         return ActionResult.PASS;
     }
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 1 -> {

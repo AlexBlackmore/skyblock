@@ -2,25 +2,24 @@ package net.skyblock.item.custom;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
-import net.skyblock.item.ModPickaxe;
-import net.skyblock.util.ModRarity;
+import net.skyblock.item.ModMiningToolItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TitaniumPickaxeItem extends ModPickaxe {
+public class TitaniumPickaxeItem extends ModMiningToolItem {
     private int titaniumMiningFortune = 0;
 
-    public TitaniumPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity) {
-        super(material, settings, rarity, "titanium_pickaxe");
-    }
-    public TitaniumPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity, int fortune) {
-        super(material,  settings, rarity, "titanium_pickaxe");
+    public TitaniumPickaxeItem(ToolMaterial material, Settings settings, int fortune) {
+        super(material, BlockTags.PICKAXE_MINEABLE, settings);
+        this.setLoreKey("titanium_pickaxe");
+        this.setGlint(true);
         this.titaniumMiningFortune = fortune;
     }
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 1 -> {
@@ -33,10 +32,5 @@ public class TitaniumPickaxeItem extends ModPickaxe {
             default -> {}
         }
         return list;
-    }
-
-    @Override
-    public boolean hasGlint(ItemStack stack) {
-        return true;
     }
 }

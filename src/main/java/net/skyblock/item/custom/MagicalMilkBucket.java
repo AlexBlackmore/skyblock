@@ -42,7 +42,7 @@ public class MagicalMilkBucket extends MilkBucketItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        LoreUtil.appendLore(tooltip, this.loreKey + "." + this.randLore);
+        LoreUtil.appendLore(stack, tooltip, this.loreKey + "." + this.randLore);
         super.appendTooltip(stack, world, tooltip, context);
     }
 }

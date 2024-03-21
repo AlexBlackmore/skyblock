@@ -10,39 +10,84 @@ import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Util;
 import net.skyblock.Skyblock;
 import net.skyblock.effect.Ability;
 import net.skyblock.effect.abilities.*;
 import net.skyblock.util.ModStats;
 import net.skyblock.util.ModTags;
 
+import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements ArmorMaterial {
+    LEATHER("leather", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.LEATHER), 5,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(1.0f),
+            new ModStats().setArmor(3.0f),
+            new ModStats().setArmor(2.0f),
+            new ModStats().setArmor(1.0f)}),
+    CHAIN("chainmail", ArmorMaterials.CHAIN.getEnchantability(), ArmorMaterials.CHAIN.getEquipSound(), () -> Ingredient.ofItems(Items.IRON_INGOT), 15,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(2.0f),
+            new ModStats().setArmor(5.0f),
+            new ModStats().setArmor(4.0f),
+            new ModStats().setArmor(1.0f)}),
+    IRON("iron", ArmorMaterials.IRON.getEnchantability(), ArmorMaterials.IRON.getEquipSound(), () -> Ingredient.ofItems(Items.IRON_INGOT), 15,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(2.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(5.0f),
+            new ModStats().setArmor(2.0f)}),
+    GOLD("gold", ArmorMaterials.GOLD.getEnchantability(), ArmorMaterials.GOLD.getEquipSound(), () -> Ingredient.ofItems(Items.GOLD_INGOT), 7,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(2.0f),
+            new ModStats().setArmor(5.0f),
+            new ModStats().setArmor(3.0f),
+            new ModStats().setArmor(1.0f)}),
+    DIAMOND("diamond", ArmorMaterials.DIAMOND.getEnchantability(), ArmorMaterials.DIAMOND.getEquipSound(), () -> Ingredient.ofItems(Items.DIAMOND), 33,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(3.0f),
+            new ModStats().setArmor(8.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(3.0f)}),
+    TURTLE("turtle", ArmorMaterials.TURTLE.getEnchantability(), ArmorMaterials.TURTLE.getEquipSound(), () -> Ingredient.ofItems(Items.SCUTE), 25,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(2.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(5.0f),
+            new ModStats().setArmor(2.0f)}),
+    NETHERITE("netherite", ArmorMaterials.NETHERITE.getEnchantability(), ArmorMaterials.NETHERITE.getEquipSound(), () -> Ingredient.ofItems(Items.NETHERITE_INGOT), 37,
+            new Ability[]{}, new ModStats[] {
+            new ModStats().setArmor(3.0f),
+            new ModStats().setArmor(8.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(3.0f)}),
     FARM_SUIT("farm_suit", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.HAY_BLOCK), 10,
             new Ability[]{new BonusSpeedAbility(3), new FarmerAuraAbility()}, new ModStats[] {
-                new ModStats().setArmor(3.0f).setFarmingFortune(0.05f),
-                new ModStats().setArmor(8.0f).setFarmingFortune(0.05f),
-                new ModStats().setArmor(6.0f).setFarmingFortune(0.05f),
-                new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)}),
+            new ModStats().setArmor(3.0f).setFarmingFortune(0.05f),
+            new ModStats().setArmor(8.0f).setFarmingFortune(0.05f),
+            new ModStats().setArmor(6.0f).setFarmingFortune(0.05f),
+            new ModStats().setArmor(3.0f).setFarmingFortune(0.05f)}),
     FARM_ARMOR("farm_armor", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(EnchantedItems.HAY_BLOCK), 30,
             new Ability[]{new BonusSpeedAbility(4)}, new ModStats[] {
-                new ModStats().setMaxHealth(4.0f).setArmor(8.0f).setFarmingFortune(0.10f),
-                new ModStats().setMaxHealth(4.0f).setArmor(15.0f).setFarmingFortune(0.10f),
-                new ModStats().setMaxHealth(4.0f).setArmor(10.0f).setFarmingFortune(0.10f),
-                new ModStats().setMaxHealth(4.0f).setArmor(7.0f).setFarmingFortune(0.10f)}),
+            new ModStats().setMaxHealth(4.0f).setArmor(8.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(15.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(10.0f).setFarmingFortune(0.10f),
+            new ModStats().setMaxHealth(4.0f).setArmor(7.0f).setFarmingFortune(0.10f)}),
     MUSHROOM("mushroom", ArmorMaterials.LEATHER.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.RED_MUSHROOM), 10,
             new Ability[]{new NightAffinityAbility()}, new ModStats[] {
-                new ModStats().setMaxHealth(4.0f),
-                new ModStats().setMaxHealth(2.0f).setArmor(2.0f),
-                new ModStats().setMaxHealth(2.0f).setArmor(1.0f),
-                new ModStats().setMaxHealth(3.0f)}),
+            new ModStats().setMaxHealth(4.0f),
+            new ModStats().setMaxHealth(2.0f).setArmor(2.0f),
+            new ModStats().setMaxHealth(2.0f).setArmor(1.0f),
+            new ModStats().setMaxHealth(3.0f)}),
     ROSETTAS("rosettas", ArmorMaterials.DIAMOND.getEnchantability(), ArmorMaterials.DIAMOND.getEquipSound(), () -> Ingredient.ofItems(Items.DIAMOND), 20,
             new Ability[]{}, new ModStats[] {
-                new ModStats().setArmor(4.0f),
-                new ModStats().setArmor(8.0f),
-                new ModStats().setArmor(6.0f),
-                new ModStats().setArmor(4.0f)}),
+            new ModStats().setArmor(4.0f),
+            new ModStats().setArmor(8.0f),
+            new ModStats().setArmor(6.0f),
+            new ModStats().setArmor(4.0f)}),
     SQUIRE("squire", ArmorMaterials.IRON.getEnchantability(), ArmorMaterials.IRON.getEquipSound(), () -> Ingredient.ofItems(Items.BEDROCK), 20,
             new Ability[]{}, new ModStats[] {
             new ModStats().setMaxHealth(5.0f).setArmor(5.0f),
@@ -63,17 +108,16 @@ public enum ModArmorMaterial implements ArmorMaterial {
             new ModStats().setArmor(3.0f)}),
     BLAZE_HAT("blaze_hat", ArmorMaterials.IRON.getEnchantability(), ArmorMaterials.LEATHER.getEquipSound(), () -> Ingredient.ofItems(Items.BEDROCK), 10,
             new Ability[]{}, new ModStats[] {
-                    new ModStats().setStrength(4.0f),
-                    new ModStats().setStrength(4.0f),
-                    new ModStats().setStrength(4.0f),
-                    new ModStats().setStrength(4.0f)}),
+            new ModStats().setStrength(4.0f),
+            new ModStats().setStrength(4.0f),
+            new ModStats().setStrength(4.0f),
+            new ModStats().setStrength(4.0f)}),
     GLACITE("glacite", ArmorMaterials.LEATHER.getEnchantability(), Blocks.PACKED_ICE.getSoundGroup(Blocks.PACKED_ICE.getDefaultState()).getBreakSound(), () -> Ingredient.ofItems(Items.BEDROCK), 40,
             new Ability[]{new ExpertMinerAbility(), new GlaciteArmorAbility()}, new ModStats[] {
             new ModStats().setArmor(14.0f).setMovementSpeed(0.10f).setArmorToughness(1.0f).setMiningSpeed(0.10f),
             new ModStats().setArmor(30.0f).setMovementSpeed(0.15f).setArmorToughness(2.0f).setMiningSpeed(0.10f),
             new ModStats().setArmor(25.0f).setMovementSpeed(0.15f).setArmorToughness(2.0f).setMiningSpeed(0.10f),
-            new ModStats().setArmor(14.0f).setMovementSpeed(0.10f).setArmorToughness(1.0f).setMiningSpeed(0.10f)}),
-;
+            new ModStats().setArmor(14.0f).setMovementSpeed(0.10f).setArmorToughness(1.0f).setMiningSpeed(0.10f)});
     private final String name;
     private final int enchantability;
     private final SoundEvent equipSound;

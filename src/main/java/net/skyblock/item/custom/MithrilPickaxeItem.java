@@ -2,27 +2,27 @@ package net.skyblock.item.custom;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
-import net.skyblock.item.ModPickaxe;
+import net.skyblock.item.ModMiningToolItem;
 import net.skyblock.util.ModRarity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MithrilPickaxeItem extends ModPickaxe {
+public class MithrilPickaxeItem extends ModMiningToolItem {
     private int mithrilPowder = 0;
     private int mithrilMiningSpeed = 0;
 
-    public MithrilPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity) {
-        super(material, settings, rarity, "mithril_pickaxe");
-    }
     public MithrilPickaxeItem(ToolMaterial material, Settings settings, ModRarity rarity,  int powder, int speed) {
-        super(material,  settings, rarity, "mithril_pickaxe");
+        super(material, BlockTags.PICKAXE_MINEABLE, settings);
+        this.setModRarity(rarity);
+        this.setLoreKey("mithril_pickaxe");
         this.mithrilPowder = powder;
         this.mithrilMiningSpeed = speed;
     }
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 1 -> {

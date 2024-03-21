@@ -6,25 +6,26 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.skyblock.item.ModPickaxe;
+import net.skyblock.item.ModMiningToolItem;
 import net.skyblock.item.ModToolMaterial;
-import net.skyblock.util.ModRarity;
 import net.skyblock.util.ModTags;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZombiePickaxeItem extends ModPickaxe {
+public class ZombiePickaxeItem extends ModMiningToolItem {
     private static final int DURATION = 5;
     private static final String STATUS_EFFECT = "effect.minecraft.haste";
     private static final int AMPLIFIER = 1;
 
     public ZombiePickaxeItem(Settings settings) {
-        super(ModToolMaterial.ZOMBIE, settings, ModRarity.COMMON, "zombie_pickaxe");
+        super(ModToolMaterial.ZOMBIE, BlockTags.PICKAXE_MINEABLE, settings);
+        this.setLoreKey("zombie_pickaxe");
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ZombiePickaxeItem extends ModPickaxe {
     }
 
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 1 -> {

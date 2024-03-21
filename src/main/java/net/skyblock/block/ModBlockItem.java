@@ -1,13 +1,10 @@
 package net.skyblock.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
-import net.skyblock.block.ModBlock;
-import net.skyblock.util.LoreUtil;
 import net.skyblock.util.ModItemInterface;
 import net.skyblock.util.ModRarity;
 import org.jetbrains.annotations.Nullable;
@@ -26,11 +23,11 @@ public class ModBlockItem extends BlockItem implements ModItemInterface {
         }
     }
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         if (this.getBlock() instanceof ModBlock modBlock) {
-            return modBlock.getLoreArgs(i);
+            return modBlock.getLoreArgs(stack, i);
         }
-        return ModItemInterface.super.getLoreArgs(i);
+        return ModItemInterface.super.getLoreArgs(stack, i);
     }
     @Override
     public String getLoreKey() {
@@ -46,9 +43,5 @@ public class ModBlockItem extends BlockItem implements ModItemInterface {
             return modBlock.getModRarity();
         }
         return ModRarity.convertRarity(this.asItem());
-    }
-    @Override
-    public void setModRarity(ModRarity rarity) {
-
     }
 }

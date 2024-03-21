@@ -1,17 +1,13 @@
 package net.skyblock.block.custom;
 
-import com.mojang.brigadier.Message;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -20,14 +16,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
 import net.skyblock.block.ModBlock;
 import net.skyblock.util.ModRarity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 public class CenturyCakeBlock extends ModBlock {
     private final float BONUS;
@@ -80,6 +74,9 @@ public class CenturyCakeBlock extends ModBlock {
     }
 
     @Override
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
+        return this.getLoreArgs(i);
+    }
     public List<Object> getLoreArgs(int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {

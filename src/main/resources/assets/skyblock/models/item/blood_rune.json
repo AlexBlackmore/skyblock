@@ -1,0 +1,6 @@
+{
+	"parent": "skyblock:item/skin_item_template",
+	"textures": {
+		"skin": "skyblock:item/skins/runes/blood_rune"
+	}
+}

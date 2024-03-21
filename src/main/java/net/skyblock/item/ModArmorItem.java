@@ -26,8 +26,9 @@ import java.util.UUID;
 
 public class ModArmorItem extends ArmorItem implements ModItemInterface {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
-    private ModRarity rarity;
+    private ModRarity rarity = ModRarity.COMMON;
     private String loreKey;
+    private boolean hasGlint = false;
 
     private Multimap<EntityAttribute, EntityAttributeModifier> BuildDefaultAttributes(ArmorMaterial material) {
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
@@ -40,7 +41,6 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
     }
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
-        this.rarity = ModRarity.convertRarity(this);
 
         if (material instanceof ModArmorMaterial modMaterial) {
             this.attributeModifiers = modMaterial.getStats(type);
@@ -49,16 +49,28 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
         }
     }
 
-    public ModArmorItem(ArmorMaterial material, Type type, Settings settings, ModRarity rarity, String name) {
-        super(material, type, settings.rarity(ModRarity.convertModRarity(rarity)));
+//    public ModArmorItem(ArmorMaterial material, Type type, Settings settings, ModRarity rarity, String name) {
+//        super(material, type, settings.rarity(ModRarity.convertModRarity(rarity)));
+//        this.rarity = rarity;
+//        this.loreKey = "lore.skyblock." + name;
+//
+//        if (material instanceof ModArmorMaterial modMaterial) {
+//            this.attributeModifiers = modMaterial.getStats(type);
+//        } else {
+//            this.attributeModifiers = BuildDefaultAttributes(material);
+//        }
+//    }
+    public ModArmorItem setModRarity(ModRarity rarity) {
         this.rarity = rarity;
+        return this;
+    }
+    public ModArmorItem setLoreKey(String name) {
         this.loreKey = "lore.skyblock." + name;
-
-        if (material instanceof ModArmorMaterial modMaterial) {
-            this.attributeModifiers = modMaterial.getStats(type);
-        } else {
-            this.attributeModifiers = BuildDefaultAttributes(material);
-        }
+        return this;
+    }
+    public ModArmorItem setGlint(boolean hasGlint) {
+        this.hasGlint = hasGlint;
+        return this;
     }
 
     @Override
@@ -82,17 +94,18 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (this.material instanceof ModArmorMaterial modMaterial) {
             for (int i = 0; i < modMaterial.getAbilities().length; i++) {
-                LoreUtil.appendLore(tooltip, modMaterial.getAbilities()[i]);
+                LoreUtil.appendLore(stack, tooltip, modMaterial.getAbilities()[i]);
             }
         }
-        LoreUtil.appendLore(tooltip, this);
+        LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
     }
     public String getLoreKey() {
         return this.loreKey;
     }
-
     public ModRarity getModRarity() {return this.rarity;}
     @Override
-    public void setModRarity(ModRarity rarity) {this.rarity = rarity;}
+    public boolean hasGlint(ItemStack stack) {
+        return this.hasGlint;
+    }
 }

@@ -28,7 +28,7 @@ public class ModMusicDiscItem extends MusicDiscItem implements ModItemInterface 
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        LoreUtil.appendLore(tooltip, this);
+        LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
     }
     public String getLoreKey() {
@@ -36,7 +36,6 @@ public class ModMusicDiscItem extends MusicDiscItem implements ModItemInterface 
     }
 
     public ModRarity getModRarity() {return this.rarity;}
-    @Override
     public void setModRarity(ModRarity rarity) {this.rarity = rarity;}
 
 }

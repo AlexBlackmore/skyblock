@@ -13,12 +13,13 @@ public interface ModItemInterface {
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context);
 
-    default public List<Object> getLoreArgs(int i) {
+    default public List<Object> getLoreArgs(ItemStack stack, int i) {
         return new ArrayList<>();
     }
 
     public String getLoreKey();
 
-    public ModRarity getModRarity();
-    public void setModRarity(ModRarity rarity);
+    public default ModRarity getModRarity() {
+        return ModRarity.COMMON;
+    }
 }

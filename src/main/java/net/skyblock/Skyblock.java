@@ -1,6 +1,7 @@
 package net.skyblock;
 
 import net.skyblock.block.ModBlocks;
+import net.skyblock.block.entity.ModBlockEntities;
 import net.skyblock.effect.ModStatusEffects;
 import net.skyblock.enchantment.ModEnchantments;
 import net.skyblock.item.ModItem;
@@ -9,6 +10,7 @@ import net.skyblock.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.skyblock.item.ModPotions;
+import net.skyblock.screen.ModScreenHandlers;
 import net.skyblock.sound.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +35,9 @@ public class Skyblock implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 		ModPotions.registerPotions();
 		ModSounds.registerSounds();
+
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
 
 	}
 }

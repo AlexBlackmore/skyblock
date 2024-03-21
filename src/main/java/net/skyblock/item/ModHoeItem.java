@@ -14,21 +14,34 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class ModHoeItem extends HoeItem implements ModItemInterface {
-    private ModRarity rarity;
+    private ModRarity rarity = ModRarity.COMMON;
     private String loreKey;
+    private boolean hasGlint = false;
+
     public ModHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
-        this.rarity = ModRarity.convertRarity(this);
     }
-    public ModHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, ModRarity rarity, String name) {
-        super(material, attackDamage, attackSpeed, settings.rarity(ModRarity.convertModRarity(rarity)));
+//    public ModHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, ModRarity rarity, String name) {
+//        super(material, attackDamage, attackSpeed, settings.rarity(ModRarity.convertModRarity(rarity)));
+//        this.rarity = rarity;
+//        this.loreKey = "lore.skyblock." + name;
+//    }
+    public ModHoeItem setModRarity(ModRarity rarity) {
         this.rarity = rarity;
+        return this;
+    }
+    public ModHoeItem setLoreKey(String name) {
         this.loreKey = "lore.skyblock." + name;
+        return this;
+    }
+    public ModHoeItem setGlint(boolean hasGlint) {
+        this.hasGlint = hasGlint;
+        return this;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        LoreUtil.appendLore(tooltip, this);
+        LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
     }
     public String getLoreKey() {
@@ -37,6 +50,8 @@ public class ModHoeItem extends HoeItem implements ModItemInterface {
 
     public ModRarity getModRarity() {return this.rarity;}
     @Override
-    public void setModRarity(ModRarity rarity) {this.rarity = rarity;}
+    public boolean hasGlint(ItemStack stack) {
+        return this.hasGlint;
+    }
 
 }

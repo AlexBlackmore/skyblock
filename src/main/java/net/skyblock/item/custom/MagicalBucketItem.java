@@ -89,7 +89,7 @@ public class MagicalBucketItem extends BucketItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        LoreUtil.appendLore(tooltip, loreKey);
+        LoreUtil.appendLore(stack, tooltip, loreKey);
         super.appendTooltip(stack, world, tooltip, context);
     }
 

@@ -1,8 +1,8 @@
 {
   "parent": "skyblock:block/century_cake",
   "textures": {
-    "skin": "skyblock:block/century_cake_magenta",
-    "torch": "skyblock:block/torch",
-    "particle": "skyblock:block/century_cake_magenta"
+    "skin": "skyblock:block/century_cake/magenta",
+    "torch": "skyblock:block/century_cake/torch",
+    "particle": "skyblock:block/century_cake/magenta"
   }
 }

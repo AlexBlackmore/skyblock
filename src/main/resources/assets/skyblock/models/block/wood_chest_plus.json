@@ -1,0 +1,12 @@
+{
+	"parent": "skyblock:block/chest_plus",
+	"textures": {
+		"chest": "skyblock:block/wood_chest_plus/chest",
+		"slab_top": "skyblock:block/wood_chest_plus/smooth_stone",
+		"slab_side": "skyblock:block/wood_chest_plus/smooth_stone_slab_side",
+		"base": "skyblock:block/wood_chest_plus/oak_planks",
+		"stairs": "skyblock:block/wood_chest_plus/spruce_planks",
+		"accent": "skyblock:block/wood_chest_plus/cobblestone",
+		"particle": "skyblock:block/wood_chest_plus/oak_planks"
+	}
+}

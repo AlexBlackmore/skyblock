@@ -4,8 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.skyblock.item.ModArmorItems;
 import net.skyblock.item.ModItems;
-import org.jetbrains.annotations.Nullable;
+import net.skyblock.item.ModMusicDiscItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,23 +17,23 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.FARM_SUIT_HELMET, ModItems.FARM_SUIT_CHESTPLATE, ModItems.FARM_SUIT_LEGGINGS, ModItems.FARM_SUIT_BOOTS)
-                .add(ModItems.FARM_ARMOR_HELMET, ModItems.FARM_ARMOR_CHESTPLATE, ModItems.FARM_ARMOR_LEGGINGS, ModItems.FARM_ARMOR_BOOTS)
-                .add(ModItems.MUSHROOM_HELMET, ModItems.MUSHROOM_CHESTPLATE, ModItems.MUSHROOM_LEGGINGS, ModItems.MUSHROOM_BOOTS)
-                .add(ModItems.ROSETTAS_HELMET, ModItems.ROSETTAS_CHESTPLATE, ModItems.ROSETTAS_LEGGINGS, ModItems.ROSETTAS_BOOTS)
-                .add(ModItems.SQUIRE_HELMET, ModItems.SQUIRE_CHESTPLATE, ModItems.SQUIRE_LEGGINGS, ModItems.SQUIRE_BOOTS)
-                .add(ModItems.CELESTE_HELMET, ModItems.CELESTE_CHESTPLATE, ModItems.CELESTE_LEGGINGS, ModItems.CELESTE_BOOTS)
-                .add(ModItems.MINERS_OUTFIT_HELMET, ModItems.MINERS_OUTFIT_CHESTPLATE, ModItems.MINERS_OUTFIT_LEGGINGS, ModItems.MINERS_OUTFIT_BOOTS)
-                .add(ModItems.GLACITE_CHESTPLATE, ModItems.GLACITE_LEGGINGS, ModItems.GLACITE_BOOTS);
+                .add(ModArmorItems.FARM_SUIT_HELMET, ModArmorItems.FARM_SUIT_CHESTPLATE, ModArmorItems.FARM_SUIT_LEGGINGS, ModArmorItems.FARM_SUIT_BOOTS)
+                .add(ModArmorItems.FARM_ARMOR_HELMET, ModArmorItems.FARM_ARMOR_CHESTPLATE, ModArmorItems.FARM_ARMOR_LEGGINGS, ModArmorItems.FARM_ARMOR_BOOTS)
+                .add(ModArmorItems.MUSHROOM_HELMET, ModArmorItems.MUSHROOM_CHESTPLATE, ModArmorItems.MUSHROOM_LEGGINGS, ModArmorItems.MUSHROOM_BOOTS)
+                .add(ModArmorItems.ROSETTAS_HELMET, ModArmorItems.ROSETTAS_CHESTPLATE, ModArmorItems.ROSETTAS_LEGGINGS, ModArmorItems.ROSETTAS_BOOTS)
+                .add(ModArmorItems.SQUIRE_HELMET, ModArmorItems.SQUIRE_CHESTPLATE, ModArmorItems.SQUIRE_LEGGINGS, ModArmorItems.SQUIRE_BOOTS)
+                .add(ModArmorItems.CELESTE_HELMET, ModArmorItems.CELESTE_CHESTPLATE, ModArmorItems.CELESTE_LEGGINGS, ModArmorItems.CELESTE_BOOTS)
+                .add(ModArmorItems.MINERS_OUTFIT_HELMET, ModArmorItems.MINERS_OUTFIT_CHESTPLATE, ModArmorItems.MINERS_OUTFIT_LEGGINGS, ModArmorItems.MINERS_OUTFIT_BOOTS)
+                .add(ModArmorItems.GLACITE_CHESTPLATE, ModArmorItems.GLACITE_LEGGINGS, ModArmorItems.GLACITE_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
-                .add(ModItems.SPOOKY_DISC)
-                .add(ModItems.BATTLE_DISC)
-                .add(ModItems.WINTER_DISC)
-                .add(ModItems.DUNGEON_DISC)
-                .add(ModItems.CLOWN_DISC)
-                .add(ModItems.WATCHER_DISC)
-                .add(ModItems.NECRON_DISC)
-                .add(ModItems.OLD_DISC);
+                .add(ModMusicDiscItems.SPOOKY_DISC)
+                .add(ModMusicDiscItems.BATTLE_DISC)
+                .add(ModMusicDiscItems.WINTER_DISC)
+                .add(ModMusicDiscItems.DUNGEON_DISC)
+                .add(ModMusicDiscItems.CLOWN_DISC)
+                .add(ModMusicDiscItems.WATCHER_DISC)
+                .add(ModMusicDiscItems.NECRON_DISC)
+                .add(ModMusicDiscItems.OLD_DISC);
     }
 }

@@ -24,13 +24,13 @@ public class ModBlock extends Block implements ModItemInterface {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        LoreUtil.appendLore(tooltip, this);
+        LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
     }
 
     @Override
-    public List<Object> getLoreArgs(int i) {
-        return ModItemInterface.super.getLoreArgs(i);
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
+        return ModItemInterface.super.getLoreArgs(stack, i);
     }
 
     @Override
@@ -41,10 +41,5 @@ public class ModBlock extends Block implements ModItemInterface {
     @Override
     public ModRarity getModRarity() {
         return this.rarity;
-    }
-
-    @Override
-    public void setModRarity(ModRarity rarity) {
-        this.rarity = rarity;
     }
 }

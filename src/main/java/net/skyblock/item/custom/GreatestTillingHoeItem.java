@@ -13,7 +13,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.skyblock.item.ModHoeItem;
-import net.skyblock.util.ModItemInterface;
 import net.skyblock.util.ModRarity;
 
 import java.util.ArrayList;
@@ -25,7 +24,9 @@ import java.util.function.Predicate;
 public class GreatestTillingHoeItem extends ModHoeItem {
     private static final int MAX = 64;
     public GreatestTillingHoeItem(Item.Settings settings) {
-        super(ToolMaterials.DIAMOND, -3, 0.0f, settings, ModRarity.EPIC, "hoe_of_greatest_tilling");
+        super(ToolMaterials.DIAMOND, -3, 0.0f, settings);
+        this.setModRarity(ModRarity.EPIC);
+        this.setLoreKey("hoe_of_greatest_tilling");
     }
 
     @Override
@@ -73,7 +74,7 @@ public class GreatestTillingHoeItem extends ModHoeItem {
     }
 
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 3 -> {

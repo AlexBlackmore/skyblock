@@ -13,6 +13,8 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.skyblock.Skyblock;
 import net.skyblock.attribute.ModEntityAttributes;
 import net.skyblock.block.custom.CenturyCakeBlock;
+import net.skyblock.block.custom.ChestPlus;
+import net.skyblock.block.custom.RunicPedestalBlock;
 import net.skyblock.effect.ModStatusEffects;
 import net.skyblock.util.ModRarity;
 
@@ -63,6 +65,10 @@ public class ModBlocks {
             new CenturyCakeBlock(ModStatusEffects.CENTURY_CAKE_VITALITY,0.01f,  ModEntityAttributes.VITALITY));
     public static final Block CENTURY_CAKE_GRAY = registerBlock("century_cake_gray",
             new CenturyCakeBlock(ModStatusEffects.CENTURY_CAKE_ARMOR_TOUGHNESS,1.0f,  EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
+    public static final Block WOOD_CHEST_PLUS = registerBlock("wood_chest_plus",
+            new ChestPlus(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS), ModRarity.UNCOMMON));
+    public static final Block RUNIC_PEDESTAL = registerBlock("runic_pedestal",
+            new RunicPedestalBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).nonOpaque()));
 
 
 

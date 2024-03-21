@@ -14,6 +14,12 @@ import net.skyblock.Skyblock;
 import net.skyblock.block.ModBlocks;
 
 public class ModItemGroups {
+    public static final ItemGroup RUNES = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(Skyblock.MOD_ID, "runes"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.runes")).icon(() ->
+                    new ItemStack(RuneItems.BLOOD)).entries((displayContext, entries) -> {
+                entries.add(RuneItems.BLOOD);
+            }).build());
     public static final ItemGroup ENCHANTED = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Skyblock.MOD_ID, "enchanted"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.enchanted")).icon(() ->
@@ -74,71 +80,74 @@ public class ModItemGroups {
         entries.add(ModBlocks.DWARVEN_REDSTONE);
         entries.add(ModBlocks.TITANIUM_ORE);
     }
-//    private static void addItemsToFunctionalItemGroup(FabricItemGroupEntries entries) {
-//    }
+    private static void addItemsToFunctionalItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ModBlocks.WOOD_CHEST_PLUS);
+        entries.add(ModBlocks.RUNIC_PEDESTAL);
+    }
 //    private static void addItemsToRedstoneItemGroup(FabricItemGroupEntries entries) {
 //    }
     private static void addItemsToToolsItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_WATER_BUCKET);
         entries.add(ModItems.MAGICAL_LAVA_BUCKET);
-        entries.add(ModItems.ROOKIE_PICKAXE);
-        entries.add(ModItems.ROOKIE_HOE);
-        entries.add(ModItems.HOE_OF_GREAT_TILLING);
-        entries.add(ModItems.HOE_OF_GREATER_TILLING);
-        entries.add(ModItems.HOE_OF_GREATEST_TILLING);
-        entries.add(ModItems.ZOMBIE_PICKAXE);
-        entries.add(ModItems.JUNGLE_PICKAXE);
-        entries.add(ModItems.FRACTURED_MITHRIL_PICKAXE);
-        entries.add(ModItems.BANDAGED_MITHRIL_PICKAXE);
-        entries.add(ModItems.MITHRIL_PICKAXE);
-        entries.add(ModItems.REFINED_MITHRIL_PICKAXE);
-        entries.add(ModItems.TITANIUM_PICKAXE);
-        entries.add(ModItems.REFINED_TITANIUM_PICKAXE);
-        entries.add(ModItems.PICKONIMBUS_2000);
-        entries.add(ModItems.BINGONIMBUS_2000);
-        entries.add(ModItems.SPOOKY_DISC);
-        entries.add(ModItems.BATTLE_DISC);
-        entries.add(ModItems.WINTER_DISC);
-        entries.add(ModItems.DUNGEON_DISC);
-        entries.add(ModItems.CLOWN_DISC);
-        entries.add(ModItems.WATCHER_DISC);
-        entries.add(ModItems.NECRON_DISC);
-        entries.add(ModItems.OLD_DISC);
+        entries.add(ModToolItems.ROOKIE_PICKAXE);
+        entries.add(ModToolItems.ROOKIE_HOE);
+        entries.add(ModToolItems.HOE_OF_GREAT_TILLING);
+        entries.add(ModToolItems.HOE_OF_GREATER_TILLING);
+        entries.add(ModToolItems.HOE_OF_GREATEST_TILLING);
+        entries.add(ModToolItems.PROMISING_PICKAXE);
+        entries.add(ModToolItems.ZOMBIE_PICKAXE);
+        entries.add(ModToolItems.JUNGLE_PICKAXE);
+        entries.add(ModToolItems.FRACTURED_MITHRIL_PICKAXE);
+        entries.add(ModToolItems.BANDAGED_MITHRIL_PICKAXE);
+        entries.add(ModToolItems.MITHRIL_PICKAXE);
+        entries.add(ModToolItems.REFINED_MITHRIL_PICKAXE);
+        entries.add(ModToolItems.TITANIUM_PICKAXE);
+        entries.add(ModToolItems.REFINED_TITANIUM_PICKAXE);
+        entries.add(ModToolItems.PICKONIMBUS_2000);
+        entries.add(ModToolItems.BINGONIMBUS_2000);
+        entries.add(ModMusicDiscItems.SPOOKY_DISC);
+        entries.add(ModMusicDiscItems.BATTLE_DISC);
+        entries.add(ModMusicDiscItems.WINTER_DISC);
+        entries.add(ModMusicDiscItems.DUNGEON_DISC);
+        entries.add(ModMusicDiscItems.CLOWN_DISC);
+        entries.add(ModMusicDiscItems.WATCHER_DISC);
+        entries.add(ModMusicDiscItems.NECRON_DISC);
+        entries.add(ModMusicDiscItems.OLD_DISC);
     }
     private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
-        entries.add(ModItems.FARM_SUIT_HELMET);
-        entries.add(ModItems.FARM_SUIT_CHESTPLATE);
-        entries.add(ModItems.FARM_SUIT_LEGGINGS);
-        entries.add(ModItems.FARM_SUIT_BOOTS);
-        entries.add(ModItems.FARM_ARMOR_HELMET);
-        entries.add(ModItems.FARM_ARMOR_CHESTPLATE);
-        entries.add(ModItems.FARM_ARMOR_LEGGINGS);
-        entries.add(ModItems.FARM_ARMOR_BOOTS);
-        entries.add(ModItems.MUSHROOM_HELMET);
-        entries.add(ModItems.MUSHROOM_CHESTPLATE);
-        entries.add(ModItems.MUSHROOM_LEGGINGS);
-        entries.add(ModItems.MUSHROOM_BOOTS);
-        entries.add(ModItems.ROSETTAS_HELMET);
-        entries.add(ModItems.ROSETTAS_CHESTPLATE);
-        entries.add(ModItems.ROSETTAS_LEGGINGS);
-        entries.add(ModItems.ROSETTAS_BOOTS);
-        entries.add(ModItems.SQUIRE_HELMET);
-        entries.add(ModItems.SQUIRE_CHESTPLATE);
-        entries.add(ModItems.SQUIRE_LEGGINGS);
-        entries.add(ModItems.SQUIRE_BOOTS);
-        entries.add(ModItems.CELESTE_HELMET);
-        entries.add(ModItems.CELESTE_CHESTPLATE);
-        entries.add(ModItems.CELESTE_LEGGINGS);
-        entries.add(ModItems.CELESTE_BOOTS);
-        entries.add(ModItems.MINERS_OUTFIT_HELMET);
-        entries.add(ModItems.MINERS_OUTFIT_CHESTPLATE);
-        entries.add(ModItems.MINERS_OUTFIT_LEGGINGS);
-        entries.add(ModItems.MINERS_OUTFIT_BOOTS);
-        entries.add(ModItems.BLAZE_HAT);
-        entries.add(ModItems.GLACITE_HELMET);
-        entries.add(ModItems.GLACITE_CHESTPLATE);
-        entries.add(ModItems.GLACITE_LEGGINGS);
-        entries.add(ModItems.GLACITE_BOOTS);
+        entries.add(ModArmorItems.FARM_SUIT_HELMET);
+        entries.add(ModArmorItems.FARM_SUIT_CHESTPLATE);
+        entries.add(ModArmorItems.FARM_SUIT_LEGGINGS);
+        entries.add(ModArmorItems.FARM_SUIT_BOOTS);
+        entries.add(ModArmorItems.FARM_ARMOR_HELMET);
+        entries.add(ModArmorItems.FARM_ARMOR_CHESTPLATE);
+        entries.add(ModArmorItems.FARM_ARMOR_LEGGINGS);
+        entries.add(ModArmorItems.FARM_ARMOR_BOOTS);
+        entries.add(ModArmorItems.MUSHROOM_HELMET);
+        entries.add(ModArmorItems.MUSHROOM_CHESTPLATE);
+        entries.add(ModArmorItems.MUSHROOM_LEGGINGS);
+        entries.add(ModArmorItems.MUSHROOM_BOOTS);
+        entries.add(ModArmorItems.ROSETTAS_HELMET);
+        entries.add(ModArmorItems.ROSETTAS_CHESTPLATE);
+        entries.add(ModArmorItems.ROSETTAS_LEGGINGS);
+        entries.add(ModArmorItems.ROSETTAS_BOOTS);
+        entries.add(ModArmorItems.SQUIRE_HELMET);
+        entries.add(ModArmorItems.SQUIRE_CHESTPLATE);
+        entries.add(ModArmorItems.SQUIRE_LEGGINGS);
+        entries.add(ModArmorItems.SQUIRE_BOOTS);
+        entries.add(ModArmorItems.CELESTE_HELMET);
+        entries.add(ModArmorItems.CELESTE_CHESTPLATE);
+        entries.add(ModArmorItems.CELESTE_LEGGINGS);
+        entries.add(ModArmorItems.CELESTE_BOOTS);
+        entries.add(ModArmorItems.MINERS_OUTFIT_HELMET);
+        entries.add(ModArmorItems.MINERS_OUTFIT_CHESTPLATE);
+        entries.add(ModArmorItems.MINERS_OUTFIT_LEGGINGS);
+        entries.add(ModArmorItems.MINERS_OUTFIT_BOOTS);
+        entries.add(ModArmorItems.BLAZE_HAT);
+        entries.add(ModArmorItems.GLACITE_HELMET);
+        entries.add(ModArmorItems.GLACITE_CHESTPLATE);
+        entries.add(ModArmorItems.GLACITE_LEGGINGS);
+        entries.add(ModArmorItems.GLACITE_BOOTS);
     }
     private static void addItemsToFoodAndDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModItems.MAGICAL_MILK_BUCKET);
@@ -172,6 +181,7 @@ public class ModItemGroups {
         Skyblock.LOGGER.info("Registering Mod Item Groups for "+Skyblock.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItemGroups::addItemsToNaturalItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(ModItemGroups::addItemsToFunctionalItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItemGroups::addItemsToToolsItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItemGroups::addItemsToCombatItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItemGroups::addItemsToFoodAndDrinkItemGroup);

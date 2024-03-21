@@ -1,22 +1,25 @@
 package net.skyblock.item.custom;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.skyblock.item.ModPickaxe;
+import net.skyblock.item.ModMiningToolItem;
 import net.skyblock.item.ModToolMaterial;
 import net.skyblock.util.ModRarity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class JunglePickaxeItem extends ModPickaxe {
+public class JunglePickaxeItem extends ModMiningToolItem {
     public JunglePickaxeItem(Settings settings) {
-        super(ModToolMaterial.JUNGLE, settings, ModRarity.UNCOMMON, "jungle_pickaxe");
+        super(ModToolMaterial.JUNGLE, BlockTags.PICKAXE_MINEABLE, settings);
+        this.setModRarity(ModRarity.UNCOMMON);
+        this.setLoreKey("jungle_pickaxe");
     }
 
     @Override
-    public List<Object> getLoreArgs(int i) {
+    public List<Object> getLoreArgs(ItemStack stack, int i) {
         List<Object> list = new ArrayList<>();
         switch (i) {
             case 2 -> {

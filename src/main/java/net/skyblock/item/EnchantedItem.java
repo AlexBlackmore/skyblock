@@ -1,17 +1,25 @@
 package net.skyblock.item;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.skyblock.util.ModRarity;
 
 public class EnchantedItem extends ModItem {
-    public EnchantedItem(Settings settings) {
+    private final Item item;
+    public EnchantedItem(Item item) {
+        super(new FabricItemSettings());
+        this.item = item;
+    }
+    public EnchantedItem(Settings settings, Item item) {
         super(settings);
+        this.item = item;
     }
-    public EnchantedItem(Settings settings, ModRarity rarity) {
-        super(settings, rarity);
-    }
-    public EnchantedItem(Settings settings, ModRarity rarity, String name) {
-        super(settings, rarity, name);
+
+    @Override
+    public Text getName(ItemStack stack) {
+        return Text.translatable("item.skyblock.enchanted_item", item.getName());
     }
 
     @Override
