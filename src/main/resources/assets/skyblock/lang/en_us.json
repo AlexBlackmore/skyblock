@@ -1,4 +1,21 @@
 {
+  "formatting.skyblock.plural": "%ss",
+  "formatting.skyblock.multiplier.2": "double",
+  "formatting.skyblock.multiplier.3": "triple",
+  "formatting.skyblock.multiplier.4": "quadruple",
+  "formatting.skyblock.multiplier.5": "quintuple",
+
+  "potion.potency.0": "",
+  "potion.potency.1": "II",
+  "potion.potency.2": "III",
+  "potion.potency.3": "IV",
+  "potion.potency.4": "V",
+  "potion.potency.5": "VI",
+  "potion.potency.6": "VII",
+  "potion.potency.7": "VIII",
+  "potion.potency.8": "IX",
+  "potion.potency.9": "X",
+
   "attribute.name.generic.max_health": "§c❤Max Health",
   "attribute.name.generic.armor": "§a❈Armor",
   "attribute.name.generic.attack_damage": "§c❁Attack Damage",
@@ -100,7 +117,11 @@
 
   "item.skyblock.refined_mineral": "Refined Mineral",
   "item.skyblock.true_essence": "True Essence",
+
   "item.skyblock.sludge_juice": "Sludge Juice",
+  "lore.skyblock.sludge_juice.1": "§7A green viscous substance highly",
+  "lore.skyblock.sludge_juice.2": "§7valued by the Kalhuiki Tribe for",
+  "lore.skyblock.sludge_juice.3": "§7its stickiness.",
 
   "item.skyblock.rune": "◆ %s %s",
   "lore.skyblock.rune_weapon.1": "Apply this rune to weapons or",
@@ -206,7 +227,6 @@
 
   "item.skyblock.promising_pickaxe": "Promising Pickaxe",
   "item.skyblock.promising_axe": "Promising Axe",
-  "item.skyblock.promising_shovel": "Promising Shovel",
   "lore.skyblock.promising_tool.1": "§7Gains %s %s §7after",
   "lore.skyblock.promising_tool.2": "§7breaking %s §7more blocks.",
   "lore.skyblock.promising_tool_blocks": "§7Blocks Broken: %s",
@@ -217,12 +237,26 @@
   "lore.skyblock.promising_tool_old.5": "§7Gains %s %s §7after",
   "lore.skyblock.promising_tool_old.6": "§7breaking %s §7more blocks.",
 
+  "item.skyblock.promising_shovel": "Promising Shovel",
+  "lore.skyblock.promising_shovel.1": "§7Gains %s %s §7after",
+  "lore.skyblock.promising_shovel.2": "§7breaking %s §7more blocks.",
+  "lore.skyblock.promising_shovel.3": "",
+  "lore.skyblock.promising_shovel.4": "§7Grants a %s §7chance to %s",
+  "lore.skyblock.promising_shovel.5": "§7%s §7drops.",
+  "message.skyblock.promising_shovel": "§aYou received %s %s §adrops from your %s§a!",
+
   "item.skyblock.jungle_pickaxe": "Jungle Pickaxe",
   "lore.skyblock.jungle_pickaxe.1": "§7Gives a chance to drop",
   "lore.skyblock.jungle_pickaxe.2": "%s §7when mining in the",
   "lore.skyblock.jungle_pickaxe.3": "%s §7of the %s§7.",
 
 
+  "item.skyblock.stonk": "Stonk",
+  "lore.skyblock.stonk.1": "§7Mining %s §7with this ",
+  "lore.skyblock.stonk.2": "§7pickaxe prevents %s §7from",
+  "lore.skyblock.stonk.3": "§7spawning, drops %s§7,",
+  "lore.skyblock.stonk.4": "§7and grants a %s §7chance to",
+  "lore.skyblock.stonk.5": "§7receive an extra block.",
 
 
   "item.skyblock.blaze_hat": "Blaze Hat",
@@ -350,16 +384,6 @@
   "itemgroup.admin": "Admin",
   "itemgroup.runes": "Runes",
 
-  "potion.potency.0": "",
-  "potion.potency.1": "II",
-  "potion.potency.2": "III",
-  "potion.potency.3": "IV",
-  "potion.potency.4": "V",
-  "potion.potency.5": "VI",
-  "potion.potency.6": "VII",
-  "potion.potency.7": "VIII",
-  "potion.potency.8": "IX",
-  "potion.potency.9": "X",
 
 
   "enchantment.skyblock.cleave": "Cleave",

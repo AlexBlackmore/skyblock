@@ -35,6 +35,7 @@ public class CenturyCakeBlock extends ModBlock {
         this.EFFECT = effect;
         this.BONUS = bonus;
         this.ATTRIBUTE = attribute;
+
     }
     public CenturyCakeBlock(StatusEffect effect, float bonus, EntityAttribute attribute, ModRarity rarity) {
         super("century_cake", rarity, FabricBlockSettings.copyOf(Blocks.CAKE));

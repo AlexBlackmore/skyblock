@@ -21,11 +21,6 @@ public class ModHoeItem extends HoeItem implements ModItemInterface {
     public ModHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
-//    public ModHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, ModRarity rarity, String name) {
-//        super(material, attackDamage, attackSpeed, settings.rarity(ModRarity.convertModRarity(rarity)));
-//        this.rarity = rarity;
-//        this.loreKey = "lore.skyblock." + name;
-//    }
     public ModHoeItem setModRarity(ModRarity rarity) {
         this.rarity = rarity;
         return this;
@@ -40,6 +35,10 @@ public class ModHoeItem extends HoeItem implements ModItemInterface {
     }
 
     @Override
+    public Text getName() {
+        return Text.translatable(this.getTranslationKey()).formatted(this.rarity.formatting);
+    }
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);
@@ -51,7 +50,7 @@ public class ModHoeItem extends HoeItem implements ModItemInterface {
     public ModRarity getModRarity() {return this.rarity;}
     @Override
     public boolean hasGlint(ItemStack stack) {
-        return this.hasGlint;
+        return this.hasGlint || super.hasGlint(stack);
     }
 
 }

@@ -113,7 +113,7 @@ public class ModDyeableArmorItem extends DyeableArmorItem implements ModItemInte
     public ModRarity getModRarity() {return this.rarity;}
     @Override
     public boolean hasGlint(ItemStack stack) {
-        return this.hasGlint;
+        return this.hasGlint || super.hasGlint(stack);
     }
 
 }

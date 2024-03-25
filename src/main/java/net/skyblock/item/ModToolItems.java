@@ -14,8 +14,10 @@ import net.skyblock.item.custom.*;
 import net.skyblock.util.ModRarity;
 
 public class ModToolItems {
+    public static final Item STONK = registerItem("stonk", new StonkItem(ToolMaterials.GOLD, BlockTags.PICKAXE_MINEABLE, new FabricItemSettings()).setModRarity(ModRarity.EPIC));
     public static final Item PROMISING_PICKAXE = registerItem("promising_pickaxe", new PromisingMiningToolItem(ToolMaterials.IRON, BlockTags.PICKAXE_MINEABLE, new FabricItemSettings()).setModRarity(ModRarity.UNCOMMON));
     public static final Item PROMISING_AXE = registerItem("promising_axe", new PromisingMiningToolItem(ToolMaterials.IRON, BlockTags.AXE_MINEABLE, new FabricItemSettings()).setModRarity(ModRarity.UNCOMMON));
+    public static final Item PROMISING_SHOVEL = registerItem("promising_shovel", new PromisingShovelItem(ToolMaterials.IRON, new FabricItemSettings()).setModRarity(ModRarity.UNCOMMON));
     public static final Item ZOMBIE_PICKAXE = registerItem("zombie_pickaxe", new ZombiePickaxeItem(new FabricItemSettings()));
     public static final Item JUNGLE_PICKAXE = registerItem("jungle_pickaxe", new JunglePickaxeItem(new FabricItemSettings()));
     public static final Item ROOKIE_PICKAXE = registerItem("rookie_pickaxe", new ModMiningToolItem(ToolMaterials.STONE, BlockTags.PICKAXE_MINEABLE, new FabricItemSettings().rarity(Rarity.COMMON)));

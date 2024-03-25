@@ -94,7 +94,10 @@ public class ModItemGroups {
         entries.add(ModToolItems.HOE_OF_GREAT_TILLING);
         entries.add(ModToolItems.HOE_OF_GREATER_TILLING);
         entries.add(ModToolItems.HOE_OF_GREATEST_TILLING);
+        entries.add(ModToolItems.STONK);
         entries.add(ModToolItems.PROMISING_PICKAXE);
+        entries.add(ModToolItems.PROMISING_AXE);
+        entries.add(ModToolItems.PROMISING_SHOVEL);
         entries.add(ModToolItems.ZOMBIE_PICKAXE);
         entries.add(ModToolItems.JUNGLE_PICKAXE);
         entries.add(ModToolItems.FRACTURED_MITHRIL_PICKAXE);
@@ -172,6 +175,7 @@ public class ModItemGroups {
         entries.add(ModItems.REFINED_MINERAL);
         entries.add(ModItems.TRUE_ESSENCE);
         entries.add(ModItems.FOUL_FLESH);
+        entries.add(ModItems.SLUDGE_JUICE);
     }
 //    private static void addItemsToSpawnEggsItemGroup(FabricItemGroupEntries entries) {
 //    }

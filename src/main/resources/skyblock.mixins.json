@@ -3,6 +3,7 @@
   "package": "net.skyblock.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BlockMixin",
     "BrewingRecipeRegistryMixin",
     "ExampleMixin",
     "ItemMixin",

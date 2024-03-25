@@ -12,20 +12,6 @@ import net.skyblock.item.ModMiningToolItem;
 import java.util.List;
 
 public class LoreUtil {
-    public static void appendLore(ItemStack stack, List<Text> tooltip, ModItem item) {
-        for (int i=1 ; i<64 ; i++) {
-//            Text line = Text.translatable(item.getLoreKey() + "." + i);
-            MutableText line = MutableText.of(new TranslatableTextContent(item.getLoreKey() + "." + i, null, item.getLoreArgs(stack, i).toArray()));
-            if (line.getString().equals(item.getLoreKey() + "." + i)) {
-                if (i>1) {
-                    tooltip.add(Text.literal(" "));
-                }
-                break;
-            } else {
-                tooltip.add(line);
-            }
-        }
-    }
     public static void appendLore(ItemStack stack, List<Text> tooltip, ModItemInterface item) {
         for (int i=1 ; i<64 ; i++) {
             MutableText line = MutableText.of(new TranslatableTextContent(item.getLoreKey() + "." + i, null, item.getLoreArgs(stack, i).toArray()));

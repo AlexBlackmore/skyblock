@@ -48,6 +48,10 @@ public class ModItem extends Item implements ModItemInterface {
     }
 
     @Override
+    public Text getName() {
+        return Text.translatable(this.getTranslationKey()).formatted(this.rarity.formatting);
+    }
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         LoreUtil.appendLore(stack, tooltip, this);
         super.appendTooltip(stack, world, tooltip, context);

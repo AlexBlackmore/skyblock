@@ -34,9 +34,15 @@ public class PromisingMiningToolItem extends ModMiningToolItem {
         super(material, effectiveBlocks, settings);
         this.setLoreKey("promising_tool");
     }
+    public Enchantment getEnchantment() {
+        return this.enchant;
+    }
     public PromisingMiningToolItem setEnchantment(Enchantment enchant) {
         this.enchant = enchant;
         return this;
+    }
+    public int[] getBlockLevels() {
+        return this.blockLevels;
     }
     public PromisingMiningToolItem setBlockLevels(int[] blockLevels) {
         this.blockLevels = blockLevels;

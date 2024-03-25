@@ -106,6 +106,6 @@ public class ModArmorItem extends ArmorItem implements ModItemInterface {
     public ModRarity getModRarity() {return this.rarity;}
     @Override
     public boolean hasGlint(ItemStack stack) {
-        return this.hasGlint;
+        return this.hasGlint || super.hasGlint(stack);
     }
 }

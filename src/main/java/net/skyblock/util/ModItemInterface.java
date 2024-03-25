@@ -22,4 +22,5 @@ public interface ModItemInterface {
     public default ModRarity getModRarity() {
         return ModRarity.COMMON;
     }
+    public Text getName();
 }

@@ -15,6 +15,7 @@ import net.skyblock.util.ModRarity;
 public class ModItems {
     public static final Item MITHRIL = registerItem("mithril", new ModItem().setLoreKey("mithril").setModRarity(ModRarity.COMMON));
     public static final Item TITANIUM = registerItem("titanium", new ModItem().setLoreKey("titanium").setModRarity(ModRarity.RARE));
+    public static final Item SLUDGE_JUICE = registerItem("sludge_juice", new ModItem().setLoreKey("sludge_juice").setModRarity(ModRarity.UNCOMMON));
     public static final Item MAGICAL_WATER_BUCKET = registerItem("magical_water_bucket", new MagicalBucketItem(Fluids.WATER, new FabricItemSettings(), "magical_water_bucket"));
     public static final Item MAGICAL_LAVA_BUCKET = registerItem("magical_lava_bucket", new MagicalBucketItem(Fluids.LAVA, new FabricItemSettings().rarity(Rarity.UNCOMMON), "magical_lava_bucket"));
     public static final Item MAGICAL_MILK_BUCKET = registerItem("magical_milk_bucket", new MagicalMilkBucket(new FabricItemSettings(), "magical_milk_bucket"));
