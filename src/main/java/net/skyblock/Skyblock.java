@@ -1,7 +1,9 @@
 package net.skyblock;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.skyblock.block.ModBlocks;
 import net.skyblock.block.entity.ModBlockEntities;
+import net.skyblock.command.WarpCommand;
 import net.skyblock.effect.ModStatusEffects;
 import net.skyblock.enchantment.ModEnchantments;
 import net.skyblock.item.ModItem;
@@ -38,6 +40,8 @@ public class Skyblock implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+
+		CommandRegistrationCallback.EVENT.register(WarpCommand::register);
 
 	}
 }
