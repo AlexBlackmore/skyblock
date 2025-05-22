@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/fishing/clay_ball/5",
+  "display": {
+    "icon": {
+      "id": "minecraft:clay_ball",
+      "count": 6
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.clay_ball"},{"translate": "enchantment.level.6"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "2,500"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_clay_ball": {
+                "min": 2500
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/fishing/clay_ball/6"
+  }
+}

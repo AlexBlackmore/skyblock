@@ -1,0 +1,47 @@
+{
+  "parent": "skyblock:collections/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:stone_pickaxe"
+    },
+    "title": {"translate":"advancements.collections.generic.title","with": [{"translate": "advancements.mining.title"}]},
+    "description": {"translate":"advancements.collections.view.description","with": [{"translate": "advancements.mining.title"}]},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:coal",
+              "minecraft:cobblestone",
+              "minecraft:stone",
+              "minecraft:diamond",
+              "minecraft:emerald",
+              "minecraft:end_stone",
+              "minecraft:glowstone_dust",
+              "minecraft:gold_ingot",
+              "minecraft:gravel",
+              "minecraft:flint",
+              "minecraft:ice",
+              "minecraft:iron_ingot",
+              "minecraft:lapis_lazuli",
+              "minecraft:mycelium",
+              "minecraft:quartz",
+              "minecraft:netherrack",
+              "minecraft:obsidian",
+              "minecraft:red_sand",
+              "minecraft:redstone",
+              "minecraft:sand",
+              "skyblock:mithril"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "parent": "skyblock:skills/foraging/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:wooden_axe"
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "advancements.foraging.title"},{"translate": "enchantment.level.2"}]},
+    "description": [
+      {"translate":"advancements.skills.generic.description","with": [{"text": "175"},{"translate": "advancements.foraging.title"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.foraging","with": [{"translate": "enchantment.level.2","color": "yellow"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.coins","with": [{"text": "250","color": "gold"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "500","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_foraging": {
+                "min": 175
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/skills/foraging/2"
+  }
+}

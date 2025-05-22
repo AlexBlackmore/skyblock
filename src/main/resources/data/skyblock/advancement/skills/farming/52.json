@@ -1,0 +1,41 @@
+{
+  "parent": "skyblock:skills/farming/51",
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_hoe"
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "advancements.farming.title"},{"translate": "enchantment.level.52"}]},
+    "description": [
+      {"translate":"advancements.skills.generic.description","with": [{"text": "64,072,425"},{"translate": "advancements.farming.title"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.farming","with": [{"translate": "enchantment.level.52","color": "yellow"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.coins","with": [{"text": "1,000,000","color": "gold"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "3,000","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_farming": {
+                "min": 64072425
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/skills/farming/51-60"
+  }
+}

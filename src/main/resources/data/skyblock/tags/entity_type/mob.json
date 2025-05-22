@@ -1,0 +1,9 @@
+{
+  "values":[
+	  "#skyblock:passive",
+	  "#skyblock:neutral",
+	  "#skyblock:hostile",
+	  "#skyblock:boss",
+	  "#skyblock:unused"
+  ]
+}

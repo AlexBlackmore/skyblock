@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/combat/ghast_tear/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:ghast_tear",
+      "count": 2
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.ghast_tear"},{"translate": "enchantment.level.2"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "250"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_ghast_tear": {
+                "min": 250
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/combat/ghast_tear/2"
+  }
+}

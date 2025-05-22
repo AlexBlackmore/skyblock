@@ -1,0 +1,18 @@
+{
+  "parent": "skyblock:commands/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:command_block"
+    },
+    "title": {"translate":"Drops"},
+    "description": {"translate":"[::]"},
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "criterion": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

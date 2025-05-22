@@ -1,0 +1,31 @@
+{
+  "parent": "skyblock:skills/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:brewing_stand"
+    },
+    "title": {"translate":"advancements.skills.generic.title","with": [{"translate": "advancements.alchemy.title"}]},
+    "description": {"translate":"advancements.skills.alchemy.description","with": [{"translate": "advancements.alchemy.title"}]},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_alchemy": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

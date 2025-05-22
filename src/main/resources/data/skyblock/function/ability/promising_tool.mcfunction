@@ -1,0 +1,18 @@
+execute store result score @s dummy run data get entity @s SelectedItem.components.skyblock:promising_tool_blocks_broken
+
+execute if score @s dummy matches 10.. if items entity @s weapon.mainhand skyblock:promising_shovel unless data entity @s SelectedItem.components.minecraft:enchantments.minecraft:efficiency run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 25.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:1}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 100.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:2}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 250.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:3}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 500.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:4}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 1000.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:5}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 2000.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:6}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 5000.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:7}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 10000.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:8}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 20000.. if items entity @s weapon.mainhand skyblock:promising_shovel[minecraft:enchantments~[{enchantments:efficiency,levels:9}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+
+execute if score @s dummy matches 50.. if items entity @s weapon.mainhand skyblock:promising_axe unless data entity @s SelectedItem.components.minecraft:enchantments.minecraft:efficiency run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 250.. if items entity @s weapon.mainhand skyblock:promising_axe[minecraft:enchantments~[{enchantments:efficiency,levels:1}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 750.. if items entity @s weapon.mainhand skyblock:promising_axe[minecraft:enchantments~[{enchantments:efficiency,levels:2}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 1750.. if items entity @s weapon.mainhand skyblock:promising_axe[minecraft:enchantments~[{enchantments:efficiency,levels:3}]] run item modify entity @s weapon.mainhand skyblock:promising_tool
+execute if score @s dummy matches 3750.. if items entity @s weapon.mainhand skyblock:promising_axe[minecraft:enchantments~[{enchantments:efficiency,levels:4}]] run item modify entity @s weapon.mainhand skyblock:promising_tool

@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/farming/pumpkin/8",
+  "display": {
+    "icon": {
+      "id": "minecraft:pumpkin",
+      "count": 9
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "block.minecraft.pumpkin"},{"translate": "enchantment.level.9"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "50,000"},{"translate": "block.minecraft.pumpkin"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_pumpkin": {
+                "min": 50000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/farming/pumpkin/9"
+  }
+}

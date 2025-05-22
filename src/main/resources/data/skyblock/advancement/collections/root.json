@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:painting"
+    },
+    "title": {"translate":"advancements.collections.root.title"},
+    "description": {"translate":"advancements.collections.root.description"},
+    "background": "minecraft:textures/block/black_stained_glass.png",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "meet_leo": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity":{
+          "nbt":"{Tags:[\"leo_village\"]}"
+        }
+      }
+    }
+  }
+}

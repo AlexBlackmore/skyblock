@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/mining/gravel/3",
+  "display": {
+    "icon": {
+      "id": "minecraft:gravel",
+      "count": 4
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "block.minecraft.gravel"},{"translate": "enchantment.level.4"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description","with": [{"text": "1,000"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_gravel": {
+                "min": 1000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/mining/gravel/4"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "function": "minecraft:set_attributes",
+  "modifiers": [
+    {
+      "attribute": "minecraft:block_break_speed",
+      "operation": "add_multiplied_base",
+      "amount": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "dummy",
+        "scale": 0.1
+      },
+      "id": "skyblock:stored_potential",
+      "slot": "mainhand"
+    }
+  ],
+  "replace": false
+}

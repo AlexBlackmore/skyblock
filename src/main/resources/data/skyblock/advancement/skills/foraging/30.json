@@ -1,0 +1,41 @@
+{
+  "parent": "skyblock:skills/foraging/29",
+  "display": {
+    "icon": {
+      "id": "minecraft:birch_log"
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "advancements.foraging.title"},{"translate": "enchantment.level.30"}]},
+    "description": [
+      {"translate":"advancements.skills.generic.description","with": [{"text": "8,022,425"},{"translate": "advancements.foraging.title"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.foraging","with": [{"translate": "enchantment.level.30","color": "yellow"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.coins","with": [{"text": "350,000","color": "gold"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "2,000","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_foraging": {
+                "min": 8022425
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/skills/foraging/30"
+  }
+}

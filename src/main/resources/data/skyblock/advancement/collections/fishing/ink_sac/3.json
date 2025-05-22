@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/fishing/ink_sac/2",
+  "display": {
+    "icon": {
+      "id": "minecraft:ink_sac",
+      "count": 3
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.ink_sac"},{"translate": "enchantment.level.3"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "100"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_ink_sac": {
+                "min": 100
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/fishing/ink_sac/3"
+  }
+}

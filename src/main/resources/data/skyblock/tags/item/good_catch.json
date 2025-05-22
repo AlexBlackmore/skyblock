@@ -1,0 +1,15 @@
+{
+  "values":[
+	  "minecraft:bow",
+	  "minecraft:enchanted_book",
+	  "minecraft:name_tag",
+	  "minecraft:nautilus_shell",
+	  "minecraft:saddle",
+	  "minecraft:golden_apple",
+	  "minecraft:sea_lantern",
+	  "#minecraft:creeper_drop_music_discs",
+	  "minecraft:wet_sponge",
+	  "minecraft:prismarine_crystals",
+	  "minecraft:prismarine_shard"
+  ]
+}

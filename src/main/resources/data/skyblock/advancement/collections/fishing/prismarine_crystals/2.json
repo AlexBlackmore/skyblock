@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/fishing/prismarine_crystals/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:prismarine_crystals",
+      "count": 2
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.prismarine_crystals"},{"translate": "enchantment.level.2"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "25"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_prismarine_crystals": {
+                "min": 25
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/fishing/prismarine_crystals/2"
+  }
+}

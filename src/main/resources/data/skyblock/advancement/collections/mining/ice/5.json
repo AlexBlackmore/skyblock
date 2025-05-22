@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/mining/ice/4",
+  "display": {
+    "icon": {
+      "id": "minecraft:ice",
+      "count": 5
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "block.minecraft.ice"},{"translate": "enchantment.level.5"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description","with": [{"text": "1,000"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_ice": {
+                "min": 1000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/mining/ice/5"
+  }
+}

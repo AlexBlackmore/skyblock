@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:command_block"
+    },
+    "title": {"translate":"Root"},
+    "description": {"translate":"[::]"},
+    "background": "minecraft:textures/block/command_block.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "criterion": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

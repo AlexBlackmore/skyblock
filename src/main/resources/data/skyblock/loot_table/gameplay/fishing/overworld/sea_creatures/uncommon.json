@@ -1,0 +1,211 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:drowned_spawn_egg",
+          "weight": 17,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biomes": "#skyblock:spawns_drowned",
+                    "light": {
+                      "light": 0
+                    },
+                    "position": {
+                      "y": {
+                        "max": 57
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biomes": "#minecraft:more_frequent_drowned_spawns",
+                    "light": {
+                      "light": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:squid_spawn_egg",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_squids",
+                "position": {
+                  "y": {
+                    "max": 63,
+                    "min": 50
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:guardian_spawn_egg",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_guardians"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tadpole_spawn_egg",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_frogs"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dolphin_spawn_egg",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_dolphins"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glow_squid_spawn_egg",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "position": {
+                      "y": {
+                        "max": 30
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "biomes": "minecraft:deep_dark"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pufferfish_spawn_egg",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:gameplay/fishing/fish"
+}

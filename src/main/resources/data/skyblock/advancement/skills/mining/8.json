@@ -1,0 +1,41 @@
+{
+  "parent": "skyblock:skills/mining/7",
+  "display": {
+    "icon": {
+      "id": "minecraft:wooden_pickaxe"
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "advancements.mining.title"},{"translate": "enchantment.level.8"}]},
+    "description": [
+      {"translate":"advancements.skills.generic.description","with": [{"text": "4,425"},{"translate": "advancements.mining.title"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.mining","with": [{"translate": "enchantment.level.8","color": "yellow"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.coins","with": [{"text": "4,000","color": "gold"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "500","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_mining": {
+                "min": 4425
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/skills/mining/8"
+  }
+}

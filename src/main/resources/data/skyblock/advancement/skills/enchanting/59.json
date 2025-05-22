@@ -1,0 +1,41 @@
+{
+  "parent": "skyblock:skills/enchanting/58",
+  "display": {
+    "icon": {
+      "id": "minecraft:experience_bottle"
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "advancements.enchanting.title"},{"translate": "enchantment.level.59"}]},
+    "description": [
+      {"translate":"advancements.skills.generic.description","with": [{"text": "104,672,425"},{"translate": "advancements.enchanting.title"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.enchanting","with": [{"translate": "enchantment.level.59","color": "yellow"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.coins","with": [{"text": "1,000,000","color": "gold"}]}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "3,000","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "experience_enchanting": {
+                "min": 104672425
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/skills/enchanting/51-60"
+  }
+}

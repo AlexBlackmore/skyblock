@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/combat/bone/9",
+  "display": {
+    "icon": {
+      "id": "minecraft:bone",
+      "count": 10
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.bone"},{"translate": "enchantment.level.10"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "150,000"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_bone": {
+                "min": 150000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/combat/bone/10"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "skyblock:commands/drops/roll_em/melon/crazy_rare",
+  "display": {
+    "icon": {
+      "id": "skyblock:enchanted_melon"
+    },
+    "title": {"translate":"advancements.skyblock.roll_em.pray_to_rngesus.title"},
+    "description": {
+      "translate":"advancements.skyblock.roll_em.description",
+      "with": [
+        {
+          "text":"3x §bEnchanted Melon"
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "criterion": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "loot": [
+      "skyblock:gameplay/roll_em/melon/pray_to_rngesus"
+    ]
+  }
+}

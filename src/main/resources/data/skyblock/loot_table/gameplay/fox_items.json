@@ -1,0 +1,45 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_foot",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_hide",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:egg",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:feather",
+          "weight": 4
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

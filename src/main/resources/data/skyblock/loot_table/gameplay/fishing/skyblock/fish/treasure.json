@@ -1,0 +1,26 @@
+{
+  "pools":[
+    {
+      "rolls":1,
+      "entries":[
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Coins": true,
+                  "Min": 10000,
+                  "Max": 20000
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

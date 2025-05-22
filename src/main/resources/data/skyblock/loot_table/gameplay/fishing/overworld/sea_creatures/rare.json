@@ -1,0 +1,101 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:elder_guardian_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structures": "minecraft:monument"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:turtle_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_turtles",
+                "light": {
+                  "min": 8
+                },
+                "position": {
+                  "y": {
+                    "max": 65,
+                    "min": 62
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:axolotl_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#skyblock:spawns_axolotls"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "Summon": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:gameplay/fishing/fish"
+}

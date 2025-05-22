@@ -1,0 +1,36 @@
+{
+  "parent": "skyblock:collections/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:fishing_rod"
+    },
+    "title": {"translate":"advancements.collections.generic.title","with": [{"translate": "advancements.fishing.title"}]},
+    "description": {"translate":"advancements.collections.view.description","with": [{"translate": "advancements.fishing.title"}]},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:clay_ball",
+              "minecraft:tropical_fish",
+              "minecraft:ink_sac",
+              "minecraft:lily_pad",
+              "minecraft:prismarine_crystals",
+              "minecraft:prismarine_shard",
+              "minecraft:pufferfish",
+              "minecraft:cod",
+              "minecraft:salmon",
+              "minecraft:sponge"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:pure_coal",
+    "skyblock:pure_iron",
+    "skyblock:pure_gold",
+    "skyblock:pure_lapis",
+    "skyblock:pure_redstone",
+    "skyblock:pure_emerald",
+    "skyblock:pure_diamond",
+    "skyblock:pure_quartz",
+    "skyblock:sulphur_ore",
+    "skyblock:hard_stone",
+    "skyblock:dark_poor_mithril_ore",
+    "skyblock:poor_mithril_ore",
+    "skyblock:dark_mithril_ore",
+    "skyblock:smooth_mithril_ore",
+    "skyblock:mithril_ore",
+    "skyblock:rich_mithril_ore",
+    "skyblock:titanium_ore",
+    "skyblock:poor_umber_ore",
+    "skyblock:umber_ore",
+    "skyblock:rich_umber_ore",
+    "skyblock:poor_tungsten_ore",
+    "skyblock:tungsten_ore",
+    "skyblock:glacite_ore"
+  ]
+}

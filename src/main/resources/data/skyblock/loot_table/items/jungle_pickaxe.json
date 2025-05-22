@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "skyblock:sludge_juice"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

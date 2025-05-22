@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/foraging/jungle_log/5",
+  "display": {
+    "icon": {
+      "id": "minecraft:jungle_log",
+      "count": 6
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "block.minecraft.jungle_log"},{"translate": "enchantment.level.6"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "2,000"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_jungle_log": {
+                "min": 2000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/foraging/jungle_log/6"
+  }
+}

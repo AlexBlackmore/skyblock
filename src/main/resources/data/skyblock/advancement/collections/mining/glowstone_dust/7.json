@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/mining/glowstone_dust/6",
+  "display": {
+    "icon": {
+      "id": "minecraft:glowstone_dust",
+      "count": 7
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.glowstone_dust"},{"translate": "enchantment.level.7"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description","with": [{"text": "25,000"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_glowstone_dust": {
+                "min": 25000
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/mining/glowstone_dust/7"
+  }
+}

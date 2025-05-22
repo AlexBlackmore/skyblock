@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/farming",
+  "display": {
+    "icon": {
+      "id": "minecraft:sugar_cane",
+      "count": 1
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "item.minecraft.sugar_cane"},{"translate": "enchantment.level.1"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description","with": [{"text": "100"},{"translate": "item.minecraft.sugar_cane"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_sugar_cane": {
+                "min": 100
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/farming/sugar_cane/1"
+  }
+}

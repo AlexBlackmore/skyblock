@@ -1,0 +1,40 @@
+{
+  "parent": "skyblock:collections/foraging",
+  "display": {
+    "icon": {
+      "id": "minecraft:spruce_log",
+      "count": 1
+    },
+    "title": {"translate":"advancements.generic.title","with": [{"translate": "block.minecraft.spruce_log"},{"translate": "enchantment.level.1"}]},
+    "description": [
+      {"translate":"advancements.collections.generic.description_plural","with": [{"text": "50"}]},
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards"}],
+      [{"text": "\n"},{"translate": "advancements.skills.generic.rewards.bits","with": [{"text": "400","color": "aqua"}]}]
+    ],
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "score": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "collection_spruce_log": {
+                "min": 50
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "skyblock:advancement/collections/foraging/spruce_log/1"
+  }
+}

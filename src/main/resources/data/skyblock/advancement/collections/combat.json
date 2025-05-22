@@ -1,0 +1,36 @@
+{
+  "parent": "skyblock:collections/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:stone_sword"
+    },
+    "title": {"translate":"advancements.collections.generic.title","with": [{"translate": "advancements.combat.title"}]},
+    "description": {"translate":"advancements.collections.view.description","with": [{"translate": "advancements.combat.title"}]},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:blaze_rod",
+              "minecraft:bone",
+              "minecraft:ender_pearl",
+              "minecraft:ghast_tear",
+              "minecraft:gunpowder",
+              "minecraft:magma_cream",
+              "minecraft:rotten_flesh",
+              "minecraft:slime_ball",
+              "minecraft:spider_eye",
+              "minecraft:string"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

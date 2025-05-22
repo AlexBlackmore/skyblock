@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#skyblock:needs_breaking_power_9",
+    "#skyblock:needs_breaking_power_8",
+    "#skyblock:needs_breaking_power_7",
+    "#skyblock:needs_breaking_power_6",
+    "#skyblock:needs_netherite_tool",
+    "#minecraft:needs_diamond_tool",
+    "#minecraft:needs_iron_tool",
+    "#minecraft:needs_stone_tool"
+  ]
+}

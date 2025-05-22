@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:pure_coal",
+    "skyblock:pure_iron",
+    "skyblock:pure_gold",
+    "skyblock:pure_lapis",
+    "skyblock:pure_redstone",
+    "skyblock:pure_emerald",
+    "skyblock:pure_diamond",
+    "skyblock:pure_quartz"
+  ]
+}

@@ -1,0 +1,1 @@
+advancement revoke @s[advancements={skyblock:commands/drops/roll_em/melon/uncommon=true}] only skyblock:commands/drops/roll_em/melon/uncommon

@@ -1,0 +1,28 @@
+{
+  "parent": "skyblock:commands/drops",
+  "display": {
+    "icon": {
+      "id": "skyblock:enchanted_pumpkin"
+    },
+    "title": {"translate":"advancements.skyblock.roll_em.uncommon.title"},
+    "description": {
+      "translate":"advancements.skyblock.roll_em.description",
+      "with": [
+        {"text":"1x §eEnchanted Pumpkin"}
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "criterion": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "loot": [
+      "skyblock:gameplay/roll_em/pumpkin/uncommon"
+    ]
+  }
+}
