@@ -1,21 +1,14 @@
 package net.skyblock.ability;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
@@ -31,6 +24,10 @@ public abstract class Ability {
     public Ability(String name, int loreLines) {
         this.name = name;
         this.loreLines = loreLines;
+    }
+
+    public boolean isHidden() {
+        return (!this.showName && !this.hasCost && !hasCooldown && !hasMax && this.loreLines == 0);
     }
 
     public Ability setShowName(boolean showName) {
@@ -59,6 +56,10 @@ public abstract class Ability {
     public ActionResult useOnBlock(ItemUsageContext context) {return ActionResult.PASS;}
 
     public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
+        if (isHidden()) {
+            return;
+        }
+        textConsumer.accept(Text.literal(""));
         if (this.showName) {
             if (this.isActive) {
                 textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), Text.translatable("lore.skyblock.ability.right_click")));

@@ -1,9 +1,16 @@
 {
+  "replace": false,
   "values": [
-    "skyblock:efficient_axe",
-    "skyblock:sweet_axe",
+    "skyblock:rookie_axe",
     "skyblock:jungle_axe",
     "skyblock:treecapitator",
-    "skyblock:promising_axe"
+    "skyblock:promising_axe",
+    "skyblock:basic_gardening_axe",
+    "skyblock:advanced_gardening_axe",
+    "skyblock:cocoa_chopper",
+    "skyblock:melon_dicer",
+    "skyblock:pumpkin_dicer",
+    "skyblock:efficient_axe",
+    "skyblock:sweet_axe"
   ]
 }

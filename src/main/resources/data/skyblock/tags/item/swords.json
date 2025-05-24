@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "skyblock:chicken_axe",
+    "skyblock:cow_axe",
+    "skyblock:mooshroom_axe",
+    "skyblock:pig_axe",
+    "skyblock:rabbit_axe",
+    "skyblock:sheep_axe"
+  ]
+}

@@ -196,6 +196,18 @@
   "ability.skyblock.snow_placer.1": "§7a §e3x3 §fSnow §7layer.",
   "ability.skyblock.snow_placer.cost": "§610 coins",
 
+  "item.skyblock.stonk": "Stonk",
+  "ability.skyblock.stonk.0": "§7When mining %s §7with this",
+  "ability.skyblock.stonk.1": "§7pickaxe, §cEndermites §7won't spawn",
+  "ability.skyblock.stonk.2": "§7and experience will be dropped.",
+  "ability.skyblock.stonk.3": "%s §7chance to drop an extra",
+  "ability.skyblock.stonk.4": "%s §7block.",
+
+  "item.skyblock.fractured_mithril_pickaxe": "Fractured Mithril Pickaxe",
+  "item.skyblock.bandaged_mithril_pickaxe": "Bandaged Mithril Pickaxe",
+  "item.skyblock.mithril_pickaxe": "Mithril Pickaxe",
+  "item.skyblock.refined_mithril_pickaxe": "Refined Mithril Pickaxe",
+
   "item.skyblock.zombie_pickaxe": "Zombie Pickaxe",
   "item.skyblock.zombie_pickaxe_legacy": "Zombie Pickaxe",
   "ability.skyblock.zombie.0": "§7Grants %s §7for %s §7when",
@@ -220,7 +232,7 @@
 
   "item.skyblock.chicken_axe": "Chicken Axe",
   "item.skyblock.cow_axe": "Cow Axe",
-  "item.skyblock.mushroom_cow_axe": "Mushroom Cow Axe",
+  "item.skyblock.mooshroom_axe": "Mooshroom Axe",
   "item.skyblock.pig_axe": "Pig Axe",
   "item.skyblock.rabbit_axe": "Rabbit Axe",
   "item.skyblock.sheep_axe": "Sheep Axe",

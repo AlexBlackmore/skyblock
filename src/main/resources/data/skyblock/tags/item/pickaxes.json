@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
-    "skyblock:lapis_pickaxe"
+    "skyblock:lapis_pickaxe",
+    "skyblock:rookie_pickaxe",
+    "skyblock:zombie_pickaxe_legacy",
+    "skyblock:zombie_pickaxe",
+    "skyblock:jungle_pickaxe",
+    "skyblock:promising_pickaxe_legacy",
+    "skyblock:promising_pickaxe",
+    "skyblock:stonk",
+    "skyblock:fractured_mithril_pickaxe",
+    "skyblock:bandaged_mithril_pickaxe",
+    "skyblock:mithril_pickaxe",
+    "skyblock:refined_mithril_pickaxe"
   ]
 }

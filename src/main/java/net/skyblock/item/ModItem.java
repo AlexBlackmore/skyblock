@@ -65,7 +65,6 @@ public class ModItem extends Item implements ExpandedRarity {
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         for (Ability ability : abilities) {
             ability.appendTooltip(stack, textConsumer);
-            textConsumer.accept(Text.literal(""));
         }
     }
 

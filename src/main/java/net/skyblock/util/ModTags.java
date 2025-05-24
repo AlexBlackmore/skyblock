@@ -40,6 +40,7 @@ public class ModTags {
         public static final TagKey<Item> EMPTY = createTag("empty");
         public static final TagKey<Item> LAPIS_TOOL_MATERIALS = createTag("lapis_tool_materials");
         public static final TagKey<Item> ZOMBIE_TOOL_MATERIALS = createTag("zombie_tool_materials");
+        public static final TagKey<Item> MITHRIL_TOOL_MATERIALS = createTag("mithril_tool_materials");
         public static final TagKey<Item> JUNGLE_AXE_MATERIALS = createTag("jungle_axe_materials");
         public static final TagKey<Item> JUNGLE_PICKAXE_MATERIALS = createTag("jungle_pickaxe_materials");
         public static final TagKey<Item> TREECAPITATOR_TOOL_MATERIALS = createTag("treecapitator_materials");

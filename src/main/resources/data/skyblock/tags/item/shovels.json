@@ -1,5 +1,8 @@
 {
+  "replace": false,
   "values": [
-    "skyblock:promising_shovel"
+    "skyblock:promising_shovel",
+    "skyblock:flint_shovel",
+    "skyblock:snow_shovel"
   ]
 }
