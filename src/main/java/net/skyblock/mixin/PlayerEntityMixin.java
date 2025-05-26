@@ -71,6 +71,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 .add(ModEntityAttributes.ORE_FORTUNE)
                 .add(ModEntityAttributes.BLOCK_FORTUNE)
                 .add(ModEntityAttributes.DWARVEN_METAL_FORTUNE)
-                .add(ModEntityAttributes.GEMSTONE_FORTUNE);
+                .add(ModEntityAttributes.GEMSTONE_FORTUNE)
+                .add(ModEntityAttributes.TITANIUM_FORTUNE);
     }
 }

@@ -1,8 +1,6 @@
 package net.skyblock.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,6 +19,7 @@ public class EnchantedItems {
     public static final Item ENCHANTED_JUNGLE_LOG = registerItem("enchanted_jungle_log", Items.JUNGLE_LOG, Rarity.UNCOMMON);
     public static final Item ENCHANTED_OBSIDIAN = registerItem("enchanted_obsidian", Items.OBSIDIAN, Rarity.UNCOMMON);
     public static final Item ENCHANTED_MITHRIL = registerItem("enchanted_mithril", ModItems.MITHRIL, Rarity.RARE);
+    public static final Item ENCHANTED_TITANIUM = registerItem("enchanted_titanium", ModItems.TITANIUM, Rarity.EPIC);
 
     private static Item registerItem(String name, Item item, Rarity rarity) {
         return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name),

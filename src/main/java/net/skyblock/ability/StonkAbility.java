@@ -28,7 +28,7 @@ public class StonkAbility extends Ability {
     //Mimic code from Block.class: dropExperienceWhenMined(), dropExperience()
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        if (world instanceof ServerWorld server) {
+        if (world instanceof ServerWorld server && state.getBlock() == this.block) {
             int i = EnchantmentHelper.getBlockExperience(server, stack, this.experience);
             if (i > 0) {
                 if (server.getGameRules().getBoolean(GameRules.DO_TILE_DROPS)) {
@@ -36,7 +36,7 @@ public class StonkAbility extends Ability {
                 }
             }
         }
-        return false;
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     @Override

@@ -24,6 +24,8 @@ public class ModItemGroups {
                         entries.add(EnchantedItems.ENCHANTED_JUNGLE_LOG);
                         entries.add(EnchantedItems.ENCHANTED_OBSIDIAN);
                         entries.add(EnchantedItems.ENCHANTED_MITHRIL);
+                        entries.add(EnchantedItems.ENCHANTED_TITANIUM);
+                        entries.add(EnchantedItems.ENCHANTED_COBBLESTONE);
                     }))
                     .build());
 

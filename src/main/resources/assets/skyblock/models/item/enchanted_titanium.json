@@ -1,0 +1,6 @@
+{
+	"parent": "skyblock:item/template_head",
+	"textures": {
+		"1": "skyblock:item/skins/enchanted_titanium"
+	}
+}

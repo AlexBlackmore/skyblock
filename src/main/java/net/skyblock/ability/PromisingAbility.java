@@ -1,9 +1,6 @@
 package net.skyblock.ability;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.ToolComponent;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -49,13 +46,7 @@ public class PromisingAbility extends Ability {
             }
         }
 
-        ToolComponent toolComponent = stack.get(DataComponentTypes.TOOL);
-        if (toolComponent != null) {
-            if (!world.isClient && state.getHardness(world, pos) != 0.0F && toolComponent.damagePerBlock() > 0) {
-                stack.damage(toolComponent.damagePerBlock(), miner, EquipmentSlot.MAINHAND);
-            }
-        }
-        return false;
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     @Override

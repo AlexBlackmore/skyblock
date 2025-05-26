@@ -39,7 +39,7 @@ public class RollEmAbility extends Ability {
                         "execute if predicate skyblock:drops/roll_em/" + this.id + "/pray_to_rngesus run advancement grant @s only skyblock:commands/drops/roll_em/" + this.id + "/pray_to_rngesus");
             }
         }
-        return false;
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     @Override
@@ -48,9 +48,7 @@ public class RollEmAbility extends Ability {
 
         for (int i=0 ; i<this.loreLines ; i++) {
             switch (i) {
-                case 0,3 -> {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, this.block.getName()));
-                }
+                case 0,3 -> textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, this.block.getName()));
                 default -> {
                     textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
                 }

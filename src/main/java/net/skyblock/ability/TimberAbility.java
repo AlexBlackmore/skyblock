@@ -43,10 +43,8 @@ public class TimberAbility extends Ability {
             if (state.getHardness(world, pos) != 0.0F && toolComponent.damagePerBlock() > 0) {
                 stack.damage(toolComponent.damagePerBlock() * blocksBroken, miner, EquipmentSlot.MAINHAND);
             }
-
-            return true;
         }
-        return false;
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     private List<BlockPos> timber(World world, BlockState state, BlockPos pos) {

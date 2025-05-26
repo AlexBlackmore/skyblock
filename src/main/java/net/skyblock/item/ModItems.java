@@ -23,16 +23,16 @@ public class ModItems {
     public static final Item MITHRIL = registerItem("mithril", Rarity.COMMON, 4);
     public static final Item BAT_THE_FISH = registerItem("bat_the_fish", new ModItem("bat_the_fish", ExpandedRarity.ModRarity.SPECIAL, 1));
     public static final Item SLUDGE_JUICE = registerItem("sludge_juice", Rarity.UNCOMMON, 3);
+    public static final Item TITANIUM = registerItem("titanium", Rarity.RARE, 3);
 
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name), item);
     }
     public static Item registerItem(String name, Item.Settings settings) {
-        return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name), new Item(settings));
+        return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name), new Item(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID,name)))));
     }
     public static Item registerItem(String name, Rarity rarity, int loreLines) {
-        Item.Settings settings = new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID,name)))
-                .rarity(rarity);
+        Item.Settings settings = new Item.Settings().rarity(rarity);
 
         if (loreLines >= 1) {
             settings = settings.component(DataComponentTypes.LORE, new LoreComponent(ModItems.getLoreList(name,loreLines)));
@@ -49,6 +49,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModItems.MITHRIL);
             entries.add(ModItems.SLUDGE_JUICE);
+            entries.add(ModItems.TITANIUM);
         });
     }
 

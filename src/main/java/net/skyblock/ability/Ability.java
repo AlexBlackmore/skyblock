@@ -56,28 +56,26 @@ public abstract class Ability {
     public ActionResult useOnBlock(ItemUsageContext context) {return ActionResult.PASS;}
 
     public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        if (isHidden()) {
-            return;
-        }
-        textConsumer.accept(Text.literal(""));
-        if (this.showName) {
-            if (this.isActive) {
-                textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), Text.translatable("lore.skyblock.ability.right_click")));
-            } else {
-                textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), ""));
+        if (!isHidden()) {
+            if (this.showName) {
+                if (this.isActive) {
+                    textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), Text.translatable("lore.skyblock.ability.right_click")));
+                } else {
+                    textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), ""));
+                }
             }
-        }
-        for (int i=0 ; i<this.loreLines ; i++) {
-            textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
-        }
-        if (this.hasMax) {
-            textConsumer.accept(Text.translatable("lore.skyblock.ability.max", Text.translatable("ability.skyblock." + name + ".max")));
-        }
-        if (this.hasCost) {
-            textConsumer.accept(Text.translatable("lore.skyblock.ability.cost", Text.translatable("ability.skyblock." + name + ".cost")));
-        }
-        if (this.hasCooldown) {
-            textConsumer.accept(Text.translatable("lore.skyblock.ability.cooldown", Text.translatable("ability.skyblock." + name + ".cooldown")));
+            for (int i=0 ; i<this.loreLines ; i++) {
+                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
+            }
+            if (this.hasMax) {
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.max", Text.translatable("ability.skyblock." + name + ".max")));
+            }
+            if (this.hasCost) {
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.cost", Text.translatable("ability.skyblock." + name + ".cost")));
+            }
+            if (this.hasCooldown) {
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.cooldown", Text.translatable("ability.skyblock." + name + ".cooldown")));
+            }
         }
     }
 

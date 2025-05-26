@@ -48,6 +48,8 @@ public class ModTags {
         public static final TagKey<Item> FLINT_TOOL_MATERIALS = createTag("flint_tool_materials");
         public static final TagKey<Item> MELON_DICER_TOOL_MATERIALS = createTag("melon_dicer_tool_materials");
         public static final TagKey<Item> PUMPKIN_DICER_TOOL_MATERIALS = createTag("pumpkin_dicer_tool_materials");
+        public static final TagKey<Item> TITANIUM_TOOL_MATERIALS = createTag("titanium_tool_materials");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID, name));
         }

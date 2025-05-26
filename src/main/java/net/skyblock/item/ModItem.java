@@ -47,10 +47,15 @@ public class ModItem extends Item implements ExpandedRarity {
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
+        ActionResult a = ActionResult.PASS;
+        ActionResult b;
         for (Ability ability : this.abilities) {
-            ability.useOnBlock(context);
+            b = ability.useOnBlock(context);
+            if (a != b) {
+                a = b;
+            }
         }
-        return super.useOnBlock(context);
+        return a;
     }
 
     @Override
@@ -65,6 +70,9 @@ public class ModItem extends Item implements ExpandedRarity {
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         for (Ability ability : abilities) {
             ability.appendTooltip(stack, textConsumer);
+        }
+        if (abilities.length > 0 && stack.hasEnchantments()) {
+            textConsumer.accept(Text.literal(""));
         }
     }
 

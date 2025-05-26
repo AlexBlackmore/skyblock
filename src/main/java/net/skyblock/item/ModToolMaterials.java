@@ -9,25 +9,18 @@ import net.minecraft.util.Rarity;
 import net.skyblock.util.ModTags;
 
 public class ModToolMaterials {
+    //From hypixel wiki
+    private static final float DEFAULT_WOODEN_MINING_SPEED = 70.0f;
+    private static final float DEFAULT_GOLDEN_MINING_SPEED = 250.0f;
+    private static final float DEFAULT_STONE_MINING_SPEED = 110.0f;
+    private static final float DEFAULT_IRON_MINING_SPEED = 160.0f;
+    private static final float DEFAULT_DIAMOND_MINING_SPEED = 220.0f;
 
-    public static final ToolMaterial LAPIS = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, ToolMaterial.DIAMOND.durability() * 2, ToolMaterial.DIAMOND.speed() * 0.9090f, 0.0f, ToolMaterial.DIAMOND.enchantmentValue(), ModTags.Items.LAPIS_TOOL_MATERIALS);
-    public static final ToolMaterial ZOMBIE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, ToolMaterial.IRON.durability(), ToolMaterial.IRON.speed() * 1.1875f, 0.0f, ToolMaterial.IRON.enchantmentValue(), ModTags.Items.ZOMBIE_TOOL_MATERIALS);
     public static final ToolMaterial ROOKIE = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, ToolMaterial.STONE.durability(), ToolMaterial.STONE.speed() * 1.3636f, 0.0f, ToolMaterial.STONE.enchantmentValue(), ModTags.Items.EMPTY);
-    public static final ToolMaterial JUNGLE_AXE = new ToolMaterial(BlockTags.INCORRECT_FOR_WOODEN_TOOL, ToolMaterial.WOOD.durability() * 2, ToolMaterial.WOOD.speed(), 0.0f, ToolMaterial.WOOD.enchantmentValue(), ModTags.Items.JUNGLE_AXE_MATERIALS);
-    public static final ToolMaterial JUNGLE_PICKAXE = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, ToolMaterial.WOOD.durability() * 2, ToolMaterial.WOOD.speed() * 4.7143f, 0.0f, ToolMaterial.WOOD.enchantmentValue(), ModTags.Items.JUNGLE_PICKAXE_MATERIALS);
-    public static final ToolMaterial FRACTURED_MITHRIL_PICKAXE = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, ToolMaterial.WOOD.durability() * 2, ToolMaterial.WOOD.speed() * 4.7143f, 0.0f, ToolMaterial.WOOD.enchantmentValue(), ModTags.Items.JUNGLE_PICKAXE_MATERIALS);
-    public static final ToolMaterial TREECAPITATOR = new ToolMaterial(BlockTags.INCORRECT_FOR_GOLD_TOOL, ToolMaterial.GOLD.durability() * 4, ToolMaterial.GOLD.speed(), 0.0f, ToolMaterial.GOLD.enchantmentValue(), ModTags.Items.TREECAPITATOR_TOOL_MATERIALS);
+    public static final ToolMaterial ZOMBIE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, ToolMaterial.IRON.durability(), ToolMaterial.IRON.speed() * 1.1875f, 0.0f, ToolMaterial.IRON.enchantmentValue(), ModTags.Items.ZOMBIE_TOOL_MATERIALS);
     public static final ToolMaterial PROMISING = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, ToolMaterial.IRON.durability() * 2, ToolMaterial.IRON.speed() * 0.3125f, 0.0f, ToolMaterial.IRON.enchantmentValue(), ModTags.Items.PROMISING_TOOL_MATERIALS);
-    public static final ToolMaterial FLINT = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, ToolMaterial.IRON.durability(), ToolMaterial.IRON.speed(), 0.0f, ToolMaterial.IRON.enchantmentValue(), ModTags.Items.FLINT_TOOL_MATERIALS);
-    public static final ToolMaterial MELON_DICER = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, ToolMaterial.DIAMOND.durability() * 4, ToolMaterial.DIAMOND.speed(), 0.0f, ToolMaterial.DIAMOND.enchantmentValue(), ModTags.Items.MELON_DICER_TOOL_MATERIALS);
-    public static final ToolMaterial PUMPKIN_DICER = new ToolMaterial(BlockTags.INCORRECT_FOR_GOLD_TOOL, ToolMaterial.GOLD.durability() * 4, ToolMaterial.GOLD.speed(), 0.0f, ToolMaterial.GOLD.enchantmentValue(), ModTags.Items.PUMPKIN_DICER_TOOL_MATERIALS);
 
-    public static final ToolMaterial BREAKING_POWER_2 = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, ToolMaterial.STONE.durability(), ToolMaterial.STONE.speed(), ToolMaterial.STONE.attackDamageBonus(), ToolMaterial.STONE.enchantmentValue(), ModTags.Items.EMPTY);
-    public static final ToolMaterial BREAKING_POWER_3 = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, ToolMaterial.IRON.durability(), ToolMaterial.IRON.speed(), ToolMaterial.IRON.attackDamageBonus(), ToolMaterial.IRON.enchantmentValue(), ModTags.Items.EMPTY);
-    public static final ToolMaterial BREAKING_POWER_4 = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, ToolMaterial.DIAMOND.durability(), ToolMaterial.DIAMOND.speed(), ToolMaterial.DIAMOND.attackDamageBonus(), ToolMaterial.DIAMOND.enchantmentValue(), ModTags.Items.EMPTY);
-    public static final ToolMaterial BREAKING_POWER_5 = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, ToolMaterial.NETHERITE.durability(), ToolMaterial.NETHERITE.speed(), ToolMaterial.NETHERITE.attackDamageBonus(), ToolMaterial.NETHERITE.enchantmentValue(), ModTags.Items.EMPTY);
-
-    //Creates irrepairable tool material
+    //Creates single-use tool material
     public static ToolMaterial getToolMaterial(int breakingPower, int durability, float speed, float attackDamage, int enchantmentValue, TagKey<Item> repairItems) {
         TagKey<Block> incorrectBlocksForDrops;
         switch (breakingPower) {
@@ -46,12 +39,20 @@ public class ModToolMaterials {
         return new ToolMaterial(incorrectBlocksForDrops, durability, speed, attackDamage, enchantmentValue, repairItems);
     }
 
-    //Creates irrepairable material by scaling the durability and speed values of a vanilla material
-    public static ToolMaterial getToolMaterial(ToolMaterial vanilla, int breakingPower, int durabilityMultiplier, float speedMultiplier, TagKey<Item> repairItems) {
-        return getToolMaterial(breakingPower, vanilla.durability() * durabilityMultiplier, vanilla.speed() * speedMultiplier, 0, vanilla.enchantmentValue(), repairItems);
+    //Creates material with scaled durability and speed based on a vanilla material but with a unique breaking power.
+    //Converts mining speed system used on hypixel to vanilla by taking a tool's given hypixel speed, divides it by the
+    // vanilla hypixel mining speed, and uses that multiplier to scale the vanilla speed
+    public static ToolMaterial getToolMaterial(ToolMaterial vanilla, int breakingPower, int durabilityMultiplier, float speedNumerator, TagKey<Item> repairItems) {
+        if (vanilla == ToolMaterial.WOOD) speedNumerator /= DEFAULT_WOODEN_MINING_SPEED;
+        else if (vanilla == ToolMaterial.STONE) speedNumerator /= DEFAULT_STONE_MINING_SPEED;
+        else if (vanilla == ToolMaterial.GOLD) speedNumerator /= DEFAULT_GOLDEN_MINING_SPEED;
+        else if (vanilla == ToolMaterial.IRON) speedNumerator /= DEFAULT_IRON_MINING_SPEED;
+        else if (vanilla == ToolMaterial.DIAMOND) speedNumerator /= DEFAULT_DIAMOND_MINING_SPEED;
+
+        return getToolMaterial(breakingPower, vanilla.durability() * durabilityMultiplier, vanilla.speed() * speedNumerator, 0, vanilla.enchantmentValue(), repairItems);
     }
 
-    //Creates irrepairable material by scaling the durability and speed values of a vanilla material
+    //Creates material by scaling the durability and speed values of a vanilla material
     public static ToolMaterial getToolMaterial(ToolMaterial vanilla, int durabilityMultiplier, float speedMultiplier, TagKey<Item> repairItems) {
         int breakingPower;
         if (vanilla == ToolMaterial.STONE) breakingPower = 2;
@@ -60,7 +61,12 @@ public class ModToolMaterials {
         else if (vanilla == ToolMaterial.NETHERITE) breakingPower = 5;
         else breakingPower = 1;
 
-        return getToolMaterial(breakingPower, vanilla.durability() * durabilityMultiplier, vanilla.speed() * speedMultiplier, 0, vanilla.enchantmentValue(), repairItems);
+        int durability = vanilla.durability();
+        if (vanilla == ToolMaterial.GOLD) {
+            durability = ToolMaterial.NETHERITE.durability();
+        }
+
+        return getToolMaterial(breakingPower, durability * durabilityMultiplier, vanilla.speed() * speedMultiplier, 0, vanilla.enchantmentValue(), repairItems);
     }
 
     //Creates irrepairable material with durability scaled based on rarity

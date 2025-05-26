@@ -36,7 +36,7 @@
                     "source_entity": {
                       "equipment": {
                         "mainhand": {
-                          "items": "skyblock:mushroom_cow_axe"
+                          "items": "skyblock:mooshroom_axe"
                         }
                       }
                     }
@@ -121,7 +121,7 @@
                     "source_entity": {
                       "equipment": {
                         "mainhand": {
-                          "items": "skyblock:mushroom_cow_axe"
+                          "items": "skyblock:mooshroom_axe"
                         }
                       }
                     }

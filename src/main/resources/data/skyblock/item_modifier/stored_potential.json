@@ -2,7 +2,7 @@
   "function": "minecraft:set_attributes",
   "modifiers": [
     {
-      "attribute": "minecraft:block_break_speed",
+      "attribute": "minecraft:mining_efficiency",
       "operation": "add_multiplied_base",
       "amount": {
         "type": "score",

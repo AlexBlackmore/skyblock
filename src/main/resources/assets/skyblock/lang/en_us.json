@@ -99,9 +99,25 @@
 
   "attribute.name.player.pristine": "Pristine",
   "attribute.name.fortune.foraging": "Foraging Fortune",
+
   "attribute.name.fortune.farming": "Farming Fortune",
+  "attribute.name.fortune.wheat": "Wheat Fortune",
+  "attribute.name.fortune.potato": "Potato Fortune",
+  "attribute.name.fortune.carrot": "Carrot Fortune",
+  "attribute.name.fortune.pumpkin": "Pumpkin Fortune",
+  "attribute.name.fortune.melon": "Melon Fortune",
+  "attribute.name.fortune.cactus": "Cactus Fortune",
+  "attribute.name.fortune.nether_wart": "Nether Wart Fortune",
+  "attribute.name.fortune.cocoa_beans": "Cocoa Beans Fortune",
+  "attribute.name.fortune.mushroom": "Mushroom Fortune",
+  "attribute.name.fortune.sugar_cane": "Sugar Cane Fortune",
+
   "attribute.name.fortune.mining": "Mining Fortune",
   "attribute.name.fortune.ore": "Ore Fortune",
+  "attribute.name.fortune.block": "Block Fortune",
+  "attribute.name.fortune.dwarven_metal": "Dwarven Metal Fortune",
+  "attribute.name.fortune.gemstone": "Gemstone Fortune",
+  "attribute.name.fortune.titanium": "Titanium Fortune",
 
   "currency.skyblock.mithril_powder": "§2᠅Mithril Powder",
   "currency.skyblock.gemstone_powder": "§d᠅Gemstone Powder",
@@ -129,6 +145,11 @@
   "lore.skyblock.mithril.1": "§7§owhile the Dwarves, who loved it",
   "lore.skyblock.mithril.2": "§7§oabove all things, had their own,\"",
   "lore.skyblock.mithril.3": "§7§osecret name for it.\"",
+
+  "item.skyblock.titanium": "Titanium",
+  "lore.skyblock.titanium.0": "§7§oIts strength and resistance to",
+  "lore.skyblock.titanium.1": "§7§ocorrosion are the highest of any",
+  "lore.skyblock.titanium.2": "§7§ometallic element.",
 
   "item.skyblock.jungle_pickaxe": "Jungle Pickaxe",
   "lore.skyblock.jungle_pickaxe.0": "§7Gives a chance to drop §eSludge Juice",
@@ -203,6 +224,12 @@
   "ability.skyblock.stonk.3": "%s §7chance to drop an extra",
   "ability.skyblock.stonk.4": "%s §7block.",
 
+  "item.skyblock.rusty_titanium_pickaxe": "Rusty Titanium Pickaxe",
+  "item.skyblock.titanium_pickaxe": "Titanium Pickaxe",
+  "item.skyblock.polished_titanium_pickaxe": "Polished Titanium Pickaxe",
+  "ability.skyblock.titanium_fortune.0": "§7Grants %s %s §7when",
+  "ability.skyblock.titanium_fortune.1": "§7mining %s§7.",
+
   "item.skyblock.fractured_mithril_pickaxe": "Fractured Mithril Pickaxe",
   "item.skyblock.bandaged_mithril_pickaxe": "Bandaged Mithril Pickaxe",
   "item.skyblock.mithril_pickaxe": "Mithril Pickaxe",
@@ -241,9 +268,46 @@
   "ability.skyblock.animal_axe.2": "§7common loot.",
 
   "item.skyblock.cocoa_chopper": "Cocoa Chopper",
-  "lore.skyblock.cocoa_chopper.0": "§7Grants §9+20% Cocoa Beans Fortune§7,",
-  "lore.skyblock.cocoa_chopper.1": "§7which increases drops when",
-  "lore.skyblock.cocoa_chopper.2": "§7harvesting §fCocoa Beans§7.",
+  "ability.skyblock.cocoa_fortune.0": "§7Grants %s %s§7,",
+  "ability.skyblock.cocoa_fortune.1": "§7which increases drops when",
+  "ability.skyblock.cocoa_fortune.2": "§7harvesting %s§7.",
+
+  "item.skyblock.pickonimbus_2000": "Pickonimbus 2000",
+  "lore.skyblock.pickonimbus_2000.0": "§7A powerful tool that breaks",
+  "lore.skyblock.pickonimbus_2000.1": "§7after §a2,000 §7uses.",
+
+  "item.skyblock.bingonimbus_2000": "Bingonimbus 2000",
+  "lore.skyblock.bingonimbus_2000.0": "§7A powerful tool that doesn't",
+  "lore.skyblock.bingonimbus_2000.1": "§7seem to break.",
+
+  "item.skyblock.pioneer_pickaxe": "Pioneer Pickaxe",
+  "lore.skyblock.pioneer_pickaxe.0": "§7§oThe very first pickaxe model!",
+  "lore.skyblock.pioneer_pickaxe.1": "§7§oInvented by the famous Thomas",
+  "lore.skyblock.pioneer_pickaxe.2": "§7§oPickson.",
+
+  "item.skyblock.rookie_hoe": "Rookie Hoe",
+  "lore.skyblock.rookie_hoe.0": "§7Crops broken with this hoe have",
+  "lore.skyblock.rookie_hoe.1": "§7a §a50% §7chance to drop a seed.",
+
+  "item.skyblock.hoe_of_great_tilling": "Hoe of Great Tilling",
+  "item.skyblock.hoe_of_greater_tilling": "Hoe of Greater Tilling",
+  "item.skyblock.hoe_of_greatest_tilling": "Hoe of Greatest Tilling",
+  "lore.skyblock.hoe_of_greatest_tilling.0": "§7Tills a row of farmland. The",
+  "lore.skyblock.hoe_of_greatest_tilling.1": "§7perfect accessory to the",
+  "lore.skyblock.hoe_of_greatest_tilling.2": "§dBasket of Seeds§7!",
+  "ability.skyblock.hoe.0": "§7Tills a %s §7area of farmland at",
+  "ability.skyblock.hoe.1": "§7a time.",
+
+  "item.skyblock.cactus_knife": "Cactus Knife",
+  "lore.skyblock.cactus_knife.0": "§7Slices through §acactus §7instantly!",
+
+  "item.skyblock.fungi_cutter": "Fungi Cutter",
+
+  "item.skyblock.hoe_of_no_tilling": "Hoe of No Tilling",
+  "lore.skyblock.hoe_of_no_tilling.0": "§7Untills farmland!",
+  "lore.skyblock.hoe_of_no_tilling.1": "",
+  "lore.skyblock.hoe_of_no_tilling.2": "§8§oMathematically proven to be more",
+  "lore.skyblock.hoe_of_no_tilling.3": "§8§oefficient than jumping on it!",
 
   "item.skyblock.pure_coal": "Pure Coal",
   "item.skyblock.pure_iron": "Pure Iron",
@@ -266,6 +330,7 @@
   "item.skyblock.mithril_ore": "Mithril Ore",
   "item.skyblock.rich_mithril_ore": "Mithril Ore",
   "item.skyblock.titanium_ore": "Titanium Ore",
+  "block.skyblock.titanium_ore": "Titanium Ore",
   "item.skyblock.poor_umber_ore": "Umber Ore",
   "item.skyblock.umber_ore": "Umber Ore",
   "item.skyblock.rich_umber_ore": "Umber Ore",

@@ -56,6 +56,7 @@ public class ModEntityAttributes {
             new ClampedEntityAttribute("attribute.name.pristine", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> FORAGING_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.foraging"),
             new ClampedEntityAttribute("attribute.name.fortune.foraging", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
+
     public static RegistryEntry<EntityAttribute> FARMING_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.farming"),
             new ClampedEntityAttribute("attribute.name.fortune.farming", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> WHEAT_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.wheat"),
@@ -78,6 +79,7 @@ public class ModEntityAttributes {
             new ClampedEntityAttribute("attribute.name.fortune.mushroom", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> SUGAR_CANE_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.sugar_cane"),
             new ClampedEntityAttribute("attribute.name.fortune.sugar_cane", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
+
     public static RegistryEntry<EntityAttribute> MINING_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.mining"),
             new ClampedEntityAttribute("attribute.name.fortune.mining", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> ORE_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.ore"),
@@ -88,6 +90,8 @@ public class ModEntityAttributes {
             new ClampedEntityAttribute("attribute.name.fortune.dwarven_metal", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> GEMSTONE_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.gemstone"),
             new ClampedEntityAttribute("attribute.name.fortune.gemstone", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
+    public static RegistryEntry<EntityAttribute> TITANIUM_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune.titanium"),
+            new ClampedEntityAttribute("attribute.name.fortune.titanium", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
 
     public static void registerEntityAttributes() {
         Skyblock.LOGGER.info("Registering Mod Entity Attributes for " + Skyblock.MOD_ID);
