@@ -20,6 +20,8 @@ public class EnchantedItems {
     public static final Item ENCHANTED_OBSIDIAN = registerItem("enchanted_obsidian", Items.OBSIDIAN, Rarity.UNCOMMON);
     public static final Item ENCHANTED_MITHRIL = registerItem("enchanted_mithril", ModItems.MITHRIL, Rarity.RARE);
     public static final Item ENCHANTED_TITANIUM = registerItem("enchanted_titanium", ModItems.TITANIUM, Rarity.EPIC);
+    public static final Item ENCHANTED_WHEAT = registerItem("enchanted_wheat", Items.WHEAT, Rarity.UNCOMMON);
+    public static final Item ENCHANTED_HAY_BLOCK = registerItem("enchanted_hay_block", Items.HAY_BLOCK, Rarity.RARE);
 
     private static Item registerItem(String name, Item item, Rarity rarity) {
         return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name),

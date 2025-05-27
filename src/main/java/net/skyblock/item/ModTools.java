@@ -333,12 +333,24 @@ public class ModTools {
                     .add(ModEntityAttributes.MUSHROOM_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "fungi_cutter_mushroom_fortune"),
                             0.3, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build())));
 
-
     public static final Item HOE_OF_NO_TILLING = ModItems.registerItem("hoe_of_no_tilling",
             new ModItem(getHoeItemSettings("hoe_of_no_tilling", 4, ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.UNCOMMON)).rarity(Rarity.UNCOMMON),
                     ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility()}));
 
-    //TODO: add Mathematical Hoes
+    public static final Item MATHEMATICAL_HOE_BLUEPRINT = ModItems.registerItem("mathematical_hoe_blueprint",
+            new ModItem(getHoeItemSettings("mathematical_hoe_blueprint", 2, ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, Rarity.COMMON)),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility()}));
+
+    public static final Item EUCLIDS_COMMON_WHEAT_HOE = ModItems.registerItem("euclids_common_wheat_hoe",
+            new ModItem(getHoeItemSettings("euclids_common_wheat_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.STONE, 1, 1, ModTags.Items.WHEAT_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.WHEAT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_common_wheat_hoe_fortune"),
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_common_wheat_hoe_wisdom"),
+                                    0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT)}));
 
 
 
@@ -388,6 +400,7 @@ public class ModTools {
             entries.add(ModTools.CACTUS_KNIFE);
             entries.add(ModTools.COCOA_CHOPPER);
             entries.add(ModTools.EFFICIENT_AXE);
+            entries.add(ModTools.EUCLIDS_COMMON_WHEAT_HOE);
             entries.add(ModTools.FLINT_SHOVEL);
             entries.add(ModTools.FRACTURED_MITHRIL_PICKAXE);
             entries.add(ModTools.FUNGI_CUTTER);
@@ -398,6 +411,7 @@ public class ModTools {
             entries.add(ModTools.JUNGLE_AXE);
             entries.add(ModTools.JUNGLE_PICKAXE);
             entries.add(ModTools.LAPIS_PICKAXE);
+            entries.add(ModTools.MATHEMATICAL_HOE_BLUEPRINT);
             entries.add(ModTools.MELON_DICER);
             entries.add(ModTools.MITHRIL_PICKAXE);
             entries.add(ModTools.PICKONIMBUS_2000);

@@ -309,6 +309,17 @@
   "lore.skyblock.hoe_of_no_tilling.2": "§8§oMathematically proven to be more",
   "lore.skyblock.hoe_of_no_tilling.3": "§8§oefficient than jumping on it!",
 
+  "item.skyblock.mathematical_hoe_blueprint": "Mathematical Hoe Blueprint",
+  "lore.skyblock.mathematical_hoe_blueprint.0": "§7Can be adapted into §a5 §7specialized",
+  "lore.skyblock.mathematical_hoe_blueprint.1": "§7hoes with §a3 §7tiers each.",
+
+  "item.skyblock.euclids_common_wheat_hoe": "Euclid's Wheat Hoe",
+  "item.skyblock.euclids_uncommon_wheat_hoe": "Euclid's Wheat Hoe",
+  "item.skyblock.euclids_rare_wheat_hoe": "Euclid's Wheat Hoe",
+  "ability.skyblock.mathematical_hoe.0": "§7Counter: %s %s",
+  "ability.skyblock.mathematical_hoe.1": "§8Reach %s §8Counter for +1 Rarity!",
+
+
   "item.skyblock.pure_coal": "Pure Coal",
   "item.skyblock.pure_iron": "Pure Iron",
   "item.skyblock.pure_gold": "Pure Gold",
