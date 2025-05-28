@@ -18,32 +18,37 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.skyblock.Skyblock;
 import net.skyblock.ability.Ability;
+import net.skyblock.component.ModDataComponentTypes;
 import net.skyblock.util.ExpandedRarity;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
 public class ModItem extends Item implements ExpandedRarity {
-    public ModRarity modRarity;
     public Ability[] abilities = {};
 
-    public ModItem(Settings settings) {
-        super(settings);
-         this.modRarity = ExpandedRarity.convertRarity(this.getDefaultStack().getRarity());
+    public ModItem(Settings settings, ModRarity rarity) {
+        super(settings.rarity(ExpandedRarity.getRarity(rarity)).component(ModDataComponentTypes.MOD_RARITY, rarity.getIndex()));
     }
 
     public ModItem(String name, ModRarity rarity, int loreLines) {
         super(new Item.Settings()
-                .rarity(ExpandedRarity.getRarity(rarity))
+                .rarity(ExpandedRarity.getRarity(rarity)).component(ModDataComponentTypes.MOD_RARITY, rarity.getIndex())
                 .component(DataComponentTypes.LORE, new LoreComponent(ModItems.getLoreList(name,loreLines)))
                 .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID,name))));
-        this.modRarity = rarity;
     }
 
     public ModItem(Settings settings, ModRarity rarity, Ability[] abilities) {
-        super(settings.rarity(ExpandedRarity.getRarity(rarity)));
-        this.modRarity = rarity;
+        super(settings.rarity(ExpandedRarity.getRarity(rarity)).component(ModDataComponentTypes.MOD_RARITY, rarity.getIndex()));
         this.abilities = abilities;
     }
+
+//    @Override
+//    public ItemStack getDefaultStack() {
+//        ItemStack stack = super.getDefaultStack();
+//        stack.set(ModDataComponentTypes.MOD_RARITY, this.modRarity.getIndex());
+//        return stack;
+//    }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -85,8 +90,13 @@ public class ModItem extends Item implements ExpandedRarity {
         return miningSpeed;
     }
 
-    @Override
-    public ModRarity getModRarity() {
-        return this.modRarity;
+    public static ModRarity getModRarity(ItemStack stack) {
+        @Nullable Integer rarity = stack.get(ModDataComponentTypes.MOD_RARITY);
+
+        if (rarity != null) {
+            return ModRarity.values()[(rarity < 8 ? rarity : 8)];
+        } else {
+            return ModRarity.ADMIN;
+        }
     }
 }

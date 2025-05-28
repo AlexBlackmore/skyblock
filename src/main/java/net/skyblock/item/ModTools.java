@@ -31,7 +31,8 @@ public class ModTools {
     //PICKAXES
     public static final Item LAPIS_PICKAXE = ModItems.registerItem("lapis_pickaxe",
             new ModItem(getItemSettings("lapis_pickaxe", 3)
-                    .pickaxe(ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 4, 2, 200f, ModTags.Items.LAPIS_TOOL_MATERIALS), 4.0f, DEFAULT_PICKAXE_ATTACK_SPEED)));
+                    .pickaxe(ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 4, 2, 200f, ModTags.Items.LAPIS_TOOL_MATERIALS), 4.0f, DEFAULT_PICKAXE_ATTACK_SPEED),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item ZOMBIE_PICKAXE_LEGACY = ModItems.registerItem("zombie_pickaxe_legacy",
             new ModItem(getItemSettings("zombie_pickaxe_legacy", 0)
@@ -51,7 +52,8 @@ public class ModTools {
                             .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "rookie_pickaxe_attack_damage"),
                                     3.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                             .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "rookie_pickaxe_attack_speed"),
-                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())));
+                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON));
 
     public static final Item PROMISING_PICKAXE_LEGACY = ModItems.registerItem("promising_pickaxe_legacy",
             new ModItem(getPickaxeItemSettings("promising_pickaxe_legacy", ModToolMaterials.PROMISING)
@@ -81,8 +83,8 @@ public class ModTools {
 
     public static final Item JUNGLE_PICKAXE = ModItems.registerItem("jungle_pickaxe",
             new ModItem(getItemSettings("jungle_pickaxe", 0)
-                    .pickaxe(ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, 5, 2, 330f, ModTags.Items.JUNGLE_PICKAXE_MATERIALS), 10, DEFAULT_PICKAXE_ATTACK_SPEED)
-                    .rarity(Rarity.UNCOMMON)));
+                    .pickaxe(ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, 5, 2, 330f, ModTags.Items.JUNGLE_PICKAXE_MATERIALS), 10, DEFAULT_PICKAXE_ATTACK_SPEED),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item FRACTURED_MITHRIL_PICKAXE = ModItems.registerItem("fractured_mithril_pickaxe",
             new ModItem(getPickaxeItemSettings("fractured_mithril_pickaxe",
@@ -93,8 +95,8 @@ public class ModTools {
                             .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "fractured_mithril_pickaxe_attack_damage"),
                                     6.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                             .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "fractured_mithril_pickaxe_attack_speed"),
-                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())
-                    .rarity(Rarity.UNCOMMON)));
+                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item BANDAGED_MITHRIL_PICKAXE = ModItems.registerItem("bandaged_mithril_pickaxe",
             new ModItem(getPickaxeItemSettings("bandaged_mithril_pickaxe",
@@ -105,8 +107,8 @@ public class ModTools {
                             .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "bandaged_mithril_pickaxe_attack_damage"),
                                     6.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                             .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "bandaged_mithril_pickaxe_attack_speed"),
-                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())
-                    .rarity(Rarity.UNCOMMON)));
+                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item MITHRIL_PICKAXE = ModItems.registerItem("mithril_pickaxe",
             new ModItem(getPickaxeItemSettings("mithril_pickaxe",
@@ -117,8 +119,8 @@ public class ModTools {
                             .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "mithril_pickaxe_attack_damage"),
                                     8.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                             .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "mithril_pickaxe_attack_speed"),
-                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())
-                    .rarity(Rarity.UNCOMMON)));
+                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item REFINED_MITHRIL_PICKAXE = ModItems.registerItem("refined_mithril_pickaxe",
             new ModItem(getPickaxeItemSettings("refined_mithril_pickaxe",
@@ -129,8 +131,8 @@ public class ModTools {
                             .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "refined_mithril_pickaxe_attack_damage"),
                                     10.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                             .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "refined_mithril_pickaxe_attack_speed"),
-                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())
-                    .rarity(Rarity.RARE)));
+                                    DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE));
 
     public static final Item RUSTY_TITANIUM_PICKAXE = ModItems.registerItem("rusty_titanium_pickaxe",
             new ModItem(getPickaxeItemSettings("rusty_titanium_pickaxe",
@@ -170,8 +172,8 @@ public class ModTools {
 
     public static final Item PICKONIMBUS_2000 = ModItems.registerItem("pickonimbus_2000",
             new ModItem(getPickaxeItemSettings("pickonimbus_2000", 2,
-                    new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_BREAKING_POWER_8, 2000, ToolMaterial.DIAMOND.speed() * 750f / 220f, 6, ToolMaterial.DIAMOND.enchantmentValue(), ModTags.Items.EMPTY))
-                    .rarity(Rarity.EPIC)));
+                    new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_BREAKING_POWER_8, 2000, ToolMaterial.DIAMOND.speed() * 750f / 220f, 6, ToolMaterial.DIAMOND.enchantmentValue(), ModTags.Items.EMPTY)),
+                    ExpandedRarity.ModRarity.EPIC));
 
     public static final Item BINGONIMBUS_2000 = ModItems.registerItem("bingonimbus_2000",
             new ModItem(getPickaxeItemSettings("bingonimbus_2000", 2,
@@ -183,7 +185,8 @@ public class ModTools {
                                         6.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
                                 .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "bingonimbus_2000_attack_speed"),
                                         DEFAULT_PICKAXE_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())
-                            .rarity(Rarity.EPIC).component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+                            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE),
+                    ExpandedRarity.ModRarity.EPIC));
 
     public static final Item PIONEER_PICKAXE = ModItems.registerItem("pioneer_pickaxe",
             new ModItem(getPickaxeItemSettings("pioneer_pickaxe", 3,
@@ -228,17 +231,17 @@ public class ModTools {
 
     public static final Item BASIC_GARDENING_AXE = ModItems.registerItem("basic_gardening_axe",
             new ModItem(getAxeItemSettings("basic_gardening_axe", 0, ModToolMaterials.getToolMaterial(ToolMaterial.IRON, Rarity.UNCOMMON))
-                    .rarity(Rarity.UNCOMMON)
                     .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder().add(ModEntityAttributes.FARMING_FORTUNE,
                             new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "basic_gardening_axe_farming_fortune"),
-                                    0.05, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build())));
+                                    0.05, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON));
 
     public static final Item ADVANCED_GARDENING_AXE = ModItems.registerItem("advanced_gardening_axe",
             new ModItem(getAxeItemSettings("advanced_gardening_axe", 0, ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, Rarity.RARE))
-                    .rarity(Rarity.RARE)
                     .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder().add(ModEntityAttributes.FARMING_FORTUNE,
                             new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "advanced_gardening_axe_farming_fortune"),
-                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build())));
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE));
 
     public static final Item COCOA_CHOPPER = ModItems.registerItem("cocoa_chopper",
             new ModItem(getAxeItemSettings("cocoa_chopper", ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.EPIC))
@@ -324,14 +327,15 @@ public class ModTools {
                     ExpandedRarity.ModRarity.EPIC, new Ability[]{new HoeAbility(64, true)}));
 
     public static final Item CACTUS_KNIFE = ModItems.registerItem("cactus_knife",
-            new ModItem(getItemSettings("cactus_knife", 1).rarity(Rarity.EPIC).sword(ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.EPIC), 0, 0)));
+            new ModItem(getItemSettings("cactus_knife", 1).sword(ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.EPIC), 0, 0),
+                    ExpandedRarity.ModRarity.EPIC));
 
     public static final Item FUNGI_CUTTER = ModItems.registerItem("fungi_cutter",
             new ModItem(getAxeItemSettings("fungi_cutter", ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.RARE))
-                    .rarity(Rarity.RARE)
                     .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
                     .add(ModEntityAttributes.MUSHROOM_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "fungi_cutter_mushroom_fortune"),
-                            0.3, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build())));
+                            0.3, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE));
 
     public static final Item HOE_OF_NO_TILLING = ModItems.registerItem("hoe_of_no_tilling",
             new ModItem(getHoeItemSettings("hoe_of_no_tilling", 4, ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.UNCOMMON)).rarity(Rarity.UNCOMMON),
@@ -351,6 +355,28 @@ public class ModTools {
                             .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_common_wheat_hoe_wisdom"),
                                     0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
                     ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT)}));
+
+    public static final Item EUCLIDS_UNCOMMON_WHEAT_HOE = ModItems.registerItem("euclids_uncommon_wheat_hoe",
+            new ModItem(getHoeItemSettings("euclids_uncommon_wheat_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.IRON, 2, 1, ModTags.Items.ENCHANTED_WHEAT_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.WHEAT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_uncommon_wheat_hoe_fortune"),
+                                    0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_uncommon_wheat_hoe_wisdom"),
+                                    0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, true)}));
+
+    public static final Item EUCLIDS_RARE_WHEAT_HOE = ModItems.registerItem("euclids_rare_wheat_hoe",
+            new ModItem(getHoeItemSettings("euclids_rare_wheat_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 3, 1, ModTags.Items.ENCHANTED_HAY_BLOCK_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.WHEAT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_rare_wheat_hoe_fortune"),
+                                    0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_rare_wheat_hoe_wisdom"),
+                                    0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, false, Items.WHEAT)}));
 
 
 
@@ -401,6 +427,8 @@ public class ModTools {
             entries.add(ModTools.COCOA_CHOPPER);
             entries.add(ModTools.EFFICIENT_AXE);
             entries.add(ModTools.EUCLIDS_COMMON_WHEAT_HOE);
+            entries.add(ModTools.EUCLIDS_UNCOMMON_WHEAT_HOE);
+            entries.add(ModTools.EUCLIDS_RARE_WHEAT_HOE);
             entries.add(ModTools.FLINT_SHOVEL);
             entries.add(ModTools.FRACTURED_MITHRIL_PICKAXE);
             entries.add(ModTools.FUNGI_CUTTER);

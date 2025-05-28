@@ -318,6 +318,13 @@
   "item.skyblock.euclids_rare_wheat_hoe": "Euclid's Wheat Hoe",
   "ability.skyblock.mathematical_hoe.0": "§7Counter: %s %s",
   "ability.skyblock.mathematical_hoe.1": "§8Reach %s §8Counter for +1 Rarity!",
+  "ability.skyblock.mathematical_hoe.2": "Logarithmic Counter",
+  "ability.skyblock.mathematical_hoe.3": "§7Gain %s %s §7per",
+  "ability.skyblock.mathematical_hoe.4": "§7digit on the Counter, minus 4!",
+  "ability.skyblock.mathematical_hoe.5": "Collection Analysis",
+  "ability.skyblock.mathematical_hoe.6": "§7Gain %s %s §7per",
+  "ability.skyblock.mathematical_hoe.7": "§7digit of your %s §7collection,",
+  "ability.skyblock.mathematical_hoe.8": "§7minus 4!",
 
 
   "item.skyblock.pure_coal": "Pure Coal",

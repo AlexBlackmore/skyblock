@@ -11,6 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.Texts;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
+import net.skyblock.item.ModItem;
 import net.skyblock.util.ExpandedRarity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -50,8 +51,8 @@ public abstract class ItemStackMixin implements ComponentHolder, FabricItemStack
     public Text getFormattedName() {
         ItemStack stack = (ItemStack)(Object)this;
         MutableText mutableText = Text.empty();
-        if (stack.getItem() instanceof ExpandedRarity modItem && stack.getRarity()==Rarity.EPIC) {
-            mutableText = mutableText.append(stack.getName()).formatted(modItem.getModRarity().getFormatting());
+        if (stack.getItem() instanceof ExpandedRarity) {
+            mutableText = mutableText.append(stack.getName()).formatted(ModItem.getModRarity(stack).getFormatting());
         } else {
             mutableText = mutableText.append(stack.getName()).formatted(stack.getRarity().getFormatting());
         }
@@ -77,8 +78,8 @@ public abstract class ItemStackMixin implements ComponentHolder, FabricItemStack
 
         MutableText mutableText2 = Texts.bracketed(mutableText);
         if (!stack.isEmpty()) {
-            if (stack.getItem() instanceof ExpandedRarity modItem && stack.getRarity()==Rarity.EPIC) {
-                mutableText2.formatted(modItem.getModRarity().getFormatting()).styled(style -> style.withHoverEvent(new HoverEvent.ShowItem(stack)));
+            if (stack.getItem() instanceof ExpandedRarity) {
+                mutableText2.formatted(ModItem.getModRarity(stack).getFormatting()).styled(style -> style.withHoverEvent(new HoverEvent.ShowItem(stack)));
             } else {
                 mutableText2.formatted(stack.getRarity().getFormatting()).styled(style -> style.withHoverEvent(new HoverEvent.ShowItem(stack)));
             }

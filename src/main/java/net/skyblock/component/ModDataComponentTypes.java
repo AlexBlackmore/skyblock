@@ -16,6 +16,7 @@ public class ModDataComponentTypes {
     public static final ComponentType<Integer> BLOCKS_BROKEN = register("blocks_broken", builder -> builder.codec(Codecs.POSITIVE_INT).packetCodec(PacketCodecs.VAR_INT));
     public static final ComponentType<Integer> COMPACT = register("compact", builder -> builder.codec(Codecs.POSITIVE_INT).packetCodec(PacketCodecs.VAR_INT));
     public static final ComponentType<Integer> MATHEMATICAL_HOE = register("mathematical_hoe", builder -> builder.codec(Codecs.POSITIVE_INT).packetCodec(PacketCodecs.VAR_INT));
+    public static final ComponentType<Integer> MOD_RARITY = register("mod_rarity", builder -> builder.codec(Codecs.POSITIVE_INT).packetCodec(PacketCodecs.VAR_INT));
 
 
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
