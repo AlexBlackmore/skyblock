@@ -7,19 +7,21 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.decoration.DisplayEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import net.skyblock.attribute.ModEntityAttributes;
 import net.skyblock.util.FormattingUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import java.util.Random;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity implements Attackable {
@@ -28,12 +30,33 @@ public abstract class LivingEntityMixin extends Entity implements Attackable {
         super(type, world);
     }
 
+    @ModifyArg(method = "damage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)V"), index = 2)
+    private float injected(ServerWorld world, DamageSource source, float amount) {
+        if (source.getAttacker() instanceof PlayerEntity player) {
+            if (Math.random() < player.getAttributeValue(ModEntityAttributes.CRIT_CHANCE)) {
+                player.addCommandTag("CRIT");
+                return  amount * (float)(1.0f + player.getAttributeValue(ModEntityAttributes.CRIT_DAMAGE));
+            }
+        }
+        return amount;
+    }
+
+
     @Inject(method = "applyDamage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)V", at = @At("HEAD"))
     protected void inject(ServerWorld world, DamageSource source, float amount, CallbackInfo info){
         LivingEntity livingEntity = (LivingEntity)(Object)this;
-        Text damage = Text.of(FormattingUtil.commaSeparateInt((int)amount)).copy().formatted(getFormatting(source));
-//        Text damage = Text.of(String.valueOf(amount)).copy().formatted(getFormatting(source));
-//        Text damage = Text.of(format.format((int)amount));
+        Text damage = Text.literal(FormattingUtil.commaSeparateInt((int)amount)).formatted(getFormatting(source));
+        if (source.getAttacker() instanceof PlayerEntity player) {
+            if (player.getCommandTags().contains("CRIT")) {
+                damage = Text.literal("✧").formatted(getRandomCritFormatting());
+                for (char c : FormattingUtil.commaSeparateInt((int)amount).toCharArray()) {
+                     damage = damage.copy().append(Text.literal(String.valueOf(c)).formatted(getRandomCritFormatting()));
+                }
+                damage = damage.copy().append(Text.literal("✧").formatted(getRandomCritFormatting()));
+                player.addCritParticles(this);
+                player.removeCommandTag("CRIT");
+            }
+        }
 
         DisplayEntity.TextDisplayEntity text = new DisplayEntity.TextDisplayEntity(EntityType.TEXT_DISPLAY,world);
         text.setText(damage);
@@ -69,6 +92,24 @@ public abstract class LivingEntityMixin extends Entity implements Attackable {
             //source.isOf(DamageTypes.GENERIC_KILL)
             //source.isOf(DamageTypes.GENERIC)
         else return Formatting.WHITE;
+    }
+
+    @Unique
+    private Formatting getRandomCritFormatting() {
+        switch(new Random().nextInt(4)) {
+            case 0 -> {
+                return Formatting.RED;
+            }
+            case 1 -> {
+                return Formatting.YELLOW;
+            }
+            case 2 -> {
+                return Formatting.GOLD;
+            }
+            default -> {
+                return Formatting.WHITE;
+            }
+        }
     }
 
 //    @Override
