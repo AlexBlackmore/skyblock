@@ -24,6 +24,7 @@ public class ModItems {
     public static final Item BAT_THE_FISH = registerItem("bat_the_fish", new ModItem("bat_the_fish", ExpandedRarity.ModRarity.SPECIAL, 1));
     public static final Item SLUDGE_JUICE = registerItem("sludge_juice", Rarity.UNCOMMON, 3);
     public static final Item TITANIUM = registerItem("titanium", Rarity.RARE, 3);
+    public static final Item MUTANT_NETHER_WART = registerItem("mutant_nether_wart", Rarity.RARE, 0);
 
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name), item);
@@ -50,6 +51,7 @@ public class ModItems {
             entries.add(ModItems.MITHRIL);
             entries.add(ModItems.SLUDGE_JUICE);
             entries.add(ModItems.TITANIUM);
+            entries.add(ModItems.MUTANT_NETHER_WART);
         });
     }
 

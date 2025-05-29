@@ -53,6 +53,18 @@ public class ModTags {
         public static final TagKey<Item> WHEAT_TOOL_MATERIALS = createTag("wheat_tool_materials");
         public static final TagKey<Item> ENCHANTED_WHEAT_TOOL_MATERIALS = createTag("enchanted_wheat_tool_materials");
         public static final TagKey<Item> ENCHANTED_HAY_BLOCK_TOOL_MATERIALS = createTag("enchanted_hay_block_tool_materials");
+        public static final TagKey<Item> CARROT_TOOL_MATERIALS = createTag("carrot_tool_materials");
+        public static final TagKey<Item> ENCHANTED_CARROT_TOOL_MATERIALS = createTag("enchanted_carrot_tool_materials");
+        public static final TagKey<Item> ENCHANTED_GOLDEN_CARROT_TOOL_MATERIALS = createTag("enchanted_golden_carrot_tool_materials");
+        public static final TagKey<Item> POTATO_TOOL_MATERIALS = createTag("potato_tool_materials");
+        public static final TagKey<Item> ENCHANTED_POTATO_TOOL_MATERIALS = createTag("enchanted_potato_tool_materials");
+        public static final TagKey<Item> ENCHANTED_BAKED_POTATO_TOOL_MATERIALS = createTag("enchanted_baked_potato_tool_materials");
+        public static final TagKey<Item> SUGAR_CANE_TOOL_MATERIALS = createTag("sugar_cane_tool_materials");
+        public static final TagKey<Item> ENCHANTED_SUGAR_TOOL_MATERIALS = createTag("enchanted_sugar_tool_materials");
+        public static final TagKey<Item> ENCHANTED_SUGAR_CANE_TOOL_MATERIALS = createTag("enchanted_sugar_cane_tool_materials");
+        public static final TagKey<Item> NETHER_WART_TOOL_MATERIALS = createTag("nether_wart_tool_materials");
+        public static final TagKey<Item> ENCHANTED_NETHER_WART_TOOL_MATERIALS = createTag("enchanted_nether_wart_materials");
+        public static final TagKey<Item> MUTANT_NETHER_WART_TOOL_MATERIALS = createTag("mutant_nether_wart_tool_materials");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID, name));

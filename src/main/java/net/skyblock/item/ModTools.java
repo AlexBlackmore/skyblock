@@ -365,7 +365,7 @@ public class ModTools {
                                     0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
                             .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_uncommon_wheat_hoe_wisdom"),
                                     0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
-                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, true)}));
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, "wheat")}));
 
     public static final Item EUCLIDS_RARE_WHEAT_HOE = ModItems.registerItem("euclids_rare_wheat_hoe",
             new ModItem(getHoeItemSettings("euclids_rare_wheat_hoe", 0,
@@ -376,8 +376,139 @@ public class ModTools {
                                     0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
                             .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "euclids_rare_wheat_hoe_wisdom"),
                                     0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
-                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, false, Items.WHEAT)}));
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.WHEAT, "wheat", Items.WHEAT)}));
 
+    public static final Item GAUSS_COMMON_CARROT_HOE = ModItems.registerItem("gauss_common_carrot_hoe",
+            new ModItem(getHoeItemSettings("gauss_common_carrot_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.STONE, 1, 1, ModTags.Items.CARROT_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.CARROT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_common_carrot_hoe_fortune"),
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_common_carrot_hoe_wisdom"),
+                                    0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.CARROTS)}));
+
+    public static final Item GAUSS_UNCOMMON_CARROT_HOE = ModItems.registerItem("gauss_uncommon_carrot_hoe",
+            new ModItem(getHoeItemSettings("gauss_uncommon_carrot_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.IRON, 2, 1, ModTags.Items.ENCHANTED_CARROT_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.CARROT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_uncommon_carrot_hoe_fortune"),
+                                    0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_uncommon_carrot_hoe_wisdom"),
+                                    0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.CARROTS, "carrot")}));
+
+    public static final Item GAUSS_RARE_CARROT_HOE = ModItems.registerItem("gauss_rare_carrot_hoe",
+            new ModItem(getHoeItemSettings("gauss_rare_carrot_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 3, 1, ModTags.Items.ENCHANTED_GOLDEN_CARROT_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.CARROT_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_rare_carrot_hoe_fortune"),
+                                    0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "gauss_rare_carrot_hoe_wisdom"),
+                                    0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.CARROTS, "carrot", Items.CARROT)}));
+
+    public static final Item PYTHAGOREAN_COMMON_POTATO_HOE = ModItems.registerItem("pythagorean_common_potato_hoe",
+            new ModItem(getHoeItemSettings("pythagorean_common_potato_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.STONE, 1, 1, ModTags.Items.POTATO_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.POTATO_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_common_potato_hoe_fortune"),
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_common_potato_hoe_wisdom"),
+                                    0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.POTATOES)}));
+
+    public static final Item PYTHAGOREAN_UNCOMMON_POTATO_HOE = ModItems.registerItem("pythagorean_uncommon_potato_hoe",
+            new ModItem(getHoeItemSettings("pythagorean_uncommon_potato_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.IRON, 2, 1, ModTags.Items.ENCHANTED_POTATO_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.POTATO_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_uncommon_potato_hoe_fortune"),
+                                    0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_uncommon_potato_hoe_wisdom"),
+                                    0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.POTATOES, "potato")}));
+
+    public static final Item PYTHAGOREAN_RARE_POTATO_HOE = ModItems.registerItem("pythagorean_rare_potato_hoe",
+            new ModItem(getHoeItemSettings("pythagorean_rare_potato_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 3, 1, ModTags.Items.ENCHANTED_BAKED_POTATO_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.POTATO_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_rare_potato_hoe_fortune"),
+                                    0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "pythagorean_rare_potato_hoe_wisdom"),
+                                    0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.POTATOES, "potato", Items.POTATO)}));
+
+    public static final Item TURING_COMMON_SUGAR_CANE_HOE = ModItems.registerItem("turing_common_sugar_cane_hoe",
+            new ModItem(getHoeItemSettings("turing_common_sugar_cane_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.STONE, 1, 1, ModTags.Items.SUGAR_CANE_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.SUGAR_CANE_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_common_sugar_cane_hoe_fortune"),
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_common_sugar_cane_hoe_wisdom"),
+                                    0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.SUGAR_CANE)}));
+
+    public static final Item TURING_UNCOMMON_SUGAR_CANE_HOE = ModItems.registerItem("turing_uncommon_sugar_cane_hoe",
+            new ModItem(getHoeItemSettings("turing_uncommon_sugar_cane_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.IRON, 2, 1, ModTags.Items.ENCHANTED_SUGAR_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.SUGAR_CANE_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_uncommon_sugar_cane_hoe_fortune"),
+                                    0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_uncommon_sugar_cane_hoe_wisdom"),
+                                    0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.SUGAR_CANE, "sugar_cane")}));
+
+    public static final Item TURING_RARE_SUGAR_CANE_HOE = ModItems.registerItem("turing_rare_sugar_cane_hoe",
+            new ModItem(getHoeItemSettings("turing_rare_sugar_cane_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 3, 1, ModTags.Items.ENCHANTED_SUGAR_CANE_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.SUGAR_CANE_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_rare_sugar_cane_hoe_fortune"),
+                                    0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "turing_rare_sugar_cane_hoe_wisdom"),
+                                    0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.SUGAR_CANE, "sugar_cane", Items.SUGAR_CANE)}));
+
+    public static final Item NEWTON_COMMON_NETHER_WART_HOE = ModItems.registerItem("newton_common_nether_wart_hoe",
+            new ModItem(getHoeItemSettings("newton_common_nether_wart_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.STONE, 1, 1, ModTags.Items.NETHER_WART_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.NETHER_WART_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_common_nether_wart_hoe_fortune"),
+                                    0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_common_nether_wart_hoe_wisdom"),
+                                    0.01, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.NETHER_WART)}));
+
+    public static final Item NEWTON_UNCOMMON_NETHER_WART_HOE = ModItems.registerItem("newton_uncommon_nether_wart_hoe",
+            new ModItem(getHoeItemSettings("newton_uncommon_nether_wart_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.IRON, 2, 1, ModTags.Items.ENCHANTED_NETHER_WART_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.NETHER_WART_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_uncommon_nether_wart_hoe_fortune"),
+                                    0.25, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_uncommon_nether_wart_hoe_wisdom"),
+                                    0.02, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.NETHER_WART, "nether_wart")}));
+
+    public static final Item NEWTON_RARE_NETHER_WART_HOE = ModItems.registerItem("newton_rare_nether_wart_hoe",
+            new ModItem(getHoeItemSettings("newton_rare_nether_wart_hoe", 0,
+                    ModToolMaterials.getToolMaterial(ToolMaterial.DIAMOND, 3, 1, ModTags.Items.MUTANT_NETHER_WART_TOOL_MATERIALS))
+                    .component(ModDataComponentTypes.MATHEMATICAL_HOE, 0)
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                            .add(ModEntityAttributes.NETHER_WART_FORTUNE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_rare_nether_wart_hoe_fortune"),
+                                    0.50, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND)
+                            .add(ModEntityAttributes.FARMING_WISDOM, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "newton_rare_nether_wart_hoe_wisdom"),
+                                    0.03, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.RARE, new Ability[]{new HoeAbility(), new MathematicalHoeAbility(Blocks.NETHER_WART, "nether_wart", Items.NETHER_WART)}));
 
 
     private static Item.Settings getPickaxeItemSettings(String name, ToolMaterial material) {
@@ -429,6 +560,18 @@ public class ModTools {
             entries.add(ModTools.EUCLIDS_COMMON_WHEAT_HOE);
             entries.add(ModTools.EUCLIDS_UNCOMMON_WHEAT_HOE);
             entries.add(ModTools.EUCLIDS_RARE_WHEAT_HOE);
+            entries.add(ModTools.GAUSS_COMMON_CARROT_HOE);
+            entries.add(ModTools.GAUSS_UNCOMMON_CARROT_HOE);
+            entries.add(ModTools.GAUSS_RARE_CARROT_HOE);
+            entries.add(ModTools.PYTHAGOREAN_COMMON_POTATO_HOE);
+            entries.add(ModTools.PYTHAGOREAN_UNCOMMON_POTATO_HOE);
+            entries.add(ModTools.PYTHAGOREAN_RARE_POTATO_HOE);
+            entries.add(ModTools.TURING_COMMON_SUGAR_CANE_HOE);
+            entries.add(ModTools.TURING_UNCOMMON_SUGAR_CANE_HOE);
+            entries.add(ModTools.TURING_RARE_SUGAR_CANE_HOE);
+            entries.add(ModTools.NEWTON_COMMON_NETHER_WART_HOE);
+            entries.add(ModTools.NEWTON_UNCOMMON_NETHER_WART_HOE);
+            entries.add(ModTools.NEWTON_RARE_NETHER_WART_HOE);
             entries.add(ModTools.FLINT_SHOVEL);
             entries.add(ModTools.FRACTURED_MITHRIL_PICKAXE);
             entries.add(ModTools.FUNGI_CUTTER);

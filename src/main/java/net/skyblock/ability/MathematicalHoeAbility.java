@@ -4,9 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -17,11 +20,16 @@ import net.skyblock.item.ModItem;
 import net.skyblock.util.FormattingUtil;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Consumer;
 
 public class MathematicalHoeAbility extends Ability {
     private final Block block;
     private final int[] upgradeThresholds = new int[]{100000, 10000000};
+    private final Set<String> VALID_IDS = new HashSet<>(Arrays.asList("wheat", "carrot", "potato", "sugar_cane", "nether_wart"));
+    private String item_id = "";
     private float logarithmic_counter_reward = 0.0f;
     private float collection_analysis_reward = 0.0f;
     private Item collection = Items.BEDROCK;
@@ -31,25 +39,27 @@ public class MathematicalHoeAbility extends Ability {
         this.block = block;
     }
 
-    public MathematicalHoeAbility(Block block, boolean logarithmicCounter) {
-        super("mathematical_hoe", 2 + (logarithmicCounter ? 3 : 0));
+    public MathematicalHoeAbility(Block block, String id) {
+        super("mathematical_hoe", 5);
         this.block = block;
 
-        if (logarithmicCounter) {
+        if (this.VALID_IDS.contains(id)) {
+            this.item_id = id;
             this.logarithmic_counter_reward = 0.16f;
         }
     }
 
-    public MathematicalHoeAbility(Block block, boolean logarithmicCounter, Item collection) {
-        super("mathematical_hoe", 2 + (logarithmicCounter ? 3 : 0) + 4);
+    public MathematicalHoeAbility(Block block, String id, Item collection) {
+        super("mathematical_hoe", 9);
         this.block = block;
 
-        if (logarithmicCounter) {
+        if (this.VALID_IDS.contains(id)) {
+            this.item_id = id;
             this.logarithmic_counter_reward = 0.16f;
+            this.collection = collection;
+            this.collection_analysis_reward = 0.08f;
         }
 
-        this.collection = collection;
-        this.collection_analysis_reward = 0.08f;
     }
 
     @Override
@@ -81,10 +91,26 @@ public class MathematicalHoeAbility extends Ability {
                     }
                 }
 
-                //Logarithmic Counter ability
+                if (miner instanceof PlayerEntity player && world instanceof ServerWorld server) {
+                    @Nullable CommandManager commandManager = server.getServer().getCommandManager();
+                    if (commandManager != null) {
+                        if ((blocksBroken/Math.pow(10, Math.floor(Math.log10(blocksBroken))))==1) {
+                            //Logarithmic Counter ability
+                            if (this.logarithmic_counter_reward != 0) {
+                                commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                                        "scoreboard players set @s dummy " + (int)(Math.log10(blocksBroken)));
+                                commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                                        "item modify entity @s weapon.mainhand skyblock:logarithmic_counter/" + this.item_id);
+                            }
+                        }
+                        //Collection Analysis ability
+                        if (this.collection_analysis_reward != 0) {
+                            commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                                    "function skyblock:ability/collection_analysis/" + this.item_id);
+                        }
+                    }
+                }
 
-
-                //Collection Analysis ability
             }
         }
 
@@ -113,7 +139,7 @@ public class MathematicalHoeAbility extends Ability {
                     textConsumer.accept(Text.literal(""));
                     textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name + "." + i).formatted(Formatting.GOLD), ""));
                 } else if (i==3 || i==6) {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, "§9+" + FormattingUtil.commaSeparateInt((int)((i==3 ? this.logarithmic_counter_reward : this.collection_analysis_reward)*100)) + "%", Text.translatable("attribute.name.fortune.wheat").formatted(Formatting.BLUE)));
+                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, "§9+" + FormattingUtil.commaSeparateInt((int)((i==3 ? this.logarithmic_counter_reward : this.collection_analysis_reward)*100)) + "%", Text.translatable("attribute.name.fortune." + this.item_id).formatted(Formatting.BLUE)));
                 } else if (i==7) {
                     textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, this.collection.getName()));
                 } else {

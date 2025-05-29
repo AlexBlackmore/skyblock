@@ -11,8 +11,8 @@
           "base": 0.01,
           "per_level_above_first": 0.01
         },
-        "attribute": "minecraft:wisdom.mining",
-        "id": "skyblock:enchantment.mining_wisdom",
+        "attribute": "minecraft:wisdom_mining",
+        "id": "skyblock:compact",
         "operation": "add_multiplied_base"
       }
     ]

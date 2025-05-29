@@ -1,4 +1,5 @@
 scoreboard objectives add dummy dummy "Dummy"
+scoreboard objectives add dummy1 dummy "Dummy1"
 scoreboard objectives add coins dummy "Purse"
 scoreboard objectives add bits dummy "Bits"
 scoreboard objectives add mana dummy "Mana"

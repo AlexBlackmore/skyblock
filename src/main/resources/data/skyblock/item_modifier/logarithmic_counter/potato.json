@@ -1,0 +1,21 @@
+{
+  "function": "minecraft:set_attributes",
+  "modifiers": [
+    {
+      "attribute": "minecraft:fortune_potato",
+      "operation": "add_multiplied_base",
+      "amount": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "dummy",
+        "scale": 0.16
+      },
+      "id": "skyblock:logarithmic_counter_potato",
+      "slot": "mainhand"
+    }
+  ],
+  "replace": false
+}

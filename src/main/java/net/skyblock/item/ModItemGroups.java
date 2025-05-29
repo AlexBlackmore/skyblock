@@ -18,6 +18,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.skyblock.enchanted"))
                     .entries(((displayContext, entries) -> {
                         entries.add(EnchantedItems.ENCHANTED_POTATO);
+                        entries.add(EnchantedItems.ENCHANTED_BAKED_POTATO);
                         entries.add(EnchantedItems.ENCHANTED_MELON_SLICE);
                         entries.add(EnchantedItems.ENCHANTED_MELON);
                         entries.add(EnchantedItems.ENCHANTED_PUMPKIN);
@@ -26,6 +27,13 @@ public class ModItemGroups {
                         entries.add(EnchantedItems.ENCHANTED_MITHRIL);
                         entries.add(EnchantedItems.ENCHANTED_TITANIUM);
                         entries.add(EnchantedItems.ENCHANTED_COBBLESTONE);
+                        entries.add(EnchantedItems.ENCHANTED_WHEAT);
+                        entries.add(EnchantedItems.ENCHANTED_HAY_BLOCK);
+                        entries.add(EnchantedItems.ENCHANTED_CARROT);
+                        entries.add(EnchantedItems.ENCHANTED_GOLDEN_CARROT);
+                        entries.add(EnchantedItems.ENCHANTED_SUGAR);
+                        entries.add(EnchantedItems.ENCHANTED_SUGAR_CANE);
+                        entries.add(EnchantedItems.ENCHANTED_NETHER_WART);
                     }))
                     .build());
 

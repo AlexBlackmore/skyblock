@@ -1,0 +1,21 @@
+{
+  "function": "minecraft:set_attributes",
+  "modifiers": [
+    {
+      "attribute": "minecraft:fortune_nether_wart",
+      "operation": "add_multiplied_base",
+      "amount": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "dummy",
+        "scale": 0.08
+      },
+      "id": "skyblock:collection_analysis_nether_wart",
+      "slot": "mainhand"
+    }
+  ],
+  "replace": false
+}

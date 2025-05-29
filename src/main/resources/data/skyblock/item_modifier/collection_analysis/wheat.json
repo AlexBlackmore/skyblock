@@ -1,0 +1,21 @@
+{
+  "function": "minecraft:set_attributes",
+  "modifiers": [
+    {
+      "attribute": "minecraft:fortune_wheat",
+      "operation": "add_multiplied_base",
+      "amount": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "dummy",
+        "scale": 0.08
+      },
+      "id": "skyblock:collection_analysis_wheat",
+      "slot": "mainhand"
+    }
+  ],
+  "replace": false
+}

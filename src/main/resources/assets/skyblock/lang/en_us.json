@@ -161,6 +161,8 @@
   "lore.skyblock.sludge_juice.1": "§7valued by the Kalhuiki Tribe for",
   "lore.skyblock.sludge_juice.2": "§7fits stickiness.",
 
+  "item.skyblock.mutant_nether_wart": "Mutant Nether Wart",
+
   "item.skyblock.rookie_pickaxe": "Rookie Pickaxe",
   "item.skyblock.rookie_axe": "Rookie Axe",
 
@@ -316,6 +318,18 @@
   "item.skyblock.euclids_common_wheat_hoe": "Euclid's Wheat Hoe",
   "item.skyblock.euclids_uncommon_wheat_hoe": "Euclid's Wheat Hoe",
   "item.skyblock.euclids_rare_wheat_hoe": "Euclid's Wheat Hoe",
+  "item.skyblock.gauss_common_carrot_hoe": "Gauss Carrot Hoe",
+  "item.skyblock.gauss_uncommon_carrot_hoe": "Gauss Carrot Hoe",
+  "item.skyblock.gauss_rare_carrot_hoe": "Gauss Carrot Hoe",
+  "item.skyblock.pythagorean_common_potato_hoe": "Pythagorean Potato Hoe",
+  "item.skyblock.pythagorean_uncommon_potato_hoe": "Pythagorean Potato Hoe",
+  "item.skyblock.pythagorean_rare_potato_hoe": "Pythagorean Potato Hoe",
+  "item.skyblock.turing_common_sugar_cane_hoe": "Turing Sugar Cane Hoe",
+  "item.skyblock.turing_uncommon_sugar_cane_hoe": "Turing Sugar Cane Hoe",
+  "item.skyblock.turing_rare_sugar_cane_hoe": "Turing Sugar Cane Hoe",
+  "item.skyblock.newton_common_nether_wart_hoe": "Newton Nether Wart Hoe",
+  "item.skyblock.newton_uncommon_nether_wart_hoe": "Newton Nether Wart Hoe",
+  "item.skyblock.newton_rare_nether_wart_hoe": "Newton Nether Wart Hoe",
   "ability.skyblock.mathematical_hoe.0": "§7Counter: %s %s",
   "ability.skyblock.mathematical_hoe.1": "§8Reach %s §8Counter for +1 Rarity!",
   "ability.skyblock.mathematical_hoe.2": "Logarithmic Counter",
