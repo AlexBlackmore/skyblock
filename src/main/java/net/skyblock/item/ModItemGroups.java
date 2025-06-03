@@ -34,6 +34,7 @@ public class ModItemGroups {
                         entries.add(EnchantedItems.ENCHANTED_SUGAR);
                         entries.add(EnchantedItems.ENCHANTED_SUGAR_CANE);
                         entries.add(EnchantedItems.ENCHANTED_NETHER_WART);
+                        entries.add(EnchantedItems.ENCHANTED_SULPHUR);
                     }))
                     .build());
 
@@ -52,6 +53,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PURE_COAL);
                         entries.add(ModBlocks.PURE_IRON);
                         entries.add(ModBlocks.PURE_GOLD);
+                        entries.add(ModBlocks.PURE_COPPER);
                         entries.add(ModBlocks.PURE_LAPIS);
                         entries.add(ModBlocks.PURE_REDSTONE);
                         entries.add(ModBlocks.PURE_EMERALD);

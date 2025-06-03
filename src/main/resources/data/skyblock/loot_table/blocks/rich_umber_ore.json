@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": true
+            }
+          ],
+          "value": "skyblock:blocks/umber_ore"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

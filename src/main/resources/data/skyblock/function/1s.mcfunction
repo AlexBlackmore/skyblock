@@ -1,0 +1,2 @@
+function skyblock:advancements/drops/reset
+function skyblock:mana_regen

@@ -7,14 +7,17 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.EndermiteEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.EnchantmentTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.skyblock.ability.Ability;
 import net.skyblock.ability.StonkAbility;
 import net.skyblock.item.ModItem;
+import net.skyblock.util.SkillsUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,6 +32,7 @@ public class AbstractBlockMixin {
         //Don't know why this doesn't work. Running in Block.onBreak instead
 //        if (tool.getHolder() instanceof PlayerEntity player) {
 //            SkillsUtil.addExperience(world, pos, state, player);
+//            player.sendMessage(Text.literal("AbstractBlock"), false);
 //        }
 
         //Spawns Endermites when mining End Stone

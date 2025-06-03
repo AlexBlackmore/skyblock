@@ -2,19 +2,20 @@
   "replace": false,
   "values": [
     "skyblock:lapis_pickaxe",
-    "skyblock:rookie_pickaxe",
     "skyblock:zombie_pickaxe_legacy",
     "skyblock:zombie_pickaxe",
-    "skyblock:jungle_pickaxe",
+    "skyblock:rookie_pickaxe",
     "skyblock:promising_pickaxe_legacy",
     "skyblock:promising_pickaxe",
     "skyblock:stonk",
+    "skyblock:jungle_pickaxe",
     "skyblock:fractured_mithril_pickaxe",
     "skyblock:bandaged_mithril_pickaxe",
     "skyblock:mithril_pickaxe",
     "skyblock:refined_mithril_pickaxe",
     "skyblock:rusty_titanium_pickaxe",
     "skyblock:titanium_pickaxe",
-    "skyblock:polished_titanium_pickaxe"
+    "skyblock:polished_titanium_pickaxe",
+    "skyblock:bingonimbus_2000"
   ]
 }

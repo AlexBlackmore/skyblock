@@ -14,34 +14,50 @@
             "name": "skyblock:hard_stone"
           }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_block"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_block",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "weight": 3,
-          "quality": 1,
+          "type": "minecraft:loot_table",
           "conditions": [
             {
               "condition": "minecraft:match_tool",
               "predicate": {
                 "items": "skyblock:jungle_pickaxe"
               }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "#minecraft:is_jungle"
-              }
             }
           ],
-          "name": "skyblock:sludge_juice"
-        },
-        {
-          "type": "minecraft:empty",
-          "weight": 97
+          "value": "skyblock:gameplay/jungle_pickaxe"
         }
       ],
       "rolls": 1.0

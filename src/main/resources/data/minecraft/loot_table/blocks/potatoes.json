@@ -1,10 +1,5 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -61,7 +56,35 @@
           "name": "minecraft:potato"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_potato"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_potato",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "bonus_rolls": 0.0,
@@ -87,6 +110,11 @@
         }
       ],
       "rolls": 1.0
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
     }
   ],
   "random_sequence": "minecraft:blocks/potatoes"

@@ -21,6 +21,10 @@ import java.util.List;
 
 public class ModItems {
     public static final Item MITHRIL = registerItem("mithril", Rarity.COMMON, 4);
+    public static final Item SULPHUR = registerItem("sulphur", Rarity.UNCOMMON, 4);
+    public static final Item UMBER = registerItem("umber", Rarity.COMMON, 2);
+    public static final Item TUNGSTEN = registerItem("tungsten", Rarity.COMMON, 3);
+    public static final Item GLACITE = registerItem("glacite", Rarity.COMMON, 5);
     public static final Item BAT_THE_FISH = registerItem("bat_the_fish", new ModItem("bat_the_fish", ExpandedRarity.ModRarity.SPECIAL, 1));
     public static final Item SLUDGE_JUICE = registerItem("sludge_juice", Rarity.UNCOMMON, 3);
     public static final Item TITANIUM = registerItem("titanium", Rarity.RARE, 3);
@@ -49,6 +53,10 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModItems.MITHRIL);
+            entries.add(ModItems.SULPHUR);
+            entries.add(ModItems.UMBER);
+            entries.add(ModItems.TUNGSTEN);
+            entries.add(ModItems.GLACITE);
             entries.add(ModItems.SLUDGE_JUICE);
             entries.add(ModItems.TITANIUM);
             entries.add(ModItems.MUTANT_NETHER_WART);

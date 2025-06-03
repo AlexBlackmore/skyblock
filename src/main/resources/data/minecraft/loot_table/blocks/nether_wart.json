@@ -6,18 +6,28 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:nether_wart"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "minecraft:nether_wart",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "conditions": [
-                {
-                  "block": "minecraft:nether_wart",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "3"
-                  }
-                }
-              ],
               "count": {
                 "type": "minecraft:uniform",
                 "max": 4.0,
@@ -26,15 +36,6 @@
               "function": "minecraft:set_count"
             },
             {
-              "conditions": [
-                {
-                  "block": "minecraft:nether_wart",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "3"
-                  }
-                }
-              ],
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:uniform_bonus_count",
               "function": "minecraft:apply_bonus",
@@ -56,13 +57,6 @@
                 {
                   "condition": "minecraft:random_chance",
                   "chance": 0.5
-                },
-                {
-                  "block": "minecraft:nether_wart",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "3"
-                  }
                 }
               ]
             }
@@ -70,12 +64,44 @@
           "name": "minecraft:nether_wart"
         }
       ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_nether_wart"
+      },
       "functions": [
         {
-          "function": "minecraft:explosion_decay"
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 4.0,
+            "min": 2.0
+          },
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_nether_wart",
+                "scale": 0.01
+              }
+            }
+          ]
         }
-      ],
-      "rolls": 1.0
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
     }
   ],
   "random_sequence": "minecraft:blocks/nether_wart"

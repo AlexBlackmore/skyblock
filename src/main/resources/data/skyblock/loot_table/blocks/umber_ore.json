@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "skyblock:umber"
+        }
+      ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_dwarven_metal"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 2,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_dwarven_metal",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

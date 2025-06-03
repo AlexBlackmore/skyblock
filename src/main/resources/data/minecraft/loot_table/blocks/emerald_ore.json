@@ -1,0 +1,102 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald_ore"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term":
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:silk_touch",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:emerald"
+        }
+      ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_ore"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 1.0,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_ore",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/emerald_ore"
+}

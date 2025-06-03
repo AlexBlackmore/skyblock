@@ -5,94 +5,56 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ],
-              "name": "skyblock:pure_redstone"
+              "function": "minecraft:set_count",
+              "count": 9
             },
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 9.0
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "function": "minecraft:apply_bonus",
+              "parameters": {
+                "bonusMultiplier": 1
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:redstone"
+        }
+      ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_ore"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 9,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
                 },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:uniform_bonus_count",
-                  "function": "minecraft:apply_bonus",
-                  "parameters": {
-                    "bonusMultiplier": 1
-                  }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:redstone"
+                "score": "fortune_remainder_ore",
+                "scale": 0.01
+              }
             }
           ]
         }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          ],
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_data": {
-                  "MiningXP": 20
-                }
-              }
-            }
-          ],
-          "name": "minecraft:gray_dye"
-        }
-      ],
-      "rolls": 1.0
+      ]
     }
   ],
   "random_sequence": "minecraft:blocks/redstone_ore"

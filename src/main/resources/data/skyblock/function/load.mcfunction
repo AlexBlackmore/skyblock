@@ -3,6 +3,7 @@ scoreboard objectives add dummy1 dummy "Dummy1"
 scoreboard objectives add coins dummy "Purse"
 scoreboard objectives add bits dummy "Bits"
 scoreboard objectives add mana dummy "Mana"
+scoreboard players set @a mana 0
 
 scoreboard objectives add experience_combat dummy "Combat Experience"
 scoreboard objectives add experience_mining dummy "Mining Experience"
@@ -11,6 +12,51 @@ scoreboard objectives add experience_foraging dummy "Foraging Experience"
 scoreboard objectives add experience_fishing dummy "Fishing Experience"
 scoreboard objectives add experience_enchanting dummy "Enchanting Experience"
 scoreboard objectives add experience_alchemy dummy "Alchemy Experience"
+
+
+scoreboard objectives add fortune_mining dummy "Mining Fortune"
+scoreboard objectives add fortune_ore dummy "Ore Fortune"
+scoreboard objectives add fortune_block dummy "Block Fortune"
+scoreboard objectives add fortune_dwarven_metal dummy "Dwarven Metal Fortune"
+scoreboard objectives add fortune_gemstone dummy "Gemstone Fortune"
+scoreboard objectives add fortune_titanium dummy "Titanium Fortune"
+
+scoreboard objectives add fortune_farming dummy "Farming Fortune"
+scoreboard objectives add fortune_wheat dummy "Wheat Fortune"
+scoreboard objectives add fortune_potato dummy "Potato Fortune"
+scoreboard objectives add fortune_carrot dummy "Carrot Fortune"
+scoreboard objectives add fortune_pumpkin dummy "Pumpkin Fortune"
+scoreboard objectives add fortune_melon dummy "Melon Fortune"
+scoreboard objectives add fortune_cactus dummy "Cactus Fortune"
+scoreboard objectives add fortune_nether_wart dummy "Nether Wart Fortune"
+scoreboard objectives add fortune_cocoa_beans dummy "Cocoa Bean Fortune"
+scoreboard objectives add fortune_mushroom dummy "Mushroom Fortune"
+scoreboard objectives add fortune_sugar_cane dummy "Sugar Cane Fortune"
+
+scoreboard objectives add fortune_foraging dummy "Foraging Fortune"
+
+scoreboard objectives add fortune_remainder_mining dummy "Mining Fortune Remainder"
+scoreboard objectives add fortune_remainder_ore dummy "Ore Fortune Remainder"
+scoreboard objectives add fortune_remainder_block dummy "Block Fortune Remainder"
+scoreboard objectives add fortune_remainder_dwarven_metal dummy "Dwarven Metal Fortune Remainder"
+scoreboard objectives add fortune_remainder_gemstone dummy "Gemstone Fortune Remainder"
+scoreboard objectives add fortune_remainder_titanium dummy "Titanium Fortune Remainder"
+
+scoreboard objectives add fortune_remainder_farming dummy "Farming Fortune Remainder"
+scoreboard objectives add fortune_remainder_wheat dummy "Wheat Fortune Remainder"
+scoreboard objectives add fortune_remainder_potato dummy "Potato Fortune Remainder"
+scoreboard objectives add fortune_remainder_carrot dummy "Carrot Fortune Remainder"
+scoreboard objectives add fortune_remainder_pumpkin dummy "Pumpkin Fortune Remainder"
+scoreboard objectives add fortune_remainder_melon dummy "Melon Fortune Remainder"
+scoreboard objectives add fortune_remainder_cactus dummy "Cactus Fortune Remainder"
+scoreboard objectives add fortune_remainder_nether_wart dummy "Nether Wart Fortune Remainder"
+scoreboard objectives add fortune_remainder_cocoa_beans dummy "Cocoa Bean Fortune Remainder"
+scoreboard objectives add fortune_remainder_mushroom dummy "Mushroom Fortune Remainder"
+scoreboard objectives add fortune_remainder_sugar_cane dummy "Sugar Cane Fortune Remainder"
+
+scoreboard objectives add fortune_foraging dummy "Foraging Fortune Remainder"
+
+scoreboard objectives add pristine dummy "Pristine"
 
 
 scoreboard objectives add collection_cactus dummy "Cactus Collection"

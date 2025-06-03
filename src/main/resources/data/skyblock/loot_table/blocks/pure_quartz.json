@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 5
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:quartz"
+        }
+      ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_ore"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 5,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_ore",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/nether_quartz_ore"
+}

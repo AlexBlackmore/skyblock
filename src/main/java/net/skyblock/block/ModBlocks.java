@@ -20,8 +20,9 @@ import net.skyblock.item.ModItems;
 public class ModBlocks {
     //TODO: check that blocks are copying all qualities from vanilla blocks (sounds etc.)
     public static final Block PURE_COAL = registerOreBlock("pure_coal", Blocks.COAL_BLOCK, 60.0f, 0, 10, 20);
-    public static final Block PURE_IRON = registerOreBlock("pure_iron", Blocks.IRON_BLOCK, 60.0f, 20);
-    public static final Block PURE_GOLD = registerOreBlock("pure_gold", Blocks.GOLD_BLOCK, 60.0f, 20);
+    public static final Block PURE_IRON = registerOreBlock("pure_iron", Blocks.RAW_IRON_BLOCK, 60.0f, 20);
+    public static final Block PURE_GOLD = registerOreBlock("pure_gold", Blocks.RAW_GOLD_BLOCK, 60.0f, 20);
+    public static final Block PURE_COPPER = registerOreBlock("pure_copper", Blocks.RAW_COPPER_BLOCK, 60.0f, 20);
     public static final Block PURE_LAPIS = registerOreBlock("pure_lapis", Blocks.LAPIS_BLOCK, 60.0f, 3, 6, 20);
     public static final Block PURE_REDSTONE = registerOreBlock("pure_redstone", Blocks.REDSTONE_BLOCK, 60.0f, 2, 10, 20);
     public static final Block PURE_EMERALD = registerOreBlock("pure_emerald", Blocks.EMERALD_BLOCK, 60.0f, 15, 35, 20);

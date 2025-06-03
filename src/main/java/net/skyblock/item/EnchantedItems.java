@@ -28,6 +28,7 @@ public class EnchantedItems {
     public static final Item ENCHANTED_SUGAR = registerItem("enchanted_sugar", Items.SUGAR, Rarity.UNCOMMON);
     public static final Item ENCHANTED_SUGAR_CANE = registerItem("enchanted_sugar_cane", Items.SUGAR_CANE, Rarity.RARE);
     public static final Item ENCHANTED_NETHER_WART = registerItem("enchanted_nether_wart", Items.NETHER_WART, Rarity.UNCOMMON);
+    public static final Item ENCHANTED_SULPHUR = registerItem("enchanted_sulphur", ModItems.SULPHUR, Rarity.RARE);
 
     private static Item registerItem(String name, Item item, Rarity rarity) {
         return Registry.register(Registries.ITEM, Identifier.of(Skyblock.MOD_ID, name),

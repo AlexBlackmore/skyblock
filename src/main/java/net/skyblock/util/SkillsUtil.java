@@ -5,21 +5,45 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.skyblock.attribute.ModEntityAttributes;
+import net.skyblock.block.ModBlocks;
 import net.skyblock.block.ModOreBlock;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SkillsUtil {
+//    private static final Map<Block, Double> mining = new HashMap<>();
+//    static {
+//        mining.put(Blocks.COAL_ORE, 5.0);
+//        mining.put(Blocks.IRON_ORE, 5.0);
+//        mining.put(Blocks.GOLD_ORE, 6.0);
+//        mining.put(Blocks.LAPIS_ORE, 7.0);
+//        mining.put(Blocks.REDSTONE_ORE, 7.0);
+//        mining.put(Blocks.EMERALD_ORE, 9.0);
+//        mining.put(Blocks.DIAMOND_ORE, 10.0);
+//        mining.put(ModBlocks.PURE_COAL, 20.0);
+//        mining.put(ModBlocks.PURE_IRON, 20.0);
+//        mining.put(ModBlocks.PURE_GOLD, 20.0);
+//        mining.put(ModBlocks.PURE_LAPIS, 20.0);
+//        mining.put(ModBlocks.PURE_REDSTONE, 20.0);
+//        mining.put(ModBlocks.PURE_EMERALD, 20.0);
+//        mining.put(ModBlocks.PURE_DIAMOND, 20.0);
+//        mining.put(ModBlocks.PURE_QUARTZ, 20.0);
+//    }
 
     public static void addExperience(ServerWorld server, BlockPos pos, BlockState state, PlayerEntity player) {
         @Nullable CommandManager commandManager = server.getServer().getCommandManager();
         if (commandManager != null) {
             //Checking that player does not have Silk Touch
             commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
-                    "execute if data entity @s SelectedItem.components.minecraft:enchantments.minecraft:silk_touch run tag @s add SUCCESS");
+                    "execute unless data entity @s SelectedItem.components.minecraft:enchantments.minecraft:silk_touch run tag @s add SUCCESS");
             if (player.getCommandTags().contains("SUCCESS")) {
                 commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
                         "tag @s remove SUCCESS");
@@ -31,20 +55,30 @@ public class SkillsUtil {
                 if (mining > 0) {
                     commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
                             "scoreboard players add @s experience_mining " + mining);
-                    player.sendMessage(Text.translatable("hud.skyblock.xp", mining, Text.translatable("skill.skyblock.mining")).formatted(Formatting.DARK_AQUA), true);
+                    commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                            getXpCommand(mining, "mining"));
+                    player.playSound(SoundEvent.of(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP.id()));
                 }
                 if (farming > 0) {
                     commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
                             "scoreboard players add @s experience_farming " + farming);
-                    player.sendMessage(Text.translatable("hud.skyblock.xp", farming, Text.translatable("skill.skyblock.farming")).formatted(Formatting.DARK_AQUA), true);
+                    commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                            getXpCommand(farming, "farming"));
+                    player.playSound(SoundEvent.of(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP.id()));
                 }
                 if (foraging > 0) {
                     commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
                             "scoreboard players add @s experience_foraging " + foraging);
-                    player.sendMessage(Text.translatable("hud.skyblock.xp", foraging, Text.translatable("skill.skyblock.foraging")).formatted(Formatting.DARK_AQUA) , true);
+                    commandManager.executeWithPrefix(player.getCommandSource(server).withLevel(4),
+                            getXpCommand(foraging, "foraging"));
+                    player.playSound(SoundEvent.of(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP.id()));
                 }
             }
         }
+    }
+
+    private static String getXpCommand(int xp, String skill) {
+        return "title @s actionbar {translate:hud.skyblock.xp,with:[\"" + xp + "\",{translate:advancements." + skill + ".title},{score:{name:\"@s\",objective:experience_" + skill + "}}],color:dark_aqua}";
     }
 
     public static int getScaledXp(double xp, double wisdom) {
@@ -108,6 +142,9 @@ public class SkillsUtil {
                 xp += 2;
                 upPos = upPos.up();
             }
+            if (xp > 0) {
+                xp += 2;
+            }
         } else if (block instanceof NetherWartBlock netherWart) {
             if (state.get(NetherWartBlock.AGE) == NetherWartBlock.MAX_AGE) {
                 xp = 4;
@@ -117,6 +154,9 @@ public class SkillsUtil {
             while (server.getBlockState(upPos).getBlock() == Blocks.CACTUS) {
                 xp += 2;
                 upPos = upPos.up();
+            }
+            if (xp > 0) {
+                xp += 2;
             }
         } else if (block instanceof CocoaBlock cocoa) {
             if (state.get(CocoaBlock.AGE) == CocoaBlock.MAX_AGE) {

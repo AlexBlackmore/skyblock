@@ -1,0 +1,28 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "quality": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_jungle"
+              }
+            }
+          ],
+          "name": "skyblock:sludge_juice"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 97
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

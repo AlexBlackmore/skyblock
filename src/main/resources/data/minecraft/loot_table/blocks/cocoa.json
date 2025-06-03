@@ -6,18 +6,28 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:cocoa_beans"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "minecraft:cocoa",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "conditions": [
-                {
-                  "block": "minecraft:cocoa",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "2"
-                  }
-                }
-              ],
               "count": 3.0,
               "function": "minecraft:set_count"
             },
@@ -35,24 +45,47 @@
                 {
                   "condition": "minecraft:random_chance",
                   "chance": 0.5
-                },
-                {
-                  "block": "minecraft:cocoa",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "2"
-                  }
                 }
               ]
-            },
-            {
-              "function": "minecraft:explosion_decay"
             }
           ],
           "name": "minecraft:cocoa_beans"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_cocoa_beans"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 3.0,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_cocoa_beans",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
     }
   ],
   "random_sequence": "minecraft:blocks/cocoa"

@@ -53,7 +53,7 @@ public class ModEntityAttributes {
 
     //Gathering stats
     public static RegistryEntry<EntityAttribute> PRISTINE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("pristine"),
-            new ClampedEntityAttribute("attribute.name.pristine", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
+            new ClampedEntityAttribute("attribute.name.pristine", 0.0, 0.0, ARBITRARY_MAX).setTracked(true));
     public static RegistryEntry<EntityAttribute> FORAGING_FORTUNE = Registry.registerReference(Registries.ATTRIBUTE, Identifier.ofVanilla("fortune_foraging"),
             new ClampedEntityAttribute("attribute.name.fortune.foraging", 1.0, 0.0, ARBITRARY_MAX).setTracked(true));
 

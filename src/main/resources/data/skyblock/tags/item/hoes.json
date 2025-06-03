@@ -1,7 +1,30 @@
 {
   "replace": false,
   "values": [
+    "skyblock:rookie_hoe",
     "skyblock:basic_gardening_hoe",
-    "skyblock:advanced_gardening_hoe"
+    "skyblock:advanced_gardening_hoe",
+    "skyblock:hoe_of_great_tilling",
+    "skyblock:hoe_of_greater_tilling",
+    "skyblock:hoe_of_greatest_tilling",
+    "skyblock:cactus_knife",
+    "skyblock:fungi_cutter",
+    "skyblock:hoe_of_no_tilling",
+    "skyblock:mathematical_hoe_blueprint",
+    "skyblock:euclids_common_wheat_hoe",
+    "skyblock:euclids_uncommon_wheat_hoe",
+    "skyblock:euclids_rare_wheat_hoe",
+    "skyblock:gauss_common_carrot_hoe",
+    "skyblock:gauss_uncommon_carrot_hoe",
+    "skyblock:gauss_rare_carrot_hoe",
+    "skyblock:pythagorean_common_potato_hoe",
+    "skyblock:pythagorean_uncommon_potato_hoe",
+    "skyblock:pythagorean_rare_potato_hoe",
+    "skyblock:turing_common_sugar_cane_hoe",
+    "skyblock:turing_uncommon_sugar_cane_hoe",
+    "skyblock:turing_rare_sugar_cane_hoe",
+    "skyblock:newton_common_nether_wart_hoe",
+    "skyblock:newton_uncommon_nether_wart_hoe",
+    "skyblock:newton_rare_nether_wart_hoe"
   ]
 }

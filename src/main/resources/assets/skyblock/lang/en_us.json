@@ -15,7 +15,7 @@
   "hud.skyblock.health": "%s/%s❤",
   "hud.skyblock.armor": "%s❈",
   "hud.skyblock.mana": "%s/%s✎ Mana",
-  "hud.skyblock.xp": "+%s %s XP",
+  "hud.skyblock.xp": "+%s %s XP (%s)",
   "hud.skyblock.coins": "§6+%s §6Coins (%s§6)",
 
 
@@ -150,6 +150,28 @@
   "lore.skyblock.titanium.0": "§7§oIts strength and resistance to",
   "lore.skyblock.titanium.1": "§7§ocorrosion are the highest of any",
   "lore.skyblock.titanium.2": "§7§ometallic element.",
+
+  "item.skyblock.sulphur": "Sulphur",
+  "lore.skyblock.sulphur.0": "§7§o\"Give me some Sulphur and I'll",
+  "lore.skyblock.sulphur.1": "§7§omake a wand. Give me all the",
+  "lore.skyblock.sulphur.2": "§7§oSulphur and I'll conquer the",
+  "lore.skyblock.sulphur.3": "§7§oworld.\" -Unnamed Mage.",
+
+  "item.skyblock.umber": "Umber",
+  "lore.skyblock.umber.0": "§7§oHardy enough to flourish even in",
+  "lore.skyblock.umber.1": "§7§othe harshest of conditions.",
+
+  "item.skyblock.tungsten": "Tungsten",
+  "lore.skyblock.tungsten.0": "§7§oConsidered for a long time to be",
+  "lore.skyblock.tungsten.1": "§7§ounbreakable prior to the",
+  "lore.skyblock.tungsten.2": "§7§odiscovery of the §5Crystal Hollows§7.",
+
+  "item.skyblock.glacite": "Glacite",
+  "lore.skyblock.glacite.0": "§7§oAn unnaturally, nigh-unbreakable",
+  "lore.skyblock.glacite.1": "§7§omaterial. Of those unlucky few",
+  "lore.skyblock.glacite.2": "§7§owho have discovered where it",
+  "lore.skyblock.glacite.3": "§7§ooriginates, none have lived to",
+  "lore.skyblock.glacite.4": "§7§otell the tale.",
 
   "item.skyblock.jungle_pickaxe": "Jungle Pickaxe",
   "lore.skyblock.jungle_pickaxe.0": "§7Gives a chance to drop §eSludge Juice",
@@ -344,6 +366,7 @@
   "item.skyblock.pure_coal": "Pure Coal",
   "item.skyblock.pure_iron": "Pure Iron",
   "item.skyblock.pure_gold": "Pure Gold",
+  "item.skyblock.pure_copper": "Pure Copper",
   "item.skyblock.pure_lapis": "Pure Lapis",
   "item.skyblock.pure_redstone": "Pure Redstone",
   "item.skyblock.pure_emerald": "Pure Emerald",
@@ -398,7 +421,7 @@
   "item.skyblock.enchanted_item": "Enchanted %s",
 
   "itemgroup.skyblock.enchanted": "Enchanted Items",
-  "itemgroup.skyblock.special": "§cSpecial Items",
+  "itemgroup.skyblock.special": "Special Items",
   "itemgroup.skyblock.ores": "Ores",
   "itemgroup.skyblock.dwarven_metals": "Dwarven Metals",
   "itemgroup.skyblock.gemstones": "Gemstones"

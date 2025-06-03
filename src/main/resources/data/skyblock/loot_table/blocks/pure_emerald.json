@@ -5,91 +5,53 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ],
-              "name": "skyblock:pure_emerald"
+              "function": "minecraft:set_count",
+              "count": 5
             },
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 5.0
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:emerald"
+        }
+      ],
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_ore"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 5,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
                 },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:emerald"
+                "score": "fortune_remainder_ore",
+                "scale": 0.01
+              }
             }
           ]
         }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          ],
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_data": {
-                  "MiningXP": 20
-                }
-              }
-            }
-          ],
-          "name": "minecraft:gray_dye"
-        }
-      ],
-      "rolls": 1.0
+      ]
     }
   ],
   "random_sequence": "minecraft:blocks/emerald_ore"

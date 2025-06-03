@@ -5,6 +5,54 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:silk_touch",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "name": "minecraft:crimson_stem"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term":
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:silk_touch",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
           "type": "minecraft:alternatives",
           "children": [
             {
@@ -27,12 +75,40 @@
             },
             {
               "type": "minecraft:item",
-              "name": "minecraft:crimson_stem"
+              "name": "minecraft:stripped_crimson_stem"
             }
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "score",
+        "target": {
+          "type": "context",
+          "target": "this"
+        },
+        "score": "fortune_foraging"
+      },
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "add": true,
+          "count": 1.0,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "score",
+                "target": {
+                  "type": "context",
+                  "target": "this"
+                },
+                "score": "fortune_remainder_foraging",
+                "scale": 0.01
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "conditions": [
