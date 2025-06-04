@@ -8,13 +8,19 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.decoration.DisplayEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.skyblock.attribute.ModEntityAttributes;
 import net.skyblock.util.FormattingUtil;
+import net.skyblock.util.ModTags;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,8 +32,54 @@ import java.util.Random;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity implements Attackable {
 
+    @Shadow public abstract float getHealth();
+
+    @Shadow public abstract float getMaxHealth();
+
+    @Shadow protected abstract Box getHitbox();
+
+    @Shadow public abstract float getAbsorptionAmount();
+
     protected LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
+    }
+
+    @Override
+    public Text getName() {
+        float health = this.getHealth();
+        float maxHealth = this.getMaxHealth();
+        float absorption = this.getAbsorptionAmount();
+        float percent = health/maxHealth;
+        Formatting healthFormatting;
+        if (absorption > 0.0f) {
+            healthFormatting = Formatting.AQUA;
+        } else if (percent >= 1.0f) {
+            healthFormatting = Formatting.GREEN;
+        } else if (percent > 0.66f) {
+            healthFormatting = Formatting.GOLD;
+        } else if (percent > 0.33f) {
+            healthFormatting = Formatting.YELLOW;
+        } else {
+            healthFormatting = Formatting.RED;
+        }
+
+        LivingEntity livingEntity = (LivingEntity)(Object)this;
+        Formatting nameFormatting = Formatting.WHITE;
+        if (this.getType().isIn(ModTags.EntityTypes.HOSTILE)) {
+            nameFormatting = Formatting.RED;
+        } else if (this.getType().isIn(ModTags.EntityTypes.NEUTRAL)) {
+            nameFormatting = Formatting.YELLOW;
+        }
+
+        Text text = super.getName();
+//        Don't know why this doesn't work. Will appear in command line ie. teleported to "Runic Zombie" but not above entity head
+//        if (livingEntity.getCommandTags().contains("RUNIC")) {
+//            nameFormatting = Formatting.LIGHT_PURPLE;
+//            text = Text.literal("Runic ").append(text);
+//        }
+
+        return text.copy().formatted(nameFormatting).append(Text.literal(" "))
+                .append(Text.translatable("hud.skyblock.health", (int)Math.ceil(health + absorption), (int)Math.ceil(maxHealth)).formatted(healthFormatting));
     }
 
     @ModifyArg(method = "damage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)V"), index = 2)

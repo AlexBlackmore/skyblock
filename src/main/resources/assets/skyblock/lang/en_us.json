@@ -12,7 +12,7 @@
   "potion.potency.8": "IX",
   "potion.potency.9": "X",
 
-  "hud.skyblock.health": "%s/%s❤",
+  "hud.skyblock.health": "%s/%s§c❤",
   "hud.skyblock.armor": "%s❈",
   "hud.skyblock.mana": "%s/%s✎ Mana",
   "hud.skyblock.xp": "+%s %s XP (%s)",

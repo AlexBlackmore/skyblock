@@ -1,6 +1,7 @@
 package net.skyblock.util;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -9,7 +10,6 @@ import net.skyblock.Skyblock;
 
 public class ModTags {
     public static class Blocks {
-
         public static final TagKey<Block> GIVES_FORAGING_XP = createTag("gives_foraging_xp");
         public static final TagKey<Block> PURE_ORES = createTag("pure_ores");
         public static final TagKey<Block> DEEPSLATE_ORES = createTag("deepslate_ores");
@@ -68,6 +68,15 @@ public class ModTags {
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Skyblock.MOD_ID, name));
+        }
+    }
+
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> HOSTILE = createTag("hostile");
+        public static final TagKey<EntityType<?>> NEUTRAL = createTag("neutral");
+
+        private static TagKey<EntityType<?>> createTag(String name) {
+            return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Skyblock.MOD_ID, name));
         }
     }
 }
