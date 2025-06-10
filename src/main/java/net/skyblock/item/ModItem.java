@@ -2,9 +2,9 @@ package net.skyblock.item;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.LoreComponent;
-import net.minecraft.component.type.TooltipDisplayComponent;
+import net.minecraft.component.type.*;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
@@ -13,6 +13,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -51,8 +52,21 @@ public class ModItem extends Item implements ExpandedRarity {
 //    }
 
     @Override
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+        ActionResult a = super.use(world, user, hand);
+        ActionResult b;
+        for (Ability ability : this.abilities) {
+            b = ability.use(world, user, hand);
+            if (a != b) {
+                a = b;
+            }
+        }
+        return a;
+    }
+
+    @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        ActionResult a = ActionResult.PASS;
+        ActionResult a = super.useOnBlock(context);
         ActionResult b;
         for (Ability ability : this.abilities) {
             b = ability.useOnBlock(context);

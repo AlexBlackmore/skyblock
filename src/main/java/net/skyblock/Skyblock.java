@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.skyblock.attribute.ModEntityAttributes;
 import net.skyblock.block.ModBlocks;
 import net.skyblock.component.ModDataComponentTypes;
+import net.skyblock.effect.ModEffects;
 import net.skyblock.item.ModItemGroups;
 import net.skyblock.item.ModItems;
 import net.skyblock.util.EventUtil;
@@ -22,6 +23,7 @@ public class Skyblock implements ModInitializer {
 		ModEntityAttributes.registerEntityAttributes();
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
+		ModEffects.registerEffects();
 
 		EventUtil.registerEvents();
 		ModDataComponentTypes.registerDataComponentTypes();

@@ -27,6 +27,7 @@ public class ModTools {
     private static final float DEFAULT_SWORD_ATTACK_SPEED  = -2.4f;
     private static final float DEFAULT_IRON_AXE_ATTACK_SPEED  = -3.1f;
     private static final float DEFAULT_STONE_AXE_ATTACK_SPEED = -3.2f;
+    private static final float DEFAULT_GOLDEN_SWORD_ATTACK_SPEED = -2.4F;
 
     //PICKAXES
     public static final Item LAPIS_PICKAXE = ModItems.registerItem("lapis_pickaxe",
@@ -293,6 +294,15 @@ public class ModTools {
     public static final Item SHEEP_AXE = ModItems.registerItem("sheep_axe",
             new ModItem(getSwordItemSettings("sheep_axe", ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, Rarity.UNCOMMON)),
                     ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new AnimalAxeAbility("sheep")}));
+
+    public static final Item ROGUE_SWORD = ModItems.registerItem("rogue_sword",
+            new ModItem(getSwordItemSettings("rogue_sword", ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, Rarity.COMMON))
+                    .component(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.builder()
+                        .add(EntityAttributes.ATTACK_DAMAGE, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "rogue_sword_attack_damage"),
+                                4.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND)
+                        .add(EntityAttributes.ATTACK_SPEED, new EntityAttributeModifier(Identifier.of(Skyblock.MOD_ID, "rogue_sword_attack_speed"),
+                                DEFAULT_GOLDEN_SWORD_ATTACK_SPEED, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build()),
+                    ExpandedRarity.ModRarity.COMMON, new Ability[]{new SpeedBoostAbility()}));
 
 
     //HOES
@@ -613,6 +623,7 @@ public class ModTools {
             entries.add(ModTools.PIG_AXE);
             entries.add(ModTools.RABBIT_AXE);
             entries.add(ModTools.SHEEP_AXE);
+            entries.add(ModTools.ROGUE_SWORD);
         });
     }
 }

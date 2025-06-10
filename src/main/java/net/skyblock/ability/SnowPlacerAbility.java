@@ -19,12 +19,10 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class SnowPlacerAbility extends Ability {
-    private final int cost;
     public SnowPlacerAbility(int cost) {
         super("snow_placer", 2);
-        this.cost = cost;
-        this.setHasCost(true);
-        this.setIsActive(true);
+        this.setCost(cost);
+        this.setActive();
     }
 
     @Override
@@ -39,10 +37,10 @@ public class SnowPlacerAbility extends Ability {
             @Nullable CommandManager commandManager = server.getServer().getCommandManager();
             if (commandManager != null && playerEntity != null) {
                 commandManager.executeWithPrefix(playerEntity.getCommandSource(server).withLevel(4),
-                        "execute if score @s coins matches " + this.cost + ".. run tag @s add SUCCESS");
+                        "execute if score @s coins matches " + getCost() + ".. run tag @s add SUCCESS");
                 if (playerEntity.getCommandTags().contains("SUCCESS") || playerEntity.isCreative()) {
                     commandManager.executeWithPrefix(playerEntity.getCommandSource(server).withLevel(4),
-                            "scoreboard players remove @s[tag=SUCCESS] coins " + this.cost);
+                            "scoreboard players remove @s[tag=SUCCESS] coins " + getCost());
                     commandManager.executeWithPrefix(playerEntity.getCommandSource(server).withLevel(4),
                             "tag @s[tag=SUCCESS] remove SUCCESS");
                 } else {

@@ -63,20 +63,30 @@ public abstract class LivingEntityMixin extends Entity implements Attackable {
             healthFormatting = Formatting.RED;
         }
 
-        LivingEntity livingEntity = (LivingEntity)(Object)this;
+
+        Text text = this.getCustomName();
+        if (text != null) {
+            text = super.getName();
+        } else {
+            text = this.getDefaultName();
+            if (this.getCommandTags().contains("RUNIC")) {
+                this.setCustomName(Text.literal("Runic ").append(this.getDefaultName()));
+            }
+            if (this.getCommandTags().contains("CORRUPTED")) {
+                this.setCustomName(Text.literal("Corrupted ").append(this.getDefaultName()));
+            }
+        }
+
         Formatting nameFormatting = Formatting.WHITE;
-        if (this.getType().isIn(ModTags.EntityTypes.HOSTILE)) {
+        if (text.contains(Text.literal("Runic "))) {
+            nameFormatting = Formatting.LIGHT_PURPLE;
+        } else if (text.contains(Text.literal("Corrupted "))) {
+            nameFormatting = Formatting.DARK_PURPLE;
+        } else if (this.getType().isIn(ModTags.EntityTypes.HOSTILE)) {
             nameFormatting = Formatting.RED;
         } else if (this.getType().isIn(ModTags.EntityTypes.NEUTRAL)) {
             nameFormatting = Formatting.YELLOW;
         }
-
-        Text text = super.getName();
-//        Don't know why this doesn't work. Will appear in command line ie. teleported to "Runic Zombie" but not above entity head
-//        if (livingEntity.getCommandTags().contains("RUNIC")) {
-//            nameFormatting = Formatting.LIGHT_PURPLE;
-//            text = Text.literal("Runic ").append(text);
-//        }
 
         return text.copy().formatted(nameFormatting).append(Text.literal(" "))
                 .append(Text.translatable("hud.skyblock.health", (int)Math.ceil(health + absorption), (int)Math.ceil(maxHealth)).formatted(healthFormatting));

@@ -5,12 +5,15 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ToolComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.skyblock.effect.ModEffects;
 import net.skyblock.util.SkillsUtil;
 
 import java.util.*;
@@ -21,12 +24,19 @@ public class TimberAbility extends Ability {
         super("timber", 0);
         this.maxBlocks = maxBlocks;
         this.setShowName(false);
+        this.setCooldown(40, ModEffects.TIMBER_COOLDOWN);
     }
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         ToolComponent toolComponent = stack.get(DataComponentTypes.TOOL);
         if (toolComponent != null && world instanceof ServerWorld server && miner instanceof PlayerEntity player) {
+            if (player.hasStatusEffect(getCooldownEffect())) {
+                return super.postMine(stack, world, state, pos, miner);
+            } else {
+                player.addStatusEffect(new StatusEffectInstance(getCooldownEffect(), getCooldown()));
+            }
+
             int blocksBroken = 1;
             if (state.isIn(BlockTags.LOGS)) {
 

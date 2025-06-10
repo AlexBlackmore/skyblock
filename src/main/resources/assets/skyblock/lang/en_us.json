@@ -1,4 +1,6 @@
 {
+  "trim_pattern.skyblock.blank": "Blank",
+
   "formatting.skyblock.plural": "%ss",
   "formatting.skyblock.name": "%s %s§c❤",
   "formatting.skyblock.hearts": "%s§c❤",
@@ -68,6 +70,7 @@
   "message.fishing.sea_creature.generic": "§aA %s §aappeared.",
   "message.coins.pick_up": "You gained %s coins!",
   "message.skyblock.not_enough_coins": "§cYou do not have enough coins!",
+  "message.skyblock.not_enough_mana": "§cYou do not have enough mana!",
 
   "attribute.name.intelligence": "Intelligence",
   "attribute.name.crit_damage": "Crit Damage",
@@ -131,11 +134,54 @@
   "enchantment.skyblock.hidden": "",
 
 
+  "effect.skyblock.runic": "Runic",
+  "effect.skyblock.timber_cooldown": "Timber Cooldown",
+
+  "effect.skyblock.stamina": "Stamina",
+  "effect.skyblock.adrenaline": "Adrenaline",
+  "effect.skyblock.agility": "Agility",
+  "effect.skyblock.archery": "Archery",
+  "effect.skyblock.burning": "Burning",
+  "effect.skyblock.burned": "Burned",
+  "effect.skyblock.critical": "Critical",
+  "effect.skyblock.dodge": "Dodge",
+  "effect.skyblock.experience": "Experience",
+  "effect.skyblock.mana": "Mana",
+  "effect.skyblock.pet_luck": "Pet Luck",
+  "effect.skyblock.rabbit": "Rabbit",
+  "effect.skyblock.spelunker": "Spelunker",
+  "effect.skyblock.stun": "Stun",
+  "effect.skyblock.knockback": "Knockback",
+  "effect.skyblock.venomous": "Venomous",
+  "effect.skyblock.venomed": "Venomed",
+  "effect.skyblock.wounded": "Wounded",
+  "effect.skyblock.mushed_glowy_tonic": "Mushed Glowy Tonic",
+  "effect.skyblock.spirit": "Spirit",
+  "effect.skyblock.alchemy_xp_boost": "Alchemy XP Boost",
+  "effect.skyblock.combat_xp_boost": "Combat XP Boost",
+  "effect.skyblock.enchanting_xp_boost": "Enchanting XP Boost",
+  "effect.skyblock.farming_xp_boost": "Farming XP Boost",
+  "effect.skyblock.fishing_xp_boost": "Fishing XP Boost",
+  "effect.skyblock.foraging_xp_boost": "Foraging XP Boost",
+  "effect.skyblock.mining_xp_boost": "Mining XP Boost",
+  "effect.skyblock.wisps_ice_flavored_water": "Wisp's Ice-Flavored Water",
+  "effect.skyblock.harvest_harbinger": "Harvest Harbinger",
+  "effect.skyblock.cold_resistance": "Cold Resistance",
+  "effect.skyblock.douce_pluie_de_stinky_cheese": "Douce Pluie de Stinky Cheese",
+
+
   "lore.skyblock.ability": "§6Ability: %s %s",
   "lore.skyblock.ability.right_click": "§e§lRIGHT CLICK",
   "lore.skyblock.ability.cost": "§8Cost: %s",
   "lore.skyblock.ability.cooldown": "§8Cooldown: %s",
   "lore.skyblock.ability.max": "§8(Max: %s§8)",
+
+  "item.skyblock.rogue_sword": "Rogue Sword",
+  "effect.skyblock.speed_boost": "Speed Boost",
+  "effect.skyblock.speed_boost_cooldown": "Speed Boost Cooldown",
+  "ability.skyblock.speed_boost": "Speed Boost",
+  "ability.skyblock.speed_boost.0": "§7Grants %s %s §7for %s§7.",
+
 
   "item.skyblock.bat_the_fish": "Bat The Fish",
   "lore.skyblock.bat_the_fish.0": "§7Where is my cape!",
