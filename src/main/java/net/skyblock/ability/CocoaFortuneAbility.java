@@ -20,12 +20,16 @@ public class CocoaFortuneAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        for (int i=0 ; i<this.loreLines ; i++) {
-            if (i == 0) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, "§9+" + (int)(this.fortune *100) + "%", Text.translatable("attribute.name.fortune.cocoa_beans").formatted(Formatting.BLUE)));
-            } else if (i == 1) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, this.block.getName()));
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case 0 -> {
+                return new Object[]{"§9+" + (int)(this.fortune *100) + "%", Text.translatable("attribute.name.fortune.cocoa_beans").formatted(Formatting.BLUE)};
+            }
+            case 2 -> {
+                return new Object[]{this.block.getName()};
+            }
+            default -> {
+                return new Object[]{};
             }
         }
     }

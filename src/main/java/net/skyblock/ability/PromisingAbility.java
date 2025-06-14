@@ -20,12 +20,12 @@ public class PromisingAbility extends Ability {
     private final int[] levels;
 
     public PromisingAbility() {
-        super("promising", 0);
+        super("promising", 4);
         this.levels = new int[]{50, 250, 750, 1750, 3750};
         this.setShowName(false);
     }
     public PromisingAbility(int[] levels) {
-        super("promising", 0);
+        super("promising", 4);
         this.levels = levels;
         this.setShowName(false);
     }
@@ -50,18 +50,29 @@ public class PromisingAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
         @Nullable Integer blocksBroken = stack.get(ModDataComponentTypes.BLOCKS_BROKEN);
         if (blocksBroken != null) {
             int nextLevel = 1;
-            for (int i : this.levels) {
-                if (blocksBroken>i) nextLevel++;
+            for (int a : this.levels) {
+                if (blocksBroken > a) nextLevel++;
             }
 
-            textConsumer.accept(Text.translatable("lore.skyblock.promising_tool.0", Text.translatable("enchantment.minecraft.efficiency").formatted(Formatting.BLUE), Text.translatable("enchantment.level." + nextLevel).formatted(Formatting.BLUE)));
-            textConsumer.accept(Text.translatable("lore.skyblock.promising_tool.1", "§a" + FormattingUtil.commaSeparateInt(levels[nextLevel-1])));
-            textConsumer.accept(Text.literal(""));
-            textConsumer.accept(Text.translatable("lore.skyblock.promising_tool.2", "§a" + FormattingUtil.commaSeparateInt(blocksBroken)));
+            switch(i) {
+                case 0 -> {
+                    return new Object[]{ Text.translatable("enchantment.minecraft.efficiency").formatted(Formatting.BLUE), Text.translatable("enchantment.level." + nextLevel).formatted(Formatting.BLUE)};
+                }
+                case 1 -> {
+                    return new Object[]{"§a" + FormattingUtil.commaSeparateInt(levels[nextLevel-1])};
+                }
+                case 3 -> {
+                    return new Object[]{"§a" + FormattingUtil.commaSeparateInt(blocksBroken)};
+                }
+                default -> {
+                    return new Object[]{};
+                }
+            }
         }
+        return new Object[]{};
     }
 }

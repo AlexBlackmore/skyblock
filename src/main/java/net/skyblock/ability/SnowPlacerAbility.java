@@ -6,12 +6,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -23,6 +25,7 @@ public class SnowPlacerAbility extends Ability {
         super("snow_placer", 2);
         this.setCost(cost);
         this.setActive();
+        this.setCooldown(19);
     }
 
     @Override
@@ -36,6 +39,9 @@ public class SnowPlacerAbility extends Ability {
             PlayerEntity playerEntity = context.getPlayer();
             @Nullable CommandManager commandManager = server.getServer().getCommandManager();
             if (commandManager != null && playerEntity != null) {
+                if (playerEntity.hasStatusEffect(getCooldownEffect())) {
+                    return ActionResult.PASS;
+                }
                 commandManager.executeWithPrefix(playerEntity.getCommandSource(server).withLevel(4),
                         "execute if score @s coins matches " + getCost() + ".. run tag @s add SUCCESS");
                 if (playerEntity.getCommandTags().contains("SUCCESS") || playerEntity.isCreative()) {
@@ -79,6 +85,18 @@ public class SnowPlacerAbility extends Ability {
             return blockState.isIn(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON) ||
                     Block.isFaceFullSquare(blockState.getCollisionShape(world, pos.down()), Direction.UP) ||
                     blockState.isOf(Blocks.SNOW) && (Integer)blockState.get(SnowBlock.LAYERS) == 8;
+        }
+    }
+
+    @Override
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case -2 -> {
+                return new Object[]{"§6" + getCost() + " coins"};
+            }
+            default -> {
+                return new Object[]{};
+            }
         }
     }
 }

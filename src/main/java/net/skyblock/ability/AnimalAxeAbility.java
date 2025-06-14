@@ -10,17 +10,18 @@ public class AnimalAxeAbility extends Ability {
     private final String entity;
     public AnimalAxeAbility(String entity) {
         super("animal_axe", 3);
+        setShowName(false);
         this.entity = entity;
     }
 
-
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        for (int i=0 ; i<this.loreLines ; i++) {
-            if (i == 0) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, Text.translatable("entity.minecraft." + this.entity).formatted(Formatting.LIGHT_PURPLE)));
-            } else {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case 0 -> {
+                return new Object[]{Text.translatable("entity.minecraft." + this.entity).formatted(Formatting.LIGHT_PURPLE)};
+            }
+            default -> {
+                return new Object[]{};
             }
         }
     }

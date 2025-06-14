@@ -41,15 +41,21 @@ public class StoredPotentialAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
         @Nullable Integer blocksBroken = stack.get(ModDataComponentTypes.BLOCKS_BROKEN);
         if (blocksBroken != null) {
-            textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock.stored_potential").formatted(Formatting.GOLD), ""));
-            textConsumer.accept(Text.translatable("ability.skyblock.stored_potential.0", "§9+10%", Text.translatable("attribute.name.mining_efficiency").formatted(Formatting.BLUE)));
-            textConsumer.accept(Text.translatable("ability.skyblock.stored_potential.1"));
-            textConsumer.accept(Text.translatable("lore.skyblock.ability.max", Text.translatable("ability.skyblock.stored_potential.max", "§8+250%", Text.translatable("attribute.name.block_break_speed")).formatted(Formatting.DARK_GRAY)));
-            textConsumer.accept(Text.literal(""));
-            textConsumer.accept(Text.translatable("lore.skyblock.promising_tool.2", "§a" + FormattingUtil.commaSeparateInt(blocksBroken)));
+            switch(i) {
+                case 0 -> {
+                    return new Object[]{"§9+10%", Text.translatable("attribute.name.mining_efficiency").formatted(Formatting.BLUE)};
+                }
+                case -1 -> {
+                    return new Object[]{Text.literal("§8+250% ").append(Text.translatable("attribute.name.mining_efficiency")).formatted(Formatting.DARK_GRAY)};
+                }
+                default -> {
+                    return new Object[]{};
+                }
+            }
         }
+        return new Object[]{};
     }
 }

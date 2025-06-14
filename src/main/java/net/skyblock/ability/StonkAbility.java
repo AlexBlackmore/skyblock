@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.GameRules;
@@ -40,12 +41,16 @@ public class StonkAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        for (int i=0 ; i<this.loreLines ; i++) {
-            switch(i) {
-                case 0, 4 -> textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, this.block.getName()));
-                case 3 -> textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, "§a" + (int)(this.chance*100) + "%"));
-                default -> textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case 0, 4 -> {
+                return new Object[]{this.block.getName()};
+            }
+            case 3 -> {
+                return new Object[]{"§a" + (int)(this.chance*100) + "%"};
+            }
+            default -> {
+                return new Object[]{};
             }
         }
     }

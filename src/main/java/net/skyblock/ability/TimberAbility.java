@@ -6,7 +6,6 @@ import net.minecraft.component.type.ToolComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
@@ -20,6 +19,7 @@ import java.util.*;
 
 public class TimberAbility extends Ability {
     private final int maxBlocks;
+
     public TimberAbility(int maxBlocks) {
         super("timber", 0);
         this.maxBlocks = maxBlocks;
@@ -46,9 +46,6 @@ public class TimberAbility extends Ability {
                     SkillsUtil.addExperience(server, pos, state, player);
                 }
                 blocksBroken += connectedBlocks.size() - 1;
-//                if (miner instanceof PlayerEntity player) {
-//                    player.sendMessage(Text.literal("Jungle Axe just mined a log. " + blocksBroken), true);
-//                }
             }
             if (state.getHardness(world, pos) != 0.0F && toolComponent.damagePerBlock() > 0) {
                 stack.damage(toolComponent.damagePerBlock() * blocksBroken, miner, EquipmentSlot.MAINHAND);

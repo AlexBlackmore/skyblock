@@ -217,11 +217,11 @@ public class ModTools {
                 ExpandedRarity.ModRarity.COMMON, new Ability[]{new AxeAbility()}));
 
     public static final Item JUNGLE_AXE = ModItems.registerItem("jungle_axe",
-            new ModItem(getAxeItemSettings("jungle_axe", 4, ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, 2, 1.0f, ModTags.Items.JUNGLE_AXE_MATERIALS)),
+            new ModItem(getAxeItemSettings("jungle_axe", 3, ModToolMaterials.getToolMaterial(ToolMaterial.WOOD, 2, 1.0f, ModTags.Items.JUNGLE_AXE_MATERIALS)),
                     ExpandedRarity.ModRarity.UNCOMMON, new Ability[]{new TimberAbility(10), new AxeAbility()}));
 
     public static final Item TREECAPITATOR = ModItems.registerItem("treecapitator",
-            new ModItem(getAxeItemSettings("treecapitator", 4, ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, 4, 1.0f, ModTags.Items.TREECAPITATOR_TOOL_MATERIALS)),
+            new ModItem(getAxeItemSettings("treecapitator", 3, ModToolMaterials.getToolMaterial(ToolMaterial.GOLD, 4, 1.0f, ModTags.Items.TREECAPITATOR_TOOL_MATERIALS)),
                     ExpandedRarity.ModRarity.EPIC, new Ability[]{new TimberAbility(35), new AxeAbility()}));
 
     public static final Item PROMISING_AXE = ModItems.registerItem("promising_axe",

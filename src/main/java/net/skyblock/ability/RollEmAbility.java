@@ -11,6 +11,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.skyblock.component.ModDataComponentTypes;
+import net.skyblock.util.FormattingUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -43,15 +45,13 @@ public class RollEmAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), ""));
-
-        for (int i=0 ; i<this.loreLines ; i++) {
-            switch (i) {
-                case 0,3 -> textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, this.block.getName()));
-                default -> {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
-                }
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case 0, 3 -> {
+                return new Object[]{this.block.getName()};
+            }
+            default -> {
+                return new Object[]{};
             }
         }
     }

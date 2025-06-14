@@ -3,6 +3,7 @@ package net.skyblock.ability;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -22,7 +23,6 @@ public abstract class Ability {
     public final int loreLines;
     private boolean showName = true;
 
-    private boolean hasCost = false;
     private int cost = 0;
 
     private boolean isActive = false;
@@ -41,7 +41,7 @@ public abstract class Ability {
     }
 
     public boolean isHidden() {
-        return (!this.showName && this.cost==0 && cooldown!=0 && !hasMax && this.loreLines == 0);
+        return (!this.showName && this.cost==0 && cooldown==0 && !hasMax && this.loreLines == 0);
     }
 
     public Ability setShowName(boolean showName) {
@@ -72,7 +72,15 @@ public abstract class Ability {
     public int getDuration() {
         return this.duration;
     }
+    public StatusEffectInstance getActiveEffectInstance() {
+        return new StatusEffectInstance(activeEffect, duration);
+    }
 
+    //Sets only cooldown duration, will keep default cooldown effect (nausea)
+    public Ability setCooldown(int cooldown) {
+        this.cooldown = cooldown;
+        return this;
+    }
     public Ability setCooldown(int cooldown, RegistryEntry<StatusEffect> effect) {
         this.cooldown = cooldown;
         this.cooldownEffect = effect;
@@ -84,17 +92,37 @@ public abstract class Ability {
     public int getCooldown() {
         return this.cooldown;
     }
+    public StatusEffectInstance getCooldownEffectInstance() {
+        return new StatusEffectInstance(cooldownEffect, duration, 0, true, false, false, new StatusEffectInstance(cooldownEffect, duration+cooldown));
+    }
 
     public Ability setHasMax(boolean hasMax) {
         this.hasMax = hasMax;
         return this;
     }
 
-    public ActionResult use(World world, PlayerEntity user, Hand hand) {return ActionResult.PASS;}
+    public boolean canUse(World world, PlayerEntity user, Hand hand) {return true;}
+
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+        if (isActive && canUse(world, user, hand)) {
+            if (duration > 0) {
+                user.addStatusEffect(getActiveEffectInstance());
+            }
+            if (cooldown > 0) {
+                user.addStatusEffect(getCooldownEffectInstance());
+            }
+        }
+
+        return ActionResult.PASS;
+    }
 
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {return false;}
 
     public ActionResult useOnBlock(ItemUsageContext context) {return ActionResult.PASS;}
+
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        return new Object[]{};
+    }
 
     public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
         if (!isHidden()) {
@@ -106,16 +134,16 @@ public abstract class Ability {
                 }
             }
             for (int i=0 ; i<this.loreLines ; i++) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
+                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, getTooltipArguments(i, stack)));
             }
             if (this.hasMax) {
-                textConsumer.accept(Text.translatable("lore.skyblock.ability.max", Text.translatable("ability.skyblock." + name + ".max")));
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.max", getTooltipArguments(-1, stack)));
             }
-            if (this.hasCost) {
-                textConsumer.accept(Text.translatable("lore.skyblock.ability.cost", Text.translatable("ability.skyblock." + name + ".cost")));
+            if (this.cost != 0) {
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.cost", getTooltipArguments(-2, stack)));
             }
-            if (this.cooldown != 0) {
-                textConsumer.accept(Text.translatable("lore.skyblock.ability.cooldown", (this.cooldown/20) + "s"));
+            if (this.cooldown >= 20) {
+                textConsumer.accept(Text.translatable("lore.skyblock.ability.cooldown", "§a" + (this.cooldown/20) + "s"));
             }
         }
     }

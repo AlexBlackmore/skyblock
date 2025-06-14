@@ -10,6 +10,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.skyblock.Skyblock;
+import net.skyblock.ability.SpeedBoostAbility;
 import net.skyblock.attribute.ModEntityAttributes;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,8 +76,8 @@ public class ModEffects {
             .addAttributeModifier(ModEntityAttributes.MINING_WISDOM, Identifier.of(Skyblock.MOD_ID, "mining_xp_boost"), 0.05, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
-    public static final RegistryEntry<StatusEffect> SPEED_BOOST_COOLDOWN = register("speed_boost_cooldown", new ModEffect(StatusEffectCategory.NEUTRAL, getFormattingColourValues(Formatting.GREEN)));
-    public static final RegistryEntry<StatusEffect> SPEED_BOOST = register("speed_boost", new ModEffect(StatusEffectCategory.BENEFICIAL, getFormattingColourValues(Formatting.WHITE))
+    public static final RegistryEntry<StatusEffect> SPEED_BOOST_COOLDOWN = register("speed_boost_cooldown", new AbilityEffect(new SpeedBoostAbility(), true, StatusEffectCategory.NEUTRAL, getFormattingColourValues(Formatting.GREEN)));
+    public static final RegistryEntry<StatusEffect> SPEED_BOOST = register("speed_boost", new AbilityEffect(new SpeedBoostAbility(), StatusEffectCategory.BENEFICIAL, getFormattingColourValues(Formatting.WHITE))
             .addAttributeModifier(EntityAttributes.MOVEMENT_SPEED, Identifier.of(Skyblock.MOD_ID, "speed_boost_movement_speed"), 1.0, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static final RegistryEntry<StatusEffect> TIMBER_COOLDOWN = register("timber_cooldown", new ModEffect(StatusEffectCategory.NEUTRAL, getFormattingColourValues(Formatting.GREEN)));

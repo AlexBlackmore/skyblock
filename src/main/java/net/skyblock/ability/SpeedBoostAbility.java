@@ -1,12 +1,10 @@
 package net.skyblock.ability;
 
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -26,43 +24,41 @@ public class SpeedBoostAbility extends Ability {
     }
 
     @Override
-    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+    public boolean canUse(World world, PlayerEntity user, Hand hand) {
         if (world instanceof ServerWorld server && !user.hasStatusEffect(getActiveEffect()) && !user.hasStatusEffect(getCooldownEffect())) {
             @Nullable CommandManager commandManager = server.getServer().getCommandManager();
             if (commandManager != null) {
                 commandManager.executeWithPrefix(user.getCommandSource(server).withLevel(4),
                         "execute if score @s mana matches " + getCost() + ".. run tag @s add SUCCESS");
-                if (user.getCommandTags().contains("SUCCESS") || user.isCreative()) {
+                if (user.getCommandTags().contains("SUCCESS")) {
                     commandManager.executeWithPrefix(user.getCommandSource(server).withLevel(4),
                             "scoreboard players remove @s[tag=SUCCESS] mana " + getCost());
                     commandManager.executeWithPrefix(user.getCommandSource(server).withLevel(4),
                             "tag @s[tag=SUCCESS] remove SUCCESS");
-                } else {
+                } else if (!user.isCreative()) {
                     user.sendMessage(Text.translatable("message.skyblock.not_enough_mana"), false);
-                    return ActionResult.PASS;
+                    return false;
                 }
             } else {
-                return ActionResult.PASS;
+                return false;
             }
-
-            user.addStatusEffect(new StatusEffectInstance(getActiveEffect(), getDuration()));
-            user.addStatusEffect(new StatusEffectInstance(getCooldownEffect(), getDuration() + getCooldown()));
+            return true;
         }
-
-        return super.use(world, user, hand);
+        return false;
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name).formatted(Formatting.GOLD), Text.translatable("lore.skyblock.ability.right_click")));
-        for (int i=0 ; i<this.loreLines ; i++) {
-            if (i == 0) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, "§8" + (int)(this.boost*100) + "%",Text.translatable("attribute.name.movement_speed").formatted(Formatting.BLUE), "§a" + getDuration()/20 + "s"));
-            } else {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        switch(i) {
+            case 0 -> {
+                return new Object[]{"§9" + (int)(this.boost*100) + "%",Text.translatable("attribute.name.movement_speed").formatted(Formatting.BLUE), "§a" + getDuration()/20 + "s"};
+            }
+            case -2 -> {
+                return new Object[]{"§3" + getCost() + " mana"};
+            }
+            default -> {
+                return new Object[]{};
             }
         }
-        textConsumer.accept(Text.translatable("lore.skyblock.ability.cost", "§3" + getCost() + " mana"));
-        textConsumer.accept(Text.translatable("lore.skyblock.ability.cooldown", "§a" + (getCooldown()/20) + "s"));
     }
 }

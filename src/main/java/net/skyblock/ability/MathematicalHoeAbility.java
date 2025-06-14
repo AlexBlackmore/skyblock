@@ -35,13 +35,15 @@ public class MathematicalHoeAbility extends Ability {
     private Item collection = Items.BEDROCK;
 
     public MathematicalHoeAbility(Block block) {
-        super("mathematical_hoe", 2);
+        super("mathematical_hoe", 3);
         this.block = block;
+        setShowName(false);
     }
 
     public MathematicalHoeAbility(Block block, String id) {
-        super("mathematical_hoe", 5);
+        super("mathematical_hoe", 6);
         this.block = block;
+        setShowName(false);
 
         if (this.VALID_IDS.contains(id)) {
             this.item_id = id;
@@ -50,8 +52,9 @@ public class MathematicalHoeAbility extends Ability {
     }
 
     public MathematicalHoeAbility(Block block, String id, Item collection) {
-        super("mathematical_hoe", 9);
+        super("mathematical_hoe", 11);
         this.block = block;
+        setShowName(false);
 
         if (this.VALID_IDS.contains(id)) {
             this.item_id = id;
@@ -118,13 +121,14 @@ public class MathematicalHoeAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
         @Nullable Integer blocksBroken = stack.get(ModDataComponentTypes.MATHEMATICAL_HOE);
         if (blocksBroken != null) {
-            for (int i=0 ; i<this.loreLines ; i++) {
-                if (i==0) {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, "§e" + FormattingUtil.commaSeparateInt(blocksBroken), this.block.getName().formatted(Formatting.YELLOW)));
-                } else if (i==1) {
+            switch(i) {
+                case 0 -> {
+                    return new Object[]{"§e" + FormattingUtil.commaSeparateInt(blocksBroken), this.block.getName().formatted(Formatting.YELLOW)};
+                }
+                case 2 -> {
                     int upgradeThreshold = 0;
                     for (int t : this.upgradeThresholds) {
                         if (blocksBroken < t) {
@@ -133,19 +137,20 @@ public class MathematicalHoeAbility extends Ability {
                         }
                     }
                     if (upgradeThreshold != 0) {
-                        textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, "§8" + FormattingUtil.commaSeparateInt(upgradeThreshold)));
+                        return new Object[]{"§8" + FormattingUtil.commaSeparateInt(upgradeThreshold)};
                     }
-                } else if (i==2 || i==5) {
-                    textConsumer.accept(Text.literal(""));
-                    textConsumer.accept(Text.translatable("lore.skyblock.ability", Text.translatable("ability.skyblock." + this.name + "." + i).formatted(Formatting.GOLD), ""));
-                } else if (i==3 || i==6) {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, "§9+" + FormattingUtil.commaSeparateInt((int)((i==3 ? this.logarithmic_counter_reward : this.collection_analysis_reward)*100)) + "%", Text.translatable("attribute.name.fortune." + this.item_id).formatted(Formatting.BLUE)));
-                } else if (i==7) {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i, this.collection.getName()));
-                } else {
-                    textConsumer.accept(Text.translatable("ability.skyblock." + this.name + "." + i));
+                }
+                case 5, 9 -> {
+                    return new Object[]{"§9+" + FormattingUtil.commaSeparateInt((int)((i==3 ? this.logarithmic_counter_reward : this.collection_analysis_reward)*100)) + "%", Text.translatable("attribute.name.fortune." + this.item_id).formatted(Formatting.BLUE)};
+                }
+                case 10 -> {
+                    return new Object[]{this.collection.getName()};
+                }
+                default -> {
+                    return new Object[]{};
                 }
             }
         }
+        return new Object[]{};
     }
 }

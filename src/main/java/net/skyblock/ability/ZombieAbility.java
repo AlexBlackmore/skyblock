@@ -5,7 +5,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
@@ -15,7 +14,6 @@ import net.minecraft.world.World;
 import net.skyblock.util.ModTags;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 public class ZombieAbility extends Ability {
     private final RegistryEntry<StatusEffect> EFFECT = StatusEffects.HASTE;
@@ -43,13 +41,10 @@ public class ZombieAbility extends Ability {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Consumer<Text> textConsumer) {
-        for (int i=0 ; i<this.loreLines ; i++) {
-            if (i == 0) {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i, Text.translatable("potion.withAmplifier", Text.translatable( "effect." + EFFECT.getIdAsString().replace(':','.')), Text.translatable("potion.potency." + AMPLIFIER)).formatted(Formatting.BLUE), "§a" + DURATION/20 + "s"));
-            } else {
-                textConsumer.accept(Text.translatable("ability.skyblock." + name + "." + i));
-            }
+    public Object[] getTooltipArguments(int i, ItemStack stack) {
+        if (i == 0) {
+            return new Object[]{Text.translatable("potion.withAmplifier", Text.translatable("effect." + EFFECT.getIdAsString().replace(':', '.')), Text.translatable("potion.potency." + AMPLIFIER)).formatted(Formatting.BLUE), "§a" + DURATION / 20 + "s"};
         }
+        return new Object[]{};
     }
 }
