@@ -10,6 +10,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.skyblock.Skyblock;
+import net.skyblock.ability.RottenAbility;
 import net.skyblock.ability.SpeedBoostAbility;
 import net.skyblock.attribute.ModEntityAttributes;
 import org.jetbrains.annotations.NotNull;
@@ -81,6 +82,9 @@ public class ModEffects {
             .addAttributeModifier(EntityAttributes.MOVEMENT_SPEED, Identifier.of(Skyblock.MOD_ID, "speed_boost_movement_speed"), 1.0, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static final RegistryEntry<StatusEffect> TIMBER_COOLDOWN = register("timber_cooldown", new ModEffect(StatusEffectCategory.NEUTRAL, getFormattingColourValues(Formatting.GREEN)));
+
+    public static final RegistryEntry<StatusEffect> ROTTEN = register("rotten", new AbilityEffect(new RottenAbility(), StatusEffectCategory.BENEFICIAL, getFormattingColourValues(Formatting.WHITE))
+            .addAttributeModifier(ModEntityAttributes.MINING_FORTUNE, Identifier.of(Skyblock.MOD_ID, "rotten_mining_fortune"), 0.05, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
     public static RegistryEntry<StatusEffect> register(String id, StatusEffect statusEffect) {

@@ -306,6 +306,11 @@
   "ability.skyblock.zombie.0": "§7Grants %s §7for %s §7when",
   "ability.skyblock.zombie.1": "§7mining §fOres§7!",
 
+  "ability.skyblock.rotten": "Rotten",
+  "ability.skyblock.rotten.0": "§7Grants %s %s §7per",
+  "ability.skyblock.rotten.1": "%s §7mob within %s §7blocks of you.",
+  "ability.skyblock.rotten.2": "§7you.",
+
   "item.skyblock.melon_dicer": "Melon Dicer",
   "lore.skyblock.melon_dicer.0": "§7Gain §3+5% Farming Wisdom §7while",
   "lore.skyblock.melon_dicer.1": "§7harvesting §fMelons§7.",

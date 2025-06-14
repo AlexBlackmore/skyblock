@@ -40,7 +40,6 @@ public class ModTools {
                     .pickaxe(ModToolMaterials.ZOMBIE, 5, DEFAULT_PICKAXE_ATTACK_SPEED),
                     ExpandedRarity.ModRarity.COMMON, new Ability[]{new ZombieAbility()}));
 
-    //TODO: create Rotten Ability (need effect I think)
     public static final Item ZOMBIE_PICKAXE = ModItems.registerItem("zombie_pickaxe",
             new ModItem(getPickaxeItemSettings("zombie_pickaxe", ModToolMaterials.ZOMBIE),
                     ExpandedRarity.ModRarity.COMMON, new Ability[]{new RottenAbility()}));
@@ -613,6 +612,7 @@ public class ModTools {
             entries.add(ModTools.SWEET_AXE);
             entries.add(ModTools.TITANIUM_PICKAXE);
             entries.add(ModTools.TREECAPITATOR);
+            entries.add(ModTools.ZOMBIE_PICKAXE);
             entries.add(ModTools.ZOMBIE_PICKAXE_LEGACY);
         });
 
